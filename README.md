@@ -952,3 +952,4 @@ This instructions have only been tested on Ubuntu, but you should be able to com
 
 #### 05/10/13
 - Adaptive extension brings back responsive theme.
+# sibkm
