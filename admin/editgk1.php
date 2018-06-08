@@ -10,6 +10,12 @@
 	$id = $_GET['id'];
 	$sql = mysqli_query($koneksi,"SELECT * FROM gangguan_kesehatan WHERE id_gangguan_kesehatan=".$id."");
 	$row = mysqli_fetch_array($sql);
+	function aman($data) {
+	  $data = trim($data);
+	  $data = stripslashes($data);
+	  $data = htmlspecialchars($data);
+	  return $data;
+	}
 ?>
 <html lang="en">
 <head>

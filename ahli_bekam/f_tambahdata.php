@@ -7,6 +7,12 @@ if ($koneksi->connect_errno){
 		die ("Could not connect to the database: <br />". $koneksi>connect_error); 
 	}
 //set variabel
+function aman($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 $error_nama=$valid_nama=$error_number=$valid_number=" ";
 $error_alamat=$valid_alamat=$error_keluhan=$valid_keluhan=" ";
 $id=$nama=$number=$umur=$jk=$alamat=$keluhan=" ";

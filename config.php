@@ -7,11 +7,5 @@
 	if(mysqli_connect_errno()){
 		echo 'Gagal melakukan koneksi ke Database : '.mysqli_connect_error();
 	}
-	function aman($data) {
-	  $data = trim($data);
-	  $data = stripslashes($data);
-	  $data = htmlspecialchars($data);
-	  return $data;
-	}
 ?>
 				

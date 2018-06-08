@@ -96,51 +96,49 @@
 				};
 			//print_r($id_gk);
 			return($id_gk);
-		}			
-?>
-<?php 		
-			//mengambil data id
-			//tahap1
-			// $idpasien        = $id;
-			// $tahap1          = pengujian($idpasien);
-			// //tahap2
-			// $tahap2    = alternatif();
-			// //tahap3
-			// $tahap3          = defuzifikasi($tahap1);
-			// //tahap4
-			// $tahap4    = defuzifikasi($tahap2);
-			// //tahap5
-			// $tahap5          = normalisasi($tahap3);  
-			// //tahap6
-			// $tahap6          = normalisasi($tahap4);
-			// //tahap7
-			// $att1 = att1($tahap6);
-			// $att2 = att2($tahap6);
-			// $att3 = att3($tahap6);
-			// $att4 = att4($tahap6);
-			// $att5 = att5($tahap6);
-			// $att6 = att6($tahap6);
-			// $hsl1 = PerkalianMatriks($tahap5,$att1);
-			// $hsl2 = PerkalianMatriks($tahap5,$att2);
-			// $hsl3 = PerkalianMatriks($tahap5,$att3);
-			// $hsl4 = PerkalianMatriks($tahap5,$att4);
-			// $hsl5 = PerkalianMatriks($tahap5,$att5);
-			// $hsl6 = PerkalianMatriks($tahap5,$att6);
-			// //tahap8
-			// //$rangking = rangking($hsl1,$hsl2,$hsl3,$hsl4,$hsl5,$hsl6); 
-			// $id_gk = penentuan($hsl1,$hsl2,$hsl3,$hsl4,$hsl5,$hsl6); 
-			// //simpan database
-			// $hasil = max($hsl1,$hsl2,$hsl3,$hsl4,$hsl5,$hsl6);
-			// $sql2 =  "INSERT INTO diagnosa(idpasien,id_gangguan_kesehatan,hasil_akhir,nilai_fsaw)
-			// VALUES ('$idpasien','$id_gk','$hasil','$hasil')";
-			// //insert data
-		//  $insert = mysqli_query($koneksi,$sql2);
-		//  if ($insert){
-		//      echo 'Data berhasil di tambahkan!';//Pesan jika proses tambah sukses
-		//      echo '<a href="hasilpenentuan.php">LANJUT</a>';
-		//     }else {
-		//      echo 'Gagal menambahkan data! '; 
-		//     }
+		}			 		
+		//mengambil data id
+		//tahap1
+		// $idpasien        = $id;
+		// $tahap1          = pengujian($idpasien);
+		// //tahap2
+		// $tahap2    = alternatif();
+		// //tahap3
+		// $tahap3          = defuzifikasi($tahap1);
+		// //tahap4
+		// $tahap4    = defuzifikasi($tahap2);
+		// //tahap5
+		// $tahap5          = normalisasi($tahap3);  
+		// //tahap6
+		// $tahap6          = normalisasi($tahap4);
+		// //tahap7
+		// $att1 = att1($tahap6);
+		// $att2 = att2($tahap6);
+		// $att3 = att3($tahap6);
+		// $att4 = att4($tahap6);
+		// $att5 = att5($tahap6);
+		// $att6 = att6($tahap6);
+		// $hsl1 = PerkalianMatriks($tahap5,$att1);
+		// $hsl2 = PerkalianMatriks($tahap5,$att2);
+		// $hsl3 = PerkalianMatriks($tahap5,$att3);
+		// $hsl4 = PerkalianMatriks($tahap5,$att4);
+		// $hsl5 = PerkalianMatriks($tahap5,$att5);
+		// $hsl6 = PerkalianMatriks($tahap5,$att6);
+		// //tahap8
+		// //$rangking = rangking($hsl1,$hsl2,$hsl3,$hsl4,$hsl5,$hsl6); 
+		// $id_gk = penentuan($hsl1,$hsl2,$hsl3,$hsl4,$hsl5,$hsl6); 
+		// //simpan database
+		// $hasil = max($hsl1,$hsl2,$hsl3,$hsl4,$hsl5,$hsl6);
+		// $sql2 =  "INSERT INTO diagnosa(idpasien,id_gangguan_kesehatan,hasil_akhir,nilai_fsaw)
+		// VALUES ('$idpasien','$id_gk','$hasil','$hasil')";
+		// //insert data
+	//  $insert = mysqli_query($koneksi,$sql2);
+	//  if ($insert){
+	//      echo 'Data berhasil di tambahkan!';//Pesan jika proses tambah sukses
+	//      echo '<a href="hasilpenentuan.php">LANJUT</a>';
+	//     }else {
+	//      echo 'Gagal menambahkan data! '; 
+	//     }
 
-		// }
+	// }
 ?>

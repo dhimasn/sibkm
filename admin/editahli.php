@@ -10,6 +10,12 @@
 	$id = $_GET['id'];
 	$sql = mysqli_query($koneksi,"SELECT * FROM user WHERE iduser=".$id."");
 	$row = mysqli_fetch_assoc($sql);
+ function aman($data) {
+	  $data = trim($data);
+	  $data = stripslashes($data);
+	  $data = htmlspecialchars($data);
+	  return $data;
+	}
 ?>
 <html lang="en">
 <head>
@@ -165,24 +171,6 @@
 		</div>
 	</div>
 	</div>
-	
-	<!-- Modal -->
-	<!-- <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	  <div class="modal-dialog modal-sm" role="document">
-		<div class="modal-content">
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<h4 class="modal-title" id="myModalLabel">Ubah Ahli Bekam?</h4>
-		  </div>
-		  <div class="modal-body" align="center">
-			<input type="submit" name="save" class="btn btn-success btn-sm" value="YA">
-			<button type="button" class="btn btn-danger btn-sm btn-lg" data-dismiss="modal">Tidak</button>
-		  </div>
-		  <div class="modal-footer">
-		  </div>
-		</div>
-	  </div>
-	</div> -->
 	<!-- Core JavaScript Files -->
 	<script src="../js/jquery.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>

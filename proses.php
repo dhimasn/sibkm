@@ -30,4 +30,10 @@ $password = aman(md5($_POST['password']));
 			}
 		}mysqli_free_result($result);
 	}
+function aman($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 ?>

@@ -1,10 +1,17 @@
 <?php	
-$bk = alternatif(302);
-$norm = deffuzifikasi($bk);
-normalisasi($norm);
-$p = pengujian(5);
-$d = d($p);
-$n = n($d);
+	 //DATA UJI
+		$pu = pengujian(5);
+		$du = deffuzifikasi($pu);
+		$pu = normalisasi($du);
+
+		//DATA ALTERNATIF
+		$bk = alternatif(302);
+		$at = konversi($bk);
+		$nr = normalisasi($at);
+
+		//PERKALIAN MATRIKS
+
+		//FUNGSI MENGAMBIL DATA UJI
 		function pengujian($idpasien){
 		include('../config.php');
 		//mengambil nilai kriteria dari pasien.
@@ -33,36 +40,19 @@ $n = n($d);
 		return $hitung;
 		}
 		
-		function d($hitung){
-		$defuzifikasi = array();
-		for($i=0;$i<count($hitung);$i++){
-				$defuzifikasi[$i]= ($hitung[$i][0] + $hitung[$i][1] + $hitung[$i][2])/3.0;	
-		}
-		print_r($defuzifikasi);
-		return $defuzifikasi;
-		}
-		
-		function n($defuzifikasi){
-		$max = max($defuzifikasi);																					
-		$normalisasi = array();
-		for ($i=0; $i < count($defuzifikasi); $i++) { 
-				$normalisasi[$i]= $defuzifikasi[$i]/$max;
-			}
-		print_r ($normalisasi);
-		return $normalisasi;
+		//FUNGSI MENGAMBIL DATA BOBOT KRITERIA
+		function alternatif($id){	
+		include('../config.php');
+		//select data bobot dari database
+		$sql= mysqli_query($koneksi,"SELECT c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16 FROM gangguan_kesehatan WHERE id_gangguan_kesehatan='$id'");
+		$bobot = array();
+		$bobot = mysqli_fetch_row($sql);
+		print_r($bobot);
+		return $bobot;
 		}
 
-	function alternatif($id){	
-	include('../config.php');
-	//select data bobot dari database
-	$sql= mysqli_query($koneksi,"SELECT c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16 FROM gangguan_kesehatan WHERE id_gangguan_kesehatan='$id'");
-	$bobot = array();
-	$bobot = mysqli_fetch_row($sql);
-	print_r($bobot);
-	return $bobot;
-	}
-
-	function deffuzifikasi($bk){
+		//FUNGSI KONVERSI DATA BOBOT KRITERIA
+			function konversi($bk){
 	  $vl  = array(0.0,0.0,0.2);
 	  $l   = array(0.0,0.2,0.4);
 	  $m   = array(0.2,0.4,0.6);
@@ -83,24 +73,43 @@ $n = n($d);
 	 foreach($tfn as $j => $b){
 	   $sum = 0;
 	   foreach($b as $c){
-		$sum += $c;
+		  $sum += $c;
 	   }
 	   $deffval[$j] = $sum/3; //deff = deffuzifikasi
 	 }
 	 $deff['tfn'] 	= $tfn;
 	 $deff['deffval']  = $deffval;
-	 print_r($deffval);
+	 print_r($deff);
 	 return($deffval);
 	 }
 
+	 //FUNGSI DEFFUZIFIKASI
+		function deffuzifikasi($hitung){
+			 foreach($hitung as $j => $b){
+	   		$sum = 0;
+	   	foreach($b as $c){
+		  		$sum += $c;
+	   }
+	   		$deffval[$j] = $sum/3; //deff = deffuzifikasi
+	 		}	
+		print_r($deffval);
+		return $deffval;
+		}
+
+	//FUNGSI NORMALISASI DATA
 	function normalisasi($normal){
 		$total = array_sum($normal);
 		foreach($normal as $c){
 		  $normalized[] = $c/$total;
 		}
-		  $t5['total'] 	  = $total;
-		  $t5['normalized'] = $normalized;
-		  print_r($t5);
-		  return $t5;
-	    }
+		  $normalisasi['total'] 	  = $total;
+		  $normalisasi['normalized'] = $normalized;
+		  print_r($normalisasi);
+		  return $normalisasi;
+	 }
+
+	//FUNGSI PERKALIAN MATRIKS
+	function matriks(){
+		
+	}
 ?>
