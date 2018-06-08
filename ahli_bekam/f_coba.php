@@ -1,6 +1,6 @@
 <?php	
 	 //DATA UJI
-		$pu = pengujian(5);
+		$pu = pengujian(3);
 		$du = deffuzifikasi($pu);
 		$pu = normalisasi($du);
 
@@ -10,6 +10,7 @@
 		$nr = normalisasi($at);
 
 		//PERKALIAN MATRIKS
+		$mt = matriks($pu,$nr);
 
 		//FUNGSI MENGAMBIL DATA UJI
 		function pengujian($idpasien){
