@@ -108,20 +108,9 @@
 		  return $normalisasi;
 	 }
 
-	 
+
 	//FUNGSI PERKALIAN MATRIKS
 	function matriks(){
-			$matriks_a=$normalisasi;
-			$matriks_b=$normalisasi_bobot;
-			//$hasil = array();
-			$temp = 0;
-			for ($i=0; $i<sizeof($matriks_a); $i++) {
-				for ($j=0; $j<sizeof($matriks_b); $j++) {
-					$temp += $matriks_a[$i] * $matriks_b[$j];
-				}
-			}
-		$hasil = $temp;
-		//print_r($hasil);
-		return $hasil;
+
 	}
 ?>
