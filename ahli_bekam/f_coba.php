@@ -108,6 +108,7 @@
 		  return $normalisasi;
 	 }
 
+	 
 	//FUNGSI PERKALIAN MATRIKS
 	function matriks(){
 			$matriks_a=$normalisasi;
