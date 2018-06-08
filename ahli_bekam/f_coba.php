@@ -2,35 +2,44 @@
 	 //DATA UJI
 		$pu = pengujian(3);
 		$du = deffuzifikasi($pu);
-		$pu = normalisasi($du);
+        $pu = normalisasi($du);
+        print_r($pu);
 
 		//DATA ALTERNATIF
-		$bk = alternatif(301);
-		$at = konversi($bk);
-		$nr = normalisasi($at);
+        $a = array();
+        $bk1 = alternatif(301);
+		$at1 = konversi($bk1);
+        $nr1 = normalisasi($at1);
+        $a[] = $nr1;
 
-		$bk = alternatif(302);
-		$at = konversi($bk);
-		$nr = normalisasi($at);
+		$bk2 = alternatif(302);
+		$at2 = konversi($bk2);
+		$nr2 = normalisasi($at2);
+        $a[] = $nr2;
 
-		$bk = alternatif(303);
-		$at = konversi($bk);
-		$nr = normalisasi($at);
+		$bk3 = alternatif(303);
+		$at3 = konversi($bk3);
+        $nr3 = normalisasi($at3);
+        $a[] = $nr3;
 
-		$bk = alternatif(304);
-		$at = konversi($bk);
-		$nr = normalisasi($at);
+		$bk4 = alternatif(304);
+		$at4 = konversi($bk4);
+		$nr4 = normalisasi($at4);
+        $a[] = $nr4;
 
-		$bk = alternatif(305);
-		$at = konversi($bk);
-		$nr = normalisasi($at);
+		$bk5 = alternatif(305);
+		$at5 = konversi($bk5);
+		$nr5 = normalisasi($at5);
+        $a[] = $nr5;
 
-		$bk = alternatif(306);
-		$at = konversi($bk);
-		$nr = normalisasi($at);
+		$bk6 = alternatif(306);
+		$at6 = konversi($bk6);
+        $nr6 = normalisasi($at6);
+        $a[] = $nr6;
+        print_r($a);
 
 		//PERKALIAN MATRIKS
-		$mt = matriks($pu,$nr);
+		//$mt = matriks($pu,$nr);
 
 		//FUNGSI MENGAMBIL DATA UJI
 		function pengujian($idpasien){
@@ -57,7 +66,6 @@
 				$nilai_u = $data['nilai_u']
 				);
 			}
-		print_r($hitung);
 		return $hitung;
 		}
 		//FUNGSI MENGAMBIL DATA BOBOT KRITERIA
@@ -66,13 +74,12 @@
 		//select data bobot dari database
 		$sql= mysqli_query($koneksi,"SELECT c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16 FROM gangguan_kesehatan WHERE id_gangguan_kesehatan='$id'");
 		$bobot = array();
-		$bobot = mysqli_fetch_row($sql);
-		print_r($bobot);
+        $bobot = mysqli_fetch_row($sql);
 		return $bobot;
 		}
 
-		//FUNGSI KONVERSI DATA BOBOT KRITERIA
-			function konversi($bk){
+	  //FUNGSI KONVERSI DATA BOBOT KRITERIA
+	  function konversi($bk){
 	  $vl  = array(0.0,0.0,0.2);
 	  $l   = array(0.0,0.2,0.4);
 	  $m   = array(0.2,0.4,0.6);
@@ -98,8 +105,8 @@
 	   $deffval[$j] = $sum/3; //deff = deffuzifikasi
 	 }
 	 $deff['tfn'] 	= $tfn;
-	 $deff['deffval']  = $deffval;
-	 print_r($deff);
+     $deff['deffval']  = $deffval;
+     
 	 return($deffval);
 	 }
 
@@ -111,8 +118,7 @@
 		  		$sum += $c;
 	   }
 	   		$deffval[$j] = $sum/3; //deff = deffuzifikasi
-	 		}	
-		print_r($deffval);
+             }	
 		return $deffval;
 		}
 
@@ -124,8 +130,8 @@
 		}
 		  $normalisasi['total'] 	  = $total;
 		  $normalisasi['normalized'] = $normalized;
-		  print_r($normalisasi);
-		  return $normalisasi;
+
+		return $normalisasi;
 	 }
 
 	 
