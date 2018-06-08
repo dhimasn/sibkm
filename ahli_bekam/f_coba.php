@@ -5,7 +5,27 @@
 		$pu = normalisasi($du);
 
 		//DATA ALTERNATIF
+		$bk = alternatif(301);
+		$at = konversi($bk);
+		$nr = normalisasi($at);
+
 		$bk = alternatif(302);
+		$at = konversi($bk);
+		$nr = normalisasi($at);
+
+		$bk = alternatif(303);
+		$at = konversi($bk);
+		$nr = normalisasi($at);
+
+		$bk = alternatif(304);
+		$at = konversi($bk);
+		$nr = normalisasi($at);
+
+		$bk = alternatif(305);
+		$at = konversi($bk);
+		$nr = normalisasi($at);
+
+		$bk = alternatif(306);
 		$at = konversi($bk);
 		$nr = normalisasi($at);
 
@@ -108,9 +128,17 @@
 		  return $normalisasi;
 	 }
 
-
+	 
 	//FUNGSI PERKALIAN MATRIKS
-	function matriks(){
-
+	function matriks($matriks_a,$matriks_b){
+		// 	$temp = 0;
+		// 	foreach ($matriks_a as $a => $value_a) {
+		// 		foreach ($matriks_b as $b => $value_b) {
+		// 			$temp += $value_a[] * $value_b[];
+		// 		}
+		// 	}
+		// $hasil = $temp;
+		// print_r($hasil);
+		// return $hasil;
 	}
 ?>
