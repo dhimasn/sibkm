@@ -44,7 +44,9 @@
 		print_r($mt);
 		
 		//SORTING DATA 
-
+		$rk = rangking($mt);
+		print_r($rk);
+		
 		//MENCARI NILAI TERTINGGI
 
 
@@ -157,5 +159,11 @@
 	  //echo "Matrix Multiplication can not be done !";
 	  //}
 	  return $matrixProduct;
+	}
+	//FUNGSI RANGKING
+	function rangking($sort){
+	$rangking = $sort;
+	sort($rangking);
+	return($rangking);
 	}
 ?>
