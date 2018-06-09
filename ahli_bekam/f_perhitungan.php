@@ -1,4 +1,56 @@
 <?php	
+	    //DATA UJI
+	    include('f_perkalianMatriks.php');
+		$pu = pengujian(3);
+		$du = deffuzifikasi($pu);
+        $ns = normalisasi($du);
+        print_r($ns);
+
+		//DATA ALTERNATIF
+        $a = array();
+        $bk1 = alternatif(301);
+		$at1 = konversi($bk1);
+        $nr1 = normalisasi($at1);
+        $a[] = $nr1;
+
+		$bk2 = alternatif(302);
+		$at2 = konversi($bk2);
+		$nr2 = normalisasi($at2);
+        $a[] = $nr2;
+
+		$bk3 = alternatif(303);
+		$at3 = konversi($bk3);
+        $nr3 = normalisasi($at3);
+        $a[] = $nr3;
+
+		$bk4 = alternatif(304);
+		$at4 = konversi($bk4);
+		$nr4 = normalisasi($at4);
+        $a[] = $nr4;
+
+		$bk5 = alternatif(305);
+		$at5 = konversi($bk5);
+		$nr5 = normalisasi($at5);
+        $a[] = $nr5;
+
+		$bk6 = alternatif(306);
+		$at6 = konversi($bk6);
+        $nr6 = normalisasi($at6);
+        $a[] = $nr6;
+        print_r($a);
+
+		//PERKALIAN MATRIKS
+		$mt = matriksPerkalian($a,$ns);
+		print_r($mt);
+		
+		//SORTING DATA 
+		$rk = rangking($mt);
+		print_r($rk);
+		
+		//MENCARI NILAI TERTINGGI
+
+
+		//FUNGSI MENGAMBIL DATA UJI
 		function pengujian($idpasien){
 		include('../config.php');
 		//mengambil nilai kriteria dari pasien.
@@ -23,122 +75,95 @@
 				$nilai_u = $data['nilai_u']
 				);
 			}
-		//print_r($hitung);
 		return $hitung;
 		}
-		
-		function defuzifikasi($hitung){
-		$defuzifikasi = array();
-		for($i=0;$i<count($hitung);$i++){
-				$defuzifikasi[$i]= ($hitung[$i][0] + $hitung[$i][1] + $hitung[$i][2])/3.0;	
+		//FUNGSI MENGAMBIL DATA BOBOT KRITERIA
+		function alternatif($id){	
+		include('../config.php');
+		//select data bobot dari database
+		$sql= mysqli_query($koneksi,"SELECT c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16 FROM gangguan_kesehatan WHERE id_gangguan_kesehatan='$id'");
+		$bobot = array();
+        $bobot = mysqli_fetch_row($sql);
+		return $bobot;
 		}
-		//print_r($defuzifikasi);
-		return $defuzifikasi;
-		}
-		
-		function normalisasi($defuzifikasi){
-		$max = max($defuzifikasi);																					
-		$normalisasi = array();
-		for ($i=0; $i < count($defuzifikasi); $i++) { 
-				$normalisasi[$i]= $defuzifikasi[$i]/$max;
-			}
-		//print_r ($normalisasi);
-		return $normalisasi;
-		}
-		
-		function PerkalianMatriks($normalisasi,$normalisasi_bobot){			
-			$matriks_a=$normalisasi;
-			$matriks_b=$normalisasi_bobot;
-			//$hasil = array();
-			$temp = 0;
-			for ($i=0; $i<sizeof($matriks_a); $i++) {
-				for ($j=0; $j<sizeof($matriks_b); $j++) {
-					$temp += $matriks_a[$i] * $matriks_b[$j];
-				}
-			}
-		$hasil = $temp;
-		//print_r($hasil);
-		return $hasil;
-		}
-		
-		function rangking($hsl1,$hsl2,$hsl3,$hsl4,$hsl5,$hsl6){
-			$rangking =array($hsl1,$hsl2,$hsl3,$hsl4,$hsl5,$hsl6);
-			sort($rangking);
-			//print_r($rangking);
-			return($rangking);
-		}
-		
-		function penentuan($hsl1,$hsl2,$hsl3,$hsl4,$hsl5,$hsl6){
-			$prefensiMax=max($hsl1,$hsl2,$hsl3,$hsl4,$hsl5,$hsl6);
-			if ($prefensiMax == $hsl1)
-				{
-				$id_gk = '301';
-				}  
-			elseif($prefensiMax == $hsl2)
-			    {
-				$id_gk = '302';
-				}
-			elseif($prefensiMax == $hsl3)
-			    {
-				$id_gk = '303';
-			    }			    
-			elseif($prefensiMax == $hsl4)
-			    {
-				$id_gk = '304';
-				}
-			elseif($prefensiMax == $hsl5)
-				{
-				$id_gk = '305';
-				}
-			else 
-				{
-				$id_gk = '306';
-				};
-			//print_r($id_gk);
-			return($id_gk);
-		}			 		
-		//mengambil data id
-		//tahap1
-		// $idpasien        = $id;
-		// $tahap1          = pengujian($idpasien);
-		// //tahap2
-		// $tahap2    = alternatif();
-		// //tahap3
-		// $tahap3          = defuzifikasi($tahap1);
-		// //tahap4
-		// $tahap4    = defuzifikasi($tahap2);
-		// //tahap5
-		// $tahap5          = normalisasi($tahap3);  
-		// //tahap6
-		// $tahap6          = normalisasi($tahap4);
-		// //tahap7
-		// $att1 = att1($tahap6);
-		// $att2 = att2($tahap6);
-		// $att3 = att3($tahap6);
-		// $att4 = att4($tahap6);
-		// $att5 = att5($tahap6);
-		// $att6 = att6($tahap6);
-		// $hsl1 = PerkalianMatriks($tahap5,$att1);
-		// $hsl2 = PerkalianMatriks($tahap5,$att2);
-		// $hsl3 = PerkalianMatriks($tahap5,$att3);
-		// $hsl4 = PerkalianMatriks($tahap5,$att4);
-		// $hsl5 = PerkalianMatriks($tahap5,$att5);
-		// $hsl6 = PerkalianMatriks($tahap5,$att6);
-		// //tahap8
-		// //$rangking = rangking($hsl1,$hsl2,$hsl3,$hsl4,$hsl5,$hsl6); 
-		// $id_gk = penentuan($hsl1,$hsl2,$hsl3,$hsl4,$hsl5,$hsl6); 
-		// //simpan database
-		// $hasil = max($hsl1,$hsl2,$hsl3,$hsl4,$hsl5,$hsl6);
-		// $sql2 =  "INSERT INTO diagnosa(idpasien,id_gangguan_kesehatan,hasil_akhir,nilai_fsaw)
-		// VALUES ('$idpasien','$id_gk','$hasil','$hasil')";
-		// //insert data
-	//  $insert = mysqli_query($koneksi,$sql2);
-	//  if ($insert){
-	//      echo 'Data berhasil di tambahkan!';//Pesan jika proses tambah sukses
-	//      echo '<a href="hasilpenentuan.php">LANJUT</a>';
-	//     }else {
-	//      echo 'Gagal menambahkan data! '; 
-	//     }
+	  //FUNGSI KONVERSI DATA BOBOT KRITERIA
+	  function konversi($bk){
+	  $vl  = array(0.0,0.0,0.2);
+	  $l   = array(0.0,0.2,0.4);
+	  $m   = array(0.2,0.4,0.6);
+	  $h   = array(0.4,0.6,0.8);
+	  $vh  = array(0.6,0.8,1);
+	  foreach($bk as $key=>$value){
+	  if($value == 'VH')
+		$tfn[] = $vh;    //konversi = konversi data awal ke data fuzzy
+	  elseif($value == 'H')
+	    $tfn[] = $h;
+	  elseif($value == 'M')
+	    $tfn[] = $m;
+	  elseif($value == 'L')
+	    $tfn[] = $l;
+	  else
+	    $tfn[] = $vl;
+	 }
+	 foreach($tfn as $j => $b){
+	   $sum = 0;
+	   foreach($b as $c){
+		  $sum += $c;
+	   }
+	   $deffval[$j] = $sum/3; //deff = deffuzifikasi
+	 }
+	 $deff['tfn'] 	= $tfn;
+     $deff['deffval']  = $deffval;
+     
+	 return $deffval;
+	 }
+	 //FUNGSI DEFFUZIFIKASI
+	function deffuzifikasi($hitung){
+	foreach($hitung as $j => $b){
+		$sum = 0;
+	foreach($b as $c){
+			$sum += $c;
+	}
+		$deffval[$j] = $sum/3; //deff = deffuzifikasi
+			}	
+	return $deffval;
+	}
+	//FUNGSI NORMALISASI DATA
+	function normalisasi($normal){
+	$total = array_sum($normal);
+	foreach($normal as $c){
+		$normalized[] = $c/$total;
+	}
+		$normalisasi['total'] 	  = $total;
+		$normalisasi['normalized'] = $normalized;
 
-	// }
+	return $normalized;
+	}
+	//FUNGSI PERKALIAN MATRIKS
+	function matriksPerkalian($matrixA, $matrixB){
+	  $colsA = count($matrixA);
+	  $rowsA = count($matrixA);	
+	  $rowsB = count($matrixB);
+      $matrixProduct = array();
+	  //if($rowsA == $rowsB){
+		for($i = 0; $i < $colsA; $i++){
+			$sum = 0; 
+			for($j = 0; $j < $rowsB; $j++){
+					for($p = 0; $p < $rowsA; $p++){
+			     $sum += $matrixA[$i][$p] * $matrixB[$p];
+			    }
+			  $matrixProduct[$i] = $sum;
+		  }
+		}
+	  //}else {
+	  //echo "Matrix Multiplication can not be done !";
+	  //}
+	  return $matrixProduct;
+	}
+	//FUNGSI RANGKING
+	function rangking($sort){
+	$rangking = $sort;
+	sort($rangking);
+	return($rangking);
+	}
 ?>

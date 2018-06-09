@@ -1,169 +1,135 @@
-<?php	
-	    //DATA UJI
-	    include('f_perkalianMatriks.php');
-		$pu = pengujian(3);
-		$du = deffuzifikasi($pu);
-        $ns = normalisasi($du);
-        print_r($ns);
-
-		//DATA ALTERNATIF
-        $a = array();
-        $bk1 = alternatif(301);
-		$at1 = konversi($bk1);
-        $nr1 = normalisasi($at1);
-        $a[] = $nr1;
-
-		$bk2 = alternatif(302);
-		$at2 = konversi($bk2);
-		$nr2 = normalisasi($at2);
-        $a[] = $nr2;
-
-		$bk3 = alternatif(303);
-		$at3 = konversi($bk3);
-        $nr3 = normalisasi($at3);
-        $a[] = $nr3;
-
-		$bk4 = alternatif(304);
-		$at4 = konversi($bk4);
-		$nr4 = normalisasi($at4);
-        $a[] = $nr4;
-
-		$bk5 = alternatif(305);
-		$at5 = konversi($bk5);
-		$nr5 = normalisasi($at5);
-        $a[] = $nr5;
-
-		$bk6 = alternatif(306);
-		$at6 = konversi($bk6);
-        $nr6 = normalisasi($at6);
-        $a[] = $nr6;
-        print_r($a);
-
-		//PERKALIAN MATRIKS
-		$mt = matriksPerkalian($a,$ns);
-		print_r($mt);
-		
-		//SORTING DATA 
-		$rk = rangking($mt);
-		print_r($rk);
-		
-		//MENCARI NILAI TERTINGGI
-
-
-		//FUNGSI MENGAMBIL DATA UJI
-		function pengujian($idpasien){
-		include('../config.php');
-		//mengambil nilai kriteria dari pasien.
-		$sql = mysqli_query($koneksi,
-			"SELECT
-				rating.nilai_l,
-				rating.nilai_m,
-				rating.nilai_u
-			FROM
-				rating_pasien
-			JOIN rating ON rating_pasien.idtfn = rating.idtfn
-			WHERE
-				rating_pasien.idpasien ='$idpasien'");
-		//deklarasi array of array
-		$hitung = array();
-		for($i=0;$i<mysqli_num_rows($sql);$i++){
-		$data = mysqli_fetch_array($sql);
-		$hitung[$i] =array 
-				(
-				$nilai_l = $data['nilai_l'],
-				$nilai_m = $data['nilai_m'],
-				$nilai_u = $data['nilai_u']
-				);
+<?php
+/* Fungsi perkalian matriks
+* @f2face - 2013
+*/
+function perkalian_matriks($matriks_a, $matriks_b) {
+	$hasil = array();
+	for ($i=0; $i<count($matriks_a); $i++) {
+		$temp = 0;
+		for ($j=0; $j<count($matriks_a); $j++) {
+			for ($k=0; $k<count($matriks_b); $k++) {
+				$temp += $matriks_a[$j][$k] * $matriks_b[$k];
 			}
-		return $hitung;
+			$hasil[$j][$k] = $temp;
 		}
-		//FUNGSI MENGAMBIL DATA BOBOT KRITERIA
-		function alternatif($id){	
-		include('../config.php');
-		//select data bobot dari database
-		$sql= mysqli_query($koneksi,"SELECT c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16 FROM gangguan_kesehatan WHERE id_gangguan_kesehatan='$id'");
-		$bobot = array();
-        $bobot = mysqli_fetch_row($sql);
-		return $bobot;
+	}
+	return $hasil;
+}
+//---------------------------------------------------------------------------
+// Contoh penggunaan :
+// Matriks A
+// $a = array();
+// $a[] = array(1, 2, 3);
+// $a[] = array(4, 5, 6);
+// $a[] = array(7, 8, 9);
+// $a[] = array(10, 11, 12);
+// // Matriks B
+// $b = array();
+// $b[] = array(1, 2, 3, 4);
+// $b[] = array(5, 6, 7, 8);
+// $b[] = array(9, 10, 11, 12);
+// // Kalikan
+// $hasil = perkalian_matriks($a, $b);
+// echo "<table border='1' cellspacing='0' cellpadding='5'>";
+// for ($i=0; $i<sizeof($hasil); $i++) {
+// 	echo "<tr>";
+// 	for ($j=0; $j<sizeof($hasil[$i]); $j++) {
+// 		echo "<td>". round($hasil[$i][$j], 4) ."</td>";
+// 	}
+// 	echo "</tr>";
+// }
+// echo "</table>";
+	function tahap6($normalized, $deff2){
+	   $n = array($normalized);
+	   foreach($n as $a){
+		$key = 1;
+		foreach($a as $b){
+		  $w[1][$key] = $b;
+		  $key++;
 		}
-	  //FUNGSI KONVERSI DATA BOBOT KRITERIA
-	  function konversi($bk){
-	  $vl  = array(0.0,0.0,0.2);
-	  $l   = array(0.0,0.2,0.4);
-	  $m   = array(0.2,0.4,0.6);
-	  $h   = array(0.4,0.6,0.8);
-	  $vh  = array(0.6,0.8,1);
-	  foreach($bk as $key=>$value){
-	  if($value == 'VH')
-		$tfn[] = $vh;    //konversi = konversi data awal ke data fuzzy
-	  elseif($value == 'H')
-	    $tfn[] = $h;
-	  elseif($value == 'M')
-	    $tfn[] = $m;
-	  elseif($value == 'L')
-	    $tfn[] = $l;
-	  else
-	    $tfn[] = $vl;
-	 }
-	 foreach($tfn as $j => $b){
-	   $sum = 0;
-	   foreach($b as $c){
-		  $sum += $c;
-	   }
-	   $deffval[$j] = $sum/3; //deff = deffuzifikasi
-	 }
-	 $deff['tfn'] 	= $tfn;
-     $deff['deffval']  = $deffval;
-     
-	 return $deffval;
-	 }
-	 //FUNGSI DEFFUZIFIKASI
-	function deffuzifikasi($hitung){
-	foreach($hitung as $j => $b){
-		$sum = 0;
-	foreach($b as $c){
-			$sum += $c;
+         }
+	   $r 	= matrixTranspose($deff2);
+	   $hasil 	= matriksPerkalian($w, $r);
+	   $thp6['w'] 		= $w;
+	   $thp6['r'] 		= $r;
+	   $thp6['hasil'] 	= $hasil;
+	   return $thp6;
 	}
-		$deffval[$j] = $sum/3; //deff = deffuzifikasi
-			}	
-	return $deffval;
-	}
-	//FUNGSI NORMALISASI DATA
-	function normalisasi($normal){
-	$total = array_sum($normal);
-	foreach($normal as $c){
-		$normalized[] = $c/$total;
-	}
-		$normalisasi['total'] 	  = $total;
-		$normalisasi['normalized'] = $normalized;
 
-	return $normalized;
-	}
-	//FUNGSI PERKALIAN MATRIKS
-	function matriksPerkalian($matrixA, $matrixB){
-	  $colsA = count($matrixA);
-	  $rowsA = count($matrixA);	
-	  $rowsB = count($matrixB);
-      $matrixProduct = array();
-	  //if($rowsA == $rowsB){
-		for($i = 0; $i < $colsA; $i++){
-			$sum = 0; 
-			for($j = 0; $j < $rowsB; $j++){
-					for($p = 0; $p < $rowsA; $p++){
-			     $sum += $matrixA[$i][$p] * $matrixB[$p];
-			    }
-			  $matrixProduct[$i] = $sum;
-		  }
+      /*tahap 7*/
+      function ranking($x){
+	  $sortArray = array();
+	  foreach($x as $a){
+	    foreach($a as $key=>$value){
+		if(!isset($sortArray[$key])){
+		  $sortArray[$key] = array();
 		}
-	  //}else {
-	  //echo "Matrix Multiplication can not be done !";
-	  //}
-	  return $matrixProduct;
+		$sortArray[$key][] = $value;
+	  }
+      }
+	$orderby = "value";
+	array_multisort($sortArray[$orderby], SORT_DESC, $x);
+	foreach ($x as $value) {
+	   $ranking['sort'][] = $value;
 	}
-	//FUNGSI RANGKING
-	function rangking($sort){
-	$rangking = $sort;
-	sort($rangking);
-	return($rangking);
+      $sort = array();
+	foreach($ranking['sort'] as $a){
+	  foreach($a as $key=>$value){
+	    if(!isset($sort[$key])){
+		$sort[$key] = array();
+	    }
+          $sort[$key][] = $value;
+	  }
 	}
+for($i=0;$i<count($sort['key']);$i++) {
+	  for($j=0;$j<count($sortArray['key']);$j++){
+		if($sortArray['key'][$i] == $sort['key'][$j]){
+		  $ranking['alternatif'][$i]['key'] = $sortArray['key'][$i];
+		  $ranking['alternatif'][$i]['value'] = $sort['value'][$j];
+	        $ranking['alternatif'][$i]['ranking'] = $j;
+		}
+	  }
+	}
+      return $ranking;
+    }	
+
+    function tahap7($hasil){
+	 foreach($hasil as $x){
+		foreach($x as $key => $y){
+		   $v[$key]['key'] = 'A'.$key;
+		   $v[$key]['value'] = $y;
+		}
+       }
+	 $v_urut = ranking($v);
+	 return $v_urut;
+    }
+										
+    function hasil($nik, $ranking){
+	$a = 1;
+	foreach($nik as $key => $value){
+	   $warga[$key] = 'A'.$a;
+	   $a++;
+	}
+	$no = 0;
+	foreach($ranking as $a){
+	   foreach($warga as $key => $value){
+		if($a['key'] == $value){
+			$hasil[$no]['nik'] 	 = $key;
+		      $hasil[$no]['nilai'] = $a['value'];
+		}
+	   }	
+	   $no++;
+	}
+	return $hasil;
+    }
+
+    // proses SAW tahap 2 - 7
+    // $tahap2 = tahap2($tahap1);
+    // $tahap3 = tahap3($tahap2);
+    // $tahap4 = tahap4($tahap3);
+    // $tahap5 = tahap5($bobot_kp);
+    // $thp5 	= thp5($tahap5['deffval']);
+    // $tahap6 = tahap6($thp5['normalized'], $tahap4['deff2']);
+    // $tahap7 = tahap7($tahap6['hasil']);
+    // $data_hasil = hasil($nilai_linguistik, $tahap7['sort']);
 ?>
