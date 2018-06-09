@@ -1,9 +1,10 @@
 <?php	
-	 //DATA UJI
+	    //DATA UJI
+	    include('f_perkalianMatriks.php');
 		$pu = pengujian(3);
 		$du = deffuzifikasi($pu);
-        $pu = normalisasi($du);
-        print_r($pu);
+        $ns = normalisasi($du);
+        print_r($ns);
 
 		//DATA ALTERNATIF
         $a = array();
@@ -39,7 +40,13 @@
         print_r($a);
 
 		//PERKALIAN MATRIKS
-		//$mt = matriks($pu,$nr);
+		$mt = matriksPerkalian($a,$ns);
+		print_r($mt);
+		
+		//SORTING DATA 
+
+		//MENCARI NILAI TERTINGGI
+
 
 		//FUNGSI MENGAMBIL DATA UJI
 		function pengujian($idpasien){
@@ -77,7 +84,6 @@
         $bobot = mysqli_fetch_row($sql);
 		return $bobot;
 		}
-
 	  //FUNGSI KONVERSI DATA BOBOT KRITERIA
 	  function konversi($bk){
 	  $vl  = array(0.0,0.0,0.2);
@@ -107,44 +113,49 @@
 	 $deff['tfn'] 	= $tfn;
      $deff['deffval']  = $deffval;
      
-	 return($deffval);
+	 return $deffval;
 	 }
-
 	 //FUNGSI DEFFUZIFIKASI
-		function deffuzifikasi($hitung){
-			 foreach($hitung as $j => $b){
-	   		$sum = 0;
-	   	foreach($b as $c){
-		  		$sum += $c;
-	   }
-	   		$deffval[$j] = $sum/3; //deff = deffuzifikasi
-             }	
-		return $deffval;
-		}
-
+	function deffuzifikasi($hitung){
+	foreach($hitung as $j => $b){
+		$sum = 0;
+	foreach($b as $c){
+			$sum += $c;
+	}
+		$deffval[$j] = $sum/3; //deff = deffuzifikasi
+			}	
+	return $deffval;
+	}
 	//FUNGSI NORMALISASI DATA
 	function normalisasi($normal){
-		$total = array_sum($normal);
-		foreach($normal as $c){
-		  $normalized[] = $c/$total;
-		}
-		  $normalisasi['total'] 	  = $total;
-		  $normalisasi['normalized'] = $normalized;
+	$total = array_sum($normal);
+	foreach($normal as $c){
+		$normalized[] = $c/$total;
+	}
+		$normalisasi['total'] 	  = $total;
+		$normalisasi['normalized'] = $normalized;
 
-		return $normalisasi;
-	 }
-
-	 
+	return $normalized;
+	}
 	//FUNGSI PERKALIAN MATRIKS
-	function matriks($matriks_a,$matriks_b){
-		// 	$temp = 0;
-		// 	foreach ($matriks_a as $a => $value_a) {
-		// 		foreach ($matriks_b as $b => $value_b) {
-		// 			$temp += $value_a[] * $value_b[];
-		// 		}
-		// 	}
-		// $hasil = $temp;
-		// print_r($hasil);
-		// return $hasil;
+	function matriksPerkalian($matrixA, $matrixB){
+	  $colsA = count($matrixA);
+	  $rowsA = count($matrixA);	
+	  $rowsB = count($matrixB);
+      $matrixProduct = array();
+	  //if($rowsA == $rowsB){
+		for($i = 0; $i < $colsA; $i++){
+			$sum = 0; 
+			for($j = 0; $j < $rowsB; $j++){
+					for($p = 0; $p < $rowsA; $p++){
+			     $sum += $matrixA[$i][$p] * $matrixB[$p];
+			    }
+			  $matrixProduct[$i] = $sum;
+		  }
+		}
+	  //}else {
+	  //echo "Matrix Multiplication can not be done !";
+	  //}
+	  return $matrixProduct;
 	}
 ?>
