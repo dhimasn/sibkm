@@ -1,6 +1,5 @@
 <?php	
-	    //DATA UJI
-	    include('f_perkalianMatriks.php');
+		//DATA UJI
 		$pu = pengujian(3);
 		$du = deffuzifikasi($pu);
         $ns = normalisasi($du);
@@ -43,13 +42,14 @@
 		$mt = matriksPerkalian($a,$ns);
 		print_r($mt);
 		
-		//SORTING DATA 
-		$rk = rangking($mt);
+		//MENCARI NILAI TERTINGGI
+		$maks = maks($mt);
+		print_r($maks);
+
+		//MENCARI ID penentuan
+		$rk = penentuan($mt);
 		print_r($rk);
 		
-		//MENCARI NILAI TERTINGGI
-
-
 		//FUNGSI MENGAMBIL DATA UJI
 		function pengujian($idpasien){
 		include('../config.php');
@@ -86,84 +86,104 @@
         $bobot = mysqli_fetch_row($sql);
 		return $bobot;
 		}
-	  //FUNGSI KONVERSI DATA BOBOT KRITERIA
-	  function konversi($bk){
-	  $vl  = array(0.0,0.0,0.2);
-	  $l   = array(0.0,0.2,0.4);
-	  $m   = array(0.2,0.4,0.6);
-	  $h   = array(0.4,0.6,0.8);
-	  $vh  = array(0.6,0.8,1);
-	  foreach($bk as $key=>$value){
-	  if($value == 'VH')
-		$tfn[] = $vh;    //konversi = konversi data awal ke data fuzzy
-	  elseif($value == 'H')
-	    $tfn[] = $h;
-	  elseif($value == 'M')
-	    $tfn[] = $m;
-	  elseif($value == 'L')
-	    $tfn[] = $l;
-	  else
-	    $tfn[] = $vl;
-	 }
-	 foreach($tfn as $j => $b){
-	   $sum = 0;
-	   foreach($b as $c){
-		  $sum += $c;
-	   }
-	   $deffval[$j] = $sum/3; //deff = deffuzifikasi
-	 }
-	 $deff['tfn'] 	= $tfn;
-     $deff['deffval']  = $deffval;
-     
-	 return $deffval;
-	 }
-	 //FUNGSI DEFFUZIFIKASI
-	function deffuzifikasi($hitung){
-	foreach($hitung as $j => $b){
-		$sum = 0;
-	foreach($b as $c){
-			$sum += $c;
-	}
-		$deffval[$j] = $sum/3; //deff = deffuzifikasi
-			}	
-	return $deffval;
-	}
-	//FUNGSI NORMALISASI DATA
-	function normalisasi($normal){
-	$total = array_sum($normal);
-	foreach($normal as $c){
-		$normalized[] = $c/$total;
-	}
-		$normalisasi['total'] 	  = $total;
-		$normalisasi['normalized'] = $normalized;
-
-	return $normalized;
-	}
-	//FUNGSI PERKALIAN MATRIKS
-	function matriksPerkalian($matrixA, $matrixB){
-	  $colsA = count($matrixA);
-	  $rowsA = count($matrixA);	
-	  $rowsB = count($matrixB);
-      $matrixProduct = array();
-	  //if($rowsA == $rowsB){
-		for($i = 0; $i < $colsA; $i++){
-			$sum = 0; 
-			for($j = 0; $j < $rowsB; $j++){
-					for($p = 0; $p < $rowsA; $p++){
-			     $sum += $matrixA[$i][$p] * $matrixB[$p];
-			    }
-			  $matrixProduct[$i] = $sum;
-		  }
+		//FUNGSI KONVERSI DATA BOBOT KRITERIA
+		function konversi($bk){
+		$vl  = array(0.0,0.0,0.2);
+		$l   = array(0.0,0.2,0.4);
+		$m   = array(0.2,0.4,0.6);
+		$h   = array(0.4,0.6,0.8);
+		$vh  = array(0.6,0.8,1);
+		foreach($bk as $key=>$value){
+		if($value == 'VH')
+			$tfn[] = $vh;    //konversi = konversi data awal ke data fuzzy
+		elseif($value == 'H')
+			$tfn[] = $h;
+		elseif($value == 'M')
+			$tfn[] = $m;
+		elseif($value == 'L')
+			$tfn[] = $l;
+		else
+			$tfn[] = $vl;
 		}
-	  //}else {
-	  //echo "Matrix Multiplication can not be done !";
-	  //}
-	  return $matrixProduct;
-	}
-	//FUNGSI RANGKING
-	function rangking($sort){
-	$rangking = $sort;
-	sort($rangking);
-	return($rangking);
-	}
+		foreach($tfn as $j => $b){
+		$sum = 0;
+		foreach($b as $c){
+			$sum += $c;
+		}
+		$deffval[$j] = $sum/3; //deff = deffuzifikasi
+		}
+		$deff['tfn'] 	= $tfn;
+		$deff['deffval']  = $deffval;
+		
+		return $deffval;
+		}
+		//FUNGSI DEFFUZIFIKASI
+		function deffuzifikasi($hitung){
+		foreach($hitung as $j => $b){
+			$sum = 0;
+		foreach($b as $c){
+				$sum += $c;
+		}
+			$deffval[$j] = $sum/3; //deff = deffuzifikasi
+				}	
+		return $deffval;
+		}
+		//FUNGSI NORMALISASI DATA
+		function normalisasi($normal){
+		$total = array_sum($normal);
+		foreach($normal as $c){
+			$normalized[] = $c/$total;
+		}
+			$normalisasi['total'] 	  = $total;
+			$normalisasi['normalized'] = $normalized;
+
+		return $normalized;
+		}
+		//FUNGSI PERKALIAN MATRIKS
+		function matriksPerkalian($matrixA, $matrixB){
+		$colsA = count($matrixA);
+		$rowsA = count($matrixA);	
+		$rowsB = count($matrixB);
+		$matrixProduct = array();
+			for($i =0; $i < $colsA; $i++){
+				$sum = 0; 
+				for($j = 0; $j < $rowsB; $j++){
+						for($p = 0; $p < $rowsA; $p++){
+					$sum += $matrixA[$i][$p] * $matrixB[$p];
+					}
+				$matrixProduct[$i] = $sum;
+			}
+		}
+		return $matrixProduct;
+		}
+
+		//FUNGSI MENCARI NILAI MAKSIMAL
+		function maks($sort){
+		$max=max($sort);
+		return $max;	
+		} 
+		
+		//FUNGSI PENENTUAN
+		function penentuan($hasil){
+		$max=max($hasil);
+		if ($max == $hasil[0]) {
+			$id = '301';
+			return $id;
+		} else if ($max == $hasil[1]) {
+			$id = '302';
+			return $id;
+		} else if ($max == $hasil[2]){
+			$id = '303';
+			return $id;
+		} else if ($max == $hasil[3]){
+			$id = '304';
+			return $id;
+		} else if ($max == $hasil[4]){
+			$id = '305';
+			return $id;
+		} else {
+			$id = '306';
+			return $id;
+		}
+		}
 ?>
