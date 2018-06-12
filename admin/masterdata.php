@@ -6,7 +6,10 @@
 		header('Location: ../index.php');
 	exit;
 	} else {
-		include("../config.php");
+	include("../config.php");
+	if ($koneksi->connect_errno){ 
+		die ("Could not connect to the database: <br />". $koneksi>connect_error); 
+	}
 ?>
 <html lang="en">
 <head>
@@ -112,7 +115,7 @@
 												<th>Action</th>
 											</thead>
 										<?php
-										$sql = mysqli_query($koneksi ,"SELECT nama_gangguan_kesehatan,id_gangguan_kesehatan,alternatif,solusi_gangguan_kesehatan FROM gangguan_kesehatan");
+										$sql = mysqli_query($koneksi ,"SELECT nama_gangguan_kesehatan,id_gangguan_kesehatan,alternatif,solusi_gangguan_kesehatan FROM gangguan_kesehatan") or die(mysqli_error());
 										if(mysqli_num_rows($sql) > 0){
 										$no = 1;
 										while($data = mysqli_fetch_assoc($sql)){
@@ -162,7 +165,7 @@
 												<th>TFN LMU</th>
 											</thead>
 										<?php
-										$sql = mysqli_query($koneksi ,"SELECT idtfn,kepentingan,ket_kepentingan,tfn_lmu FROM rating");
+										$sql = mysqli_query($koneksi ,"SELECT idtfn,kepentingan,ket_kepentingan,tfn_lmu FROM rating")or die(mysqli_error());
 										if(mysqli_num_rows($sql) > 0){
 										$no = 1;
 										while($data = mysqli_fetch_assoc($sql)){
@@ -209,7 +212,7 @@
 											<th>TFN LMU</th>
 										</thead>
 									<?php
-									$sql = mysqli_query($koneksi ,"SELECT id_kriteria,kepentingan,ket_kepentingan,tfn_lmu FROM bobot");
+									$sql = mysqli_query($koneksi ,"SELECT id_kriteria,kepentingan,ket_kepentingan,tfn_lmu FROM bobot")or die(mysqli_error());
 									if(mysqli_num_rows($sql) > 0){
 									$no = 1;
 									while($data = mysqli_fetch_assoc($sql)){

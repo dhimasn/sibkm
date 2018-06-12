@@ -6,7 +6,10 @@
 		header('Location: ../index.php');
 	exit;
 	} else {
-		include("../config.php");
+	include("../config.php");
+	if ($koneksi->connect_errno){ 
+		die ("Could not connect to the database: <br />". $koneksi>connect_error); 
+	}
 	function aman($data) {
 	  $data = trim($data);
 	  $data = stripslashes($data);

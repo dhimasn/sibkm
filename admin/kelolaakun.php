@@ -7,6 +7,9 @@
 	exit;
 	} else {
 		include("../config.php");
+	if ($koneksi->connect_errno){ 
+		die ("Could not connect to the database: <br />". $koneksi>connect_error); 
+	}
 ?>
 <html lang="en">
 <head>
@@ -97,11 +100,11 @@
 							<?php
 							if(isset($_GET['aksi']) == 'delete'){
 								$id = $_GET['iduser'];
-								$cek = mysqli_query($koneksi,"SELECT * FROM user WHERE iduser='$id'");
+								$cek = mysqli_query($koneksi,"SELECT * FROM user WHERE iduser='$id'")or die(mysqli_error());
 								if(mysqli_num_rows($cek) == 0){
 									echo '<div class="alert alert-info">Data tidak ditemukan.</div>';
 								}else{
-									$delete = mysqli_query($koneksi,"DELETE FROM user WHERE iduser='$id'");
+									$delete = mysqli_query($koneksi,"DELETE FROM user WHERE iduser='$id'")or die(mysqli_error());
 									if($delete){
 										echo '<div class="alert alert-danger">Data berhasil dihapus.</div>';
 									}else{
@@ -119,7 +122,7 @@
 								<th>Action</th>
 							</thead>
 							<?php
-							$sql = mysqli_query($koneksi ,"SELECT * FROM user WHERE status='user'");
+							$sql = mysqli_query($koneksi ,"SELECT * FROM user WHERE status='user'")or die(mysqli_error());
 							if(mysqli_num_rows($sql) > 0){
 							$no = 1;
 							while($data = mysqli_fetch_assoc($sql)){

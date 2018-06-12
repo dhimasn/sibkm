@@ -7,8 +7,11 @@
 	exit;
 	} else {
 	include("../config.php");
+	if ($koneksi->connect_errno){ 
+		die ("Could not connect to the database: <br />". $koneksi>connect_error); 
+	}
 	$id  = $_GET['id'];
-	$sql = mysqli_query($koneksi,"SELECT * FROM gangguan_kesehatan WHERE id_gangguan_kesehatan=".$id."");
+	$sql = mysqli_query($koneksi,"SELECT * FROM gangguan_kesehatan WHERE id_gangguan_kesehatan=".$id."") or die(mysqli_error());
 	$row = mysqli_fetch_array($sql);
 	function aman($data) {
 	  $data = trim($data);

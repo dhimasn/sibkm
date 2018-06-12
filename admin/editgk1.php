@@ -7,8 +7,11 @@
 	exit;
 	} else {
 	include("../config.php");
+	if ($koneksi->connect_errno){ 
+		die ("Could not connect to the database: <br />". $koneksi>connect_error); 
+	}
 	$id = $_GET['id'];
-	$sql = mysqli_query($koneksi,"SELECT * FROM gangguan_kesehatan WHERE id_gangguan_kesehatan=".$id."");
+	$sql = mysqli_query($koneksi,"SELECT * FROM gangguan_kesehatan WHERE id_gangguan_kesehatan=".$id."")or die(mysqli_error());
 	$row = mysqli_fetch_array($sql);
 	function aman($data) {
 	  $data = trim($data);
@@ -129,7 +132,7 @@
 											//Cek apakah gambar berhasil diupload atau tidak
 											//Query untuk menampilkan data gangguan berdasarkan id yang dikirim
 											$query = "SELECT * FROM gangguan_kesehatan WHERE id_gangguan_kesehatan='".$id."'";
-											$sql = mysqli_query($koneksi, $query); // Eksekusi/Jalankan query dari variabel $query
+											$sql = mysqli_query($koneksi, $query) or die(mysqli_error()); // Eksekusi/Jalankan query dari variabel $query
 											$data = mysqli_fetch_array($sql); // Ambil data dari hasil eksekusi $sql
 
 											//Cek apakah file foto sebelumnya ada di folder images
@@ -138,7 +141,7 @@
 											
 											//Proses ubah data ke Database
 											$query = "UPDATE gangguan_kesehatan SET titik_bekam='../gambar/".$fotobaru."' WHERE id_gangguan_kesehatan='".$id."'";
-											$sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
+											$sql = mysqli_query($koneksi, $query)or die(mysqli_error()); // Eksekusi/ Jalankan query dari variabel $query
 
 												if($sql){ // Cek jika proses simpan ke database sukses atau tidak
 												  //Jika Sukses, Lakukan :

@@ -7,10 +7,13 @@
 	exit;
 	} else {
 	include("../config.php");
+	if ($koneksi->connect_errno){ 
+		die ("Could not connect to the database: <br />". $koneksi>connect_error); 
+	}
 	$id = $_GET['id'];
-	$sql = mysqli_query($koneksi,"SELECT * FROM user WHERE iduser=".$id."");
+	$sql = mysqli_query($koneksi,"SELECT * FROM user WHERE iduser=".$id."") or die(mysqli_error());
 	$row = mysqli_fetch_assoc($sql);
- function aman($data) {
+    function aman($data) {
 	  $data = trim($data);
 	  $data = stripslashes($data);
 	  $data = htmlspecialchars($data);
