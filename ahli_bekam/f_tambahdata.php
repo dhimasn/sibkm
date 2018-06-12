@@ -44,51 +44,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$c[]=$_POST['c16'];
 
 	//checking ID
-	
-
-	//checking nama
-	if ($nama == ''){ 
-		$error_nama = "Name is required"; 
-		$valid_nama = FALSE; 
-	}else
-	if (!preg_match("/^[a-zA-Z ]*$/",$nama)) { 
-		$error_nama = "Only letters and white space allowed"; 
-		$valid_nama = FALSE; 
-	}else{ 
-		$valid_nama = TRUE; 
-	}  
-	
-	//checking number
-	if ($number == ''){ 
-		$error_number = "number is required"; 
-		$valid_number = FALSE; 
-	}else
-	if (!preg_match("/^[0-9]*$/",$number)) { 
-		$error_number = "Only numbers allowed"; 
-		$valid_number = FALSE; 
-	}else{ 
-		$valid_number = TRUE; 
-	}
-
-	//alamat 
-	if ($alamat == ''){ 
-		$error_alamat = "alamat is required"; 
-		$valid_alamat = FALSE; 
-	}else{ 
-		$valid_alamat = TRUE; 
-	}
-	
-	//keluhan 
-	if ($keluhan == ''){ 
-		$error_keluhan = "keluhan is required"; 
-		$valid_keluhan = FALSE; 
-	}else{ 
-		$valid_keluhan = TRUE; 
-	} 
-
-}
-				
-if($valid_nama && $valid_number && $valid_alamat && $valid_keluhan){ 
+	$cekdata="SELECT idpasien FROM pasien WHERE idpasien='$id'";
+    $ada=mysqli_query($koneksi,$cekdata) or die(mysqli_error());
+    if(mysqli_num_rows($ada)>0)
+    { 
+		header("Location: penentuan.php?pesan=ada&id=$id"); 
+    }
+    else
+    {
+	//Simpan data
 	//escape inputs data
 	$nama = $koneksi->real_escape_string($nama);
 	$number = $koneksi->real_escape_string($number);
@@ -159,12 +123,13 @@ if($valid_nama && $valid_number && $valid_alamat && $valid_keluhan){
 	$valid = diagnosa($id,$mt,$maks,$rk);
 
 	//notifikasi proses input
-	if($valid){		
-		header("Location: penentuan.php?pesan=sukses&id=$id");
-	 }else{ 
-		header("Location: penentuan.php?pesan=gagal&id=$id");
-	 }
+		if($valid){		
+			header("Location: penentuan.php?pesan=sukses&id=$id");
+		}else{ 
+			header("Location: penentuan.php?pesan=gagal&id=$id");
+		}
 	}
+}
 ?>				
 				
 

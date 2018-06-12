@@ -140,9 +140,11 @@ radio.invalid {
 				   				$id=$_GET['id'];
 				   				if ('sukses'==$_GET['pesan']){
 				   				  echo '<div class="alert alert-success"><a href="detailhasil.php?id='.$id.'">Data berhasil diTambah, Lihat Hasil</a></div>';
-											}else if ('gagal'==$_GET['pesan']) {
-						 	     echo '<div class="alert alert-danger">Data gagal disimpan, silahkan coba lagi.</div>';
-				   				}
+											}else if ('ada'==$_GET['pesan']) {
+						 	      echo '<div class="alert alert-danger">Data ID pasien sudah ada, silahkan coba lagi.</div>';
+				   				    }else{
+										echo '<div class="alert alert-danger">Data gagal disimpan, silahkan coba lagi.</div>';
+											}
 				    }
 				?>		
 					<table class="table table-danger">
