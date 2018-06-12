@@ -67,7 +67,7 @@
 				rating_pasien
 			JOIN rating ON rating_pasien.idtfn = rating.idtfn
 			WHERE
-				rating_pasien.idpasien ='$idpasien'");
+				rating_pasien.idpasien ='$idpasien'")or die(mysqli_error());
 		//deklarasi array of array
 		$hitung = array();
 		for($i=0;$i<mysqli_num_rows($sql);$i++){
@@ -85,7 +85,7 @@
 		function alternatif($id){	
 		include('../config.php');
 		//select data bobot dari database
-		$sql= mysqli_query($koneksi,"SELECT c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16 FROM gangguan_kesehatan WHERE id_gangguan_kesehatan='$id'");
+		$sql= mysqli_query($koneksi,"SELECT c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16 FROM gangguan_kesehatan WHERE id_gangguan_kesehatan='$id'") or die(mysqli_error());
 		$bobot = array();
         $bobot = mysqli_fetch_row($sql);
 		return $bobot;
@@ -202,7 +202,7 @@
 		$nilai_A5 = $mt[4];
 		$nilai_A6 = $mt[5];
 		$sql = "INSERT INTO diagnosa(idpasien,id_gangguan_kesehatan,nilai_A1,nilai_A2,nilai_A3,nilai_A4,nilai_A5,nilai_A6,nilai_fsaw) VALUES ('$idpasien','$id_gangguan_kesehatan','$nilai_A1','$nilai_A2','$nilai_A3','$nilai_A4','$nilai_A5','$nilai_A6','$nilai_fsaw')";
-		$insert = mysqli_query($koneksi,$sql);
+		$insert = mysqli_query($koneksi,$sql) or die(mysqli_error());
 		if ($insert){ 
 			$valid = TRUE; 
 		}else{ 

@@ -116,10 +116,10 @@
 							FROM
 								diagnosa
 							JOIN pasien ON diagnosa.idpasien = pasien.idpasien
-							JOIN gangguan_kesehatan ON diagnosa.id_gangguan_kesehatan = gangguan_kesehatan.id_gangguan_kesehatan");
+							JOIN gangguan_kesehatan ON diagnosa.id_gangguan_kesehatan = gangguan_kesehatan.id_gangguan_kesehatan")or die(mysqli_error());
 						$data = mysqli_fetch_assoc($sql);
 						if(mysqli_num_rows($sql) > 0){
-						$sql1 = mysqli_query($koneksi,"SELECT * FROM pasien WHERE idpasien=".$id."");
+						$sql1 = mysqli_query($koneksi,"SELECT * FROM pasien WHERE idpasien=".$id."")or die(mysqli_error());
 						$row = mysqli_fetch_assoc($sql1);}	
 						?>
 				<img src="<?php echo $data['titik_bekam'];?>"/></img> 

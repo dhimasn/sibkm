@@ -96,11 +96,11 @@
 <?php
 if(isset($_GET['aksi']) == 'delete'){
 	$idpasien = $_GET['idpasien'];
-	$cek = mysqli_query($koneksi, "SELECT * FROM pasien WHERE idpasien='$idpasien'");
+	$cek = mysqli_query($koneksi, "SELECT * FROM pasien WHERE idpasien='$idpasien'") or die(mysqli_error());
 	if(mysqli_num_rows($cek) == 0){
 		echo '<div class="alert alert-info">Data tidak ditemukan.</div>';
 	}else{
-		$delete = mysqli_query($koneksi, "DELETE FROM pasien WHERE idpasien='$idpasien'");
+		$delete = mysqli_query($koneksi, "DELETE FROM pasien WHERE idpasien='$idpasien'") or die(mysqli_error());
 		if($delete){
 			echo '<div class="alert alert-danger">Data berhasil dihapus.</div>';
 		}else{
@@ -136,7 +136,7 @@ if(isset($_GET['aksi']) == 'delete'){
 							FROM
 								diagnosa
 							JOIN pasien ON diagnosa.idpasien = pasien.idpasien
-							JOIN gangguan_kesehatan ON diagnosa.id_gangguan_kesehatan = gangguan_kesehatan.id_gangguan_kesehatan");
+							JOIN gangguan_kesehatan ON diagnosa.id_gangguan_kesehatan = gangguan_kesehatan.id_gangguan_kesehatan") or die(mysqli_error());
 							if(mysqli_num_rows($sql) > 0){
 							$no = 1;
 							while($data = mysqli_fetch_assoc($sql)){

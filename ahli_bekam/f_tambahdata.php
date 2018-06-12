@@ -69,9 +69,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 	$sql1 = rtrim($sql1,",");
 	// insert data pasien
-	$insert = mysqli_query($koneksi,$sql);
+	$insert = mysqli_query($koneksi,$sql) or die(mysqli_error());
 	// insert data rating	
-	$insert1 = mysqli_query($koneksi,$sql1);
+	$insert1 = mysqli_query($koneksi,$sql1) or die(mysqli_error());
 	
 	//DATA UJI
 	$pu = pengujian($id);
