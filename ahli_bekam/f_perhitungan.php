@@ -1,54 +1,58 @@
 <?php	
-		//DATA UJI
-		$pu = pengujian(3);
-		$du = deffuzifikasi($pu);
-        $ns = normalisasi($du);
-        print_r($ns);
+		// //DATA UJI
+		// $id = '9';
+		// $pu = pengujian($id);
+		// $du = deffuzifikasi($pu);
+        // $ns = normalisasi($du);
+        // print_r($ns);
 
-		//DATA ALTERNATIF
-        $a = array();
-        $bk1 = alternatif(301);
-		$at1 = konversi($bk1);
-        $nr1 = normalisasi($at1);
-        $a[] = $nr1;
+		// //DATA ALTERNATIF
+        // $a = array();
+        // $bk1 = alternatif(301);
+		// $at1 = konversi($bk1);
+        // $nr1 = normalisasi($at1);
+        // $a[] = $nr1;
 
-		$bk2 = alternatif(302);
-		$at2 = konversi($bk2);
-		$nr2 = normalisasi($at2);
-        $a[] = $nr2;
+		// $bk2 = alternatif(302);
+		// $at2 = konversi($bk2);
+		// $nr2 = normalisasi($at2);
+        // $a[] = $nr2;
 
-		$bk3 = alternatif(303);
-		$at3 = konversi($bk3);
-        $nr3 = normalisasi($at3);
-        $a[] = $nr3;
+		// $bk3 = alternatif(303);
+		// $at3 = konversi($bk3);
+        // $nr3 = normalisasi($at3);
+        // $a[] = $nr3;
 
-		$bk4 = alternatif(304);
-		$at4 = konversi($bk4);
-		$nr4 = normalisasi($at4);
-        $a[] = $nr4;
+		// $bk4 = alternatif(304);
+		// $at4 = konversi($bk4);
+		// $nr4 = normalisasi($at4);
+        // $a[] = $nr4;
 
-		$bk5 = alternatif(305);
-		$at5 = konversi($bk5);
-		$nr5 = normalisasi($at5);
-        $a[] = $nr5;
+		// $bk5 = alternatif(305);
+		// $at5 = konversi($bk5);
+		// $nr5 = normalisasi($at5);
+        // $a[] = $nr5;
 
-		$bk6 = alternatif(306);
-		$at6 = konversi($bk6);
-        $nr6 = normalisasi($at6);
-        $a[] = $nr6;
-        print_r($a);
+		// $bk6 = alternatif(306);
+		// $at6 = konversi($bk6);
+        // $nr6 = normalisasi($at6);
+        // $a[] = $nr6;
+        // print_r($a);
 
-		//PERKALIAN MATRIKS
-		$mt = matriksPerkalian($a,$ns);
-		print_r($mt);
+		// //PERKALIAN MATRIKS
+		// $mt = matriksPerkalian($a,$ns);
+		// print_r($mt);
 		
-		//MENCARI NILAI TERTINGGI
-		$maks = maks($mt);
-		print_r($maks);
+		// //MENCARI NILAI TERTINGGI
+		// $maks = maks($mt);
+		// print_r($maks);
 
-		//MENCARI ID penentuan
-		$rk = penentuan($mt);
-		print_r($rk);
+		// //MENCARI ID penentuan
+		// $rk = penentuan($mt);
+		// print_r($rk);
+
+		// //UPLOAD DATA
+		// diagnosa($id,$mt,$maks,$rk);
 		
 		//FUNGSI MENGAMBIL DATA UJI
 		function pengujian($idpasien){
@@ -186,4 +190,19 @@
 			return $id;
 		}
 		}
+	function diagnosa($id,$mt,$maks,$rk){
+		include('../config.php');
+		$idpasien = $id;
+		$nilai_fsaw = $maks;
+		$id_gangguan_kesehatan = $rk;
+		$nilai_A1 = $mt[0];
+		$nilai_A2 = $mt[1];
+		$nilai_A3 = $mt[2];
+		$nilai_A4 = $mt[3];
+		$nilai_A5 = $mt[4];
+		$nilai_A6 = $mt[5];
+		$sql = "INSERT INTO diagnosa(idpasien,id_gangguan_kesehatan,nilai_A1,nilai_A2,nilai_A3,nilai_A4,nilai_A5,nilai_A6,nilai_fsaw) VALUES ('$idpasien','$id_gangguan_kesehatan','$nilai_A1','$nilai_A2','$nilai_A3','$nilai_A4','$nilai_A5','$nilai_A6','$nilai_fsaw')";
+		$insert = mysqli_query($koneksi,$sql);
+	}
+
 ?>

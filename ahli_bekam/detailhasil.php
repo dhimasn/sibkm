@@ -108,7 +108,6 @@
 								diagnosa.idpasien,
 								diagnosa.id_gangguan_kesehatan,
 								diagnosa.nilai_fsaw,
-								diagnosa.hasil_akhir,
 								pasien.nama,
 								gangguan_kesehatan.nama_gangguan_kesehatan,
 								gangguan_kesehatan.solusi_gangguan_kesehatan,

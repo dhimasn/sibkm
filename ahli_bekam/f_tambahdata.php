@@ -102,14 +102,61 @@ if($valid_nama && $valid_number && $valid_alamat && $valid_keluhan){
 
 	$sql1 = rtrim($sql1,",");
 	// insert data pasien
-	//print_r($sql);
 	$insert = mysqli_query($koneksi,$sql);
-	// //insert data rating
-	//print_r($sql1);	
+	// insert data rating	
 	$insert1 = mysqli_query($koneksi,$sql1);
 	
+	//DATA UJI
+	$pu = pengujian($id);
+	$du = deffuzifikasi($pu);
+	$ns = normalisasi($du);
+
+	//DATA ALTERNATIF
+	$a = array();
+	$bk1 = alternatif(301);
+	$at1 = konversi($bk1);
+	$nr1 = normalisasi($at1);
+	$a[] = $nr1;
+
+	$bk2 = alternatif(302);
+	$at2 = konversi($bk2);
+	$nr2 = normalisasi($at2);
+	$a[] = $nr2;
+
+	$bk3 = alternatif(303);
+	$at3 = konversi($bk3);
+	$nr3 = normalisasi($at3);
+	$a[] = $nr3;
+
+	$bk4 = alternatif(304);
+	$at4 = konversi($bk4);
+	$nr4 = normalisasi($at4);
+	$a[] = $nr4;
+
+	$bk5 = alternatif(305);
+	$at5 = konversi($bk5);
+	$nr5 = normalisasi($at5);
+	$a[] = $nr5;
+
+	$bk6 = alternatif(306);
+	$at6 = konversi($bk6);
+	$nr6 = normalisasi($at6);
+	$a[] = $nr6;
+
+	//PERKALIAN MATRIKS
+	$mt = matriksPerkalian($a,$ns);
+	
+	//MENCARI NILAI TERTINGGI
+	$maks = maks($mt);
+
+	//MENCARI ID penentuan
+	$rk = penentuan($mt);
+
+	//UPLOAD DATA
+	$insert2 = diagnosa($id,$mt,$maks,$rk);
+
 	//notifikasi proses input
-	if ($insert && $insert1) {		
+	if ($insert && $insert1 && $insert2) {		
 		header("Location: penentuan.php?pesan=sukses&id=$id");
 	 }else {
 		header("Location: penentuan.php?pesan=gagal&id=$id"); 
