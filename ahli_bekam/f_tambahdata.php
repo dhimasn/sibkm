@@ -43,6 +43,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$c[]=$_POST['c15'];
 	$c[]=$_POST['c16'];
 
+	//checking ID
+	
+
 	//checking nama
 	if ($nama == ''){ 
 		$error_nama = "Name is required"; 
@@ -95,7 +98,7 @@ if($valid_nama && $valid_number && $valid_alamat && $valid_keluhan){
 	//query data
 	$sql =  "INSERT INTO pasien (idpasien,nama,no,umur,kelamin,alamat,keluhan) VALUES ('$id','$nama','$number','$umur','$jk','$alamat','$keluhan')";
 
-	$sql1 =  'INSERT INTO rating_pasien (idpasien,nama,idtfn) VALUES ';
+	$sql1 =  'INSERT INTO rating_pasien (idpasien,nama,idtfn) VALUES';
 	 for($x=0; $x < count($c) ; $x++){
 	  $sql1 .= '("'.$id.'","'.$nama.'","'.$c[$x].'"),'; 
 	 }
@@ -153,14 +156,14 @@ if($valid_nama && $valid_number && $valid_alamat && $valid_keluhan){
 	$rk = penentuan($mt);
 
 	//UPLOAD DATA
-	$insert2 = diagnosa($id,$mt,$maks,$rk);
+	$valid = diagnosa($id,$mt,$maks,$rk);
 
 	//notifikasi proses input
-	if ($insert && $insert1 && $insert2) {		
+	if($valid){		
 		header("Location: penentuan.php?pesan=sukses&id=$id");
-	 }else {
-		header("Location: penentuan.php?pesan=gagal&id=$id"); 
-		}
+	 }else{ 
+		header("Location: penentuan.php?pesan=gagal&id=$id");
+	 }
 	}
 ?>				
 				

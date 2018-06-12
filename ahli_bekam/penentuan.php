@@ -32,10 +32,13 @@ input {
 input.invalid {
   background-color: #ffdddd;
 }
-select.invalid {
+/* select.invalid {
+  background-color: #ffdddd;
+} */
+textarea.invalid {
   background-color: #ffdddd;
 }
-textarea.invalid {
+radio.invalid {
   background-color: #ffdddd;
 }
 /* Hide all steps by default: */
@@ -148,7 +151,7 @@ textarea.invalid {
 						<td>ID Pasien</td>
 						<td>:</td>
 						<td>
-							<input class="form-control" name="id" type="text" placeholder="ID Pasien" oninput="this.className = ''">
+							<input class="form-control" name="id" type="number" placeholder="ID Pasien" oninput="this.className = ''">
 						</td>
 					  </tr>
 					  <tr>
@@ -162,14 +165,14 @@ textarea.invalid {
 						<td>No Handphone</td>
 						<td>:</td>
 						<td>	
-							<input class="form-control" name="number" type="text" placeholder="No handphone" oninput="this.className = ''">
+							<input class="form-control" name="number" type="number" placeholder="No handphone" oninput="this.className = ''">
 						</td>
 					  </tr>
 					  <tr>
 						<td>Umur</td>
 						<td>:</td>	
 						<td>		
-							<input class="form-control" name="umur" type="text" placeholder="Umur" oninput="this.className = ''">
+							<input class="form-control" name="umur" type="number" placeholder="Umur" oninput="this.className = ''">
 						</td>
 					  </tr>
 					  <tr>
@@ -448,12 +451,32 @@ textarea.invalid {
 	  var x, y, i, valid = true;
 	  x = document.getElementsByClassName("tab");
 	  y = x[currentTab].getElementsByTagName("input");
-	  // A loop that checks every input field in the current tab:
+		w = x[currentTab].getElementsByTagName("textarea");
+	  z = x[currentTab].getElementsByTagName("radio");
+		// A loop that checks every input field in the current tab:
 	  for (i = 0; i < y.length; i++) {
 	    // If a field is empty...
 	    if (y[i].value == "") {
 	      // add an "invalid" class to the field:
 	      y[i].className += " invalid";
+	      // and set the current valid status to false:
+	      valid = false;
+	    }
+	  }
+		for (i = 0; i < w.length; i++) {
+	    // If a field is empty...
+	    if (w[i].value == "") {
+	      // add an "invalid" class to the field:
+	      w[i].className += " invalid";
+	      // and set the current valid status to false:
+	      valid = false;
+	    }
+	  }
+		for (i = 0; i < z.length; i++) {
+	    // If a field is empty...
+	    if (z[i].value == "") {
+	      // add an "invalid" class to the field:
+	      z[i].className += " invalid";
 	      // and set the current valid status to false:
 	      valid = false;
 	    }

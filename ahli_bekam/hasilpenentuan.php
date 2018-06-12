@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <?php
-	//koneksi
+	//KONEKSI
 	session_start();
 	if ( !isset($_SESSION) ||$_SESSION['status'] !== 'user') {
 		header('Location: ../index.php');
 	exit;
 	} else {
 		include("../config.php");
+    //CEK KONEKSI
+	if ($koneksi->connect_errno){ 
+		die ("Could not connect to the database: <br />". $koneksi>connect_error); 
+	}
 ?>
 <html lang="en">
 <head>
@@ -144,7 +148,7 @@ if(isset($_GET['aksi']) == 'delete'){
 									<td align="center">'.$data['solusi_gangguan_kesehatan'].'</td>
 									<td align="center">'.$data['nilai_fsaw'].'</td>
 									<td align="center">
-									<a href="detailhasil.php?idpasien='.$data['idpasien'].'"><button class="btn btn-info btn-sm">Detail</button></a>	
+									<a href="detailhasil.php?id='.$data['idpasien'].'"><button class="btn btn-info btn-sm">Detail</button></a>	
 									<a href="masterdata.php?aksi=delete&idpasien='.$data['idpasien'].'"onclick="return confirm(\'Yakin?\')"><button type="button" class="btn btn-danger" aria-label="delete">HAPUS</button></a>
 									</td>
 								</tr>';

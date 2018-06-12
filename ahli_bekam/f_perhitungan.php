@@ -203,6 +203,12 @@
 		$nilai_A6 = $mt[5];
 		$sql = "INSERT INTO diagnosa(idpasien,id_gangguan_kesehatan,nilai_A1,nilai_A2,nilai_A3,nilai_A4,nilai_A5,nilai_A6,nilai_fsaw) VALUES ('$idpasien','$id_gangguan_kesehatan','$nilai_A1','$nilai_A2','$nilai_A3','$nilai_A4','$nilai_A5','$nilai_A6','$nilai_fsaw')";
 		$insert = mysqli_query($koneksi,$sql);
+		if ($insert){ 
+			$valid = TRUE; 
+		}else{ 
+			$valid = FALSE; 
+		}
+		return $valid; 
 	}
 
 ?>
