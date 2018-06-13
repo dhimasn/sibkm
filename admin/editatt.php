@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php 
-    //koneksi
+ //koneksi
 	session_start();
 	if ( !isset($_SESSION) ||$_SESSION['status'] !== 'admin') {
-		header('Location: ../index.php');
+	header('Location: ../index.php');
 	exit;
 	} else {
 	include("../config.php");
@@ -35,11 +35,11 @@
 	<link href="../color/default.css" rel="stylesheet">
 	<link href="../data_tables/css/dataTables.bootstrap.css" rel="stylesheet">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+ <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+ <!--[if lt IE 9]>
+   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+ <![endif]-->
 </head>
 <!-- koneksi  -->
 <body>
@@ -116,7 +116,7 @@
             $tfn_lmu         =  aman($_POST['tfn_lmu']);
              $update = mysqli_query($koneksi,"UPDATE bobot SET kepentingan='$kepentingan',ket_kepentingan='$ket_kepentingan',nilai_l='$nilai_l',nilai_m='$nilai_m',nilai_u='$nilai_u',tfn_lmu='$tfn_lmu' WHERE id_kriteria='$id_kriteria'") or die(mysqli_error());
              if($update){
-              header("Location: editkriteria.php?id=$id&pesan=sukses");
+              header("Location: editatt.php?id_kriteria=$id_kriteria&pesan=sukses");
              }else{
               echo '<div class="alert alert-danger">Data gagal disimpan, silahkan coba lagi.</div>';
              }
