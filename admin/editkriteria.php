@@ -106,28 +106,25 @@
          <div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Ubah Data Kepentingan Kriteria</div>
           <div class="panel-body">
            <div class="table-responsive">			
-						<?php						
-						// if(isset($_POST["save"])){
-						// 	$nama		=  aman($_POST['nama']);
-						// 	$pass1		=  aman($_POST['pass1']);
-						// 	$pass2		=  aman($_POST['pass2']);
-						// 	$status		=  aman($_POST['status']);
-						// 	if($pass1 == $pass2){
-						// 		$pass 	 = md5($pass1);
-						// 		$update = mysqli_query($koneksi,"UPDATE user SET nama='$nama',status='$status',password='$pass' WHERE iduser='$id'") or die(mysqli_error());
-						// 		if($update){
-						// 			header("Location: editahli.php?id=$id&pesan=sukses");
-						// 		}else{
-						// 			echo '<div class="alert alert-danger">Data gagal disimpan, silahkan coba lagi.</div>';
-						// 		}
-						// 	}else{
-						// 			echo '<div class="alert alert-danger">Konfirmasi Password tidak sesuai.</div>';
-						// 		}
-						// }
-						// if(isset($_GET['pesan'])){
-						// 	echo '<div class="alert alert-success">Data berhasil diubah.</div>';
-						// }
-						?>
+           <?php						
+           if(isset($_POST["save"])){
+            $kepentingan	    =  aman($_POST['kepentingan']);
+            $ket_kepentingan =  aman($_POST['ket_kepentingan']);
+            $nilai_l		       =  aman($_POST['nilai_l']);
+            $nilai_m		       =  aman($_POST['nilai_m']);
+            $nilai_u		       =  aman($_POST['nilai_u']);
+            $tfn_lmu         =  aman($_POST['tfn_lmu']);
+             $update = mysqli_query($koneksi,"UPDATE rating SET kepentingan='$kepentingan',ket_kepentingan='$ket_kepentingan',nilai_l='$nilai_l',nilai_m='$nilai_m',nilai_u='$nilai_u',tfn_lmu='$tfn_lmu' WHERE idtfn='$idtfn'") or die(mysqli_error());
+             if($update){
+              header("Location: editkriteria.php?id=$id&pesan=sukses");
+             }else{
+              echo '<div class="alert alert-danger">Data gagal disimpan, silahkan coba lagi.</div>';
+             }
+           }
+           if(isset($_GET['pesan'])){
+            echo '<div class="alert alert-success">Data berhasil diubah.</div>';
+           }
+           ?>
 						<table class="table table-danger">
 							<form class="form-horizontal" method="post">
 								<tr>
@@ -143,7 +140,7 @@
 								<tr>
 								<td>Keterangan Kepentingan</td>
 								<td>:</td>
-								<td><input type="text" value="<?php echo $row['ket_kepentingan'];?>" name="keterangan Kepentingan" class="form-control"  required></td>
+								<td><input type="text" value="<?php echo $row['ket_kepentingan'];?>" name="ket" class="form-control"  required></td>
 								</tr>
         <tr>
 								<td>Nilai Lower</td>
