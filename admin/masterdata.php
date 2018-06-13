@@ -110,9 +110,9 @@
 											<thead>
 												<th>No</th>
 												<th>ID</th>
-												<th>nama Gangguan Kesehatan</th>							
+												<th>Nama Gangguan Kesehatan</th>							
 												<th>Solusi Gangguan Kesehatan</th>
-												<th>Action</th>
+												<th>Aksi</th>
 											</thead>
 										<?php
 										$sql = mysqli_query($koneksi ,"SELECT nama_gangguan_kesehatan,id_gangguan_kesehatan,alternatif,solusi_gangguan_kesehatan FROM gangguan_kesehatan") or die(mysqli_error());
@@ -163,6 +163,7 @@
 												<th>Kepentingan</th>
 												<th>Keterngan Kepentingan</th>
 												<th>TFN LMU</th>
+												<th>Aksi</th>
 											</thead>
 										<?php
 										$sql = mysqli_query($koneksi ,"SELECT idtfn,kepentingan,ket_kepentingan,tfn_lmu FROM rating")or die(mysqli_error());
@@ -175,6 +176,9 @@
 												<td align="center">'.$data['kepentingan'].'</td>
 												<td align="center">'.$data['ket_kepentingan'].'</td>
 												<td align="center">'.$data['tfn_lmu'].'</td>
+												<td align="center"> 
+												<a href="editgk.php?id='.$data['idtfn'].'"><button class="btn btn-warning btn-sm">ubah</button></a>
+												</td>
 											</tr>';
 										$no++;
 											}
@@ -210,6 +214,7 @@
 											<th>Kepentingan</th>
 											<th>Keterngan Kepentingan</th>
 											<th>TFN LMU</th>
+											<th>Aksi</th>
 										</thead>
 									<?php
 									$sql = mysqli_query($koneksi ,"SELECT id_kriteria,kepentingan,ket_kepentingan,tfn_lmu FROM bobot")or die(mysqli_error());
@@ -222,6 +227,9 @@
 											<td align="center">'.$data['kepentingan'].'</td>
 											<td align="center">'.$data['ket_kepentingan'].'</td>
 											<td align="center">'.$data['tfn_lmu'].'</td>
+											<td align="center"> 
+												<a href="editgk.php?id='.$data['id_kriteria'].'"><button class="btn btn-warning btn-sm">ubah</button></a>
+											</td>
 										</tr>';
 									$no++;
 										}
