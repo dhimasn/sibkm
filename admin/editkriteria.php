@@ -148,26 +148,26 @@
         <tr>
 								<td>Nilai Lower</td>
 								<td>:</td>
-								<td><input type="text" value="<?php echo $row['nilai_l'];?>" name="pass2" class="form-control" required></td>
+								<td><input type="text" value="<?php echo $row['nilai_l'];?>" name="nilai_l" class="form-control" required></td>
 								</tr>
         <tr>
 								<td>Nilai Middle</td>
 								<td>:</td>
-								<td><input type="text" value="<?php echo $row['nilai_m'];?>" name="pass2" class="form-control" required></td>
+								<td><input type="text" value="<?php echo $row['nilai_m'];?>" name="nilai_m" class="form-control" required></td>
 								</tr>
         <tr>
 								<td>Nilai Upper</td>
 								<td>:</td>
-								<td><input type="text" value="<?php echo $row['nilai_u'];?>" name="pass2" class="form-control" required></td>
+								<td><input type="text" value="<?php echo $row['nilai_u'];?>" name="nilai_u" class="form-control" required></td>
 								</tr>
         <tr>
 								<td>Nilai TFN LMU</td>
 								<td>:</td>
-								<td><input type="text" value="<?php echo $row['tfn_lmu'];?>" name="pass2" class="form-control" required></td>
+								<td><input type="text" value="<?php echo $row['tfn_lmu'];?>" name="tfn_lmu" class="form-control" required></td>
 								</tr>							
 								<tr colspan="3">
 								<td>  
-								<input type="submit" name="save" value="SIMPAN" class="btn btn-warning btn-sm">	
+								<input type="submit" name="save" value="simpan" class="btn btn-warning btn-sm">	
         <a href="masterdata.php" class="btn btn-danger btn-sm" id="batal">BATAL</a></td>
 								<td></td>
 								</tr>
