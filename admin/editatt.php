@@ -140,7 +140,7 @@
 								<tr>
 								<td>Keterangan Kepentingan</td>
 								<td>:</td>
-								<td><input type="text" value="<?php echo $row['ket_kepentingan'];?>" name="ket" class="form-control"  required></td>
+								<td><input type="text" value="<?php echo $row['ket_kepentingan'];?>" name="ket_kepentingan" class="form-control"  required></td>
 								</tr>
         <tr>
 								<td>Nilai Lower</td>
