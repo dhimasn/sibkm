@@ -177,7 +177,7 @@
 												<td align="center">'.$data['ket_kepentingan'].'</td>
 												<td align="center">'.$data['tfn_lmu'].'</td>
 												<td align="center"> 
-												<a href="editkriteria.php?id='.$data['idtfn'].'"><button class="btn btn-warning btn-sm">ubah</button></a>
+												<a href="editkriteria.php?idtfn='.$data['idtfn'].'"><button class="btn btn-warning btn-sm">ubah</button></a>
 												</td>
 											</tr>';
 										$no++;
@@ -228,7 +228,7 @@
 											<td align="center">'.$data['ket_kepentingan'].'</td>
 											<td align="center">'.$data['tfn_lmu'].'</td>
 											<td align="center"> 
-												<a href="editatt.php?id='.$data['id_kriteria'].'"><button class="btn btn-warning btn-sm">ubah</button></a>
+												<a href="editatt.php?id_kriteria='.$data['id_kriteria'].'"><button class="btn btn-warning btn-sm">ubah</button></a>
 											</td>
 										</tr>';
 									$no++;

@@ -10,8 +10,8 @@
 	if ($koneksi->connect_errno){ 
 		die ("Could not connect to the database:<br/>".$koneksi>connect_error); 
 	}
-	$idtfn = $_GET['idtfn'];
-	$sql = mysqli_query($koneksi,"SELECT * FROM rating WHERE idtfn='$idtfn'") or die(mysqli_error());
+	$id_kriteria = $_GET['id_kriteria'];
+	$sql = mysqli_query($koneksi,"SELECT * FROM bobot WHERE id_kriteria='$id_kriteria'") or die(mysqli_error());
     $row = mysqli_fetch_assoc($sql);
     function aman($data) {
 	  $data = trim($data);
@@ -96,14 +96,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2">
-				<h2 class="h-bold" style="margin-top:50px;" align="center">Data Kepentingan Kriteria</h2>
+				<h2 class="h-bold" style="margin-top:50px;" align="center">Data Kepentingan Alternatif</h2>
 					<div class="divider-header"></div>
   				</div>
 		    </div>
       <div class="row">
        <div class="col-sm-6 col-sm-offset-3">
         <div class="panel panel-primary">
-         <div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Ubah Data Kepentingan Kriteria</div>
+         <div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Ubah Data Kepentingan Alternatif</div>
           <div class="panel-body">
            <div class="table-responsive">			
            <?php						
@@ -114,9 +114,9 @@
             $nilai_m		       =  aman($_POST['nilai_m']);
             $nilai_u		       =  aman($_POST['nilai_u']);
             $tfn_lmu         =  aman($_POST['tfn_lmu']);
-             $update = mysqli_query($koneksi,"UPDATE rating SET kepentingan='$kepentingan',ket_kepentingan='$ket_kepentingan',nilai_l='$nilai_l',nilai_m='$nilai_m',nilai_u='$nilai_u',tfn_lmu='$tfn_lmu' WHERE idtfn='$idtfn'") or die(mysqli_error());
+             $update = mysqli_query($koneksi,"UPDATE bobot SET kepentingan='$kepentingan',ket_kepentingan='$ket_kepentingan',nilai_l='$nilai_l',nilai_m='$nilai_m',nilai_u='$nilai_u',tfn_lmu='$tfn_lmu' WHERE id_kriteria='$id_kriteria'") or die(mysqli_error());
              if($update){
-              header("Location: editkriteria.php?idtfn=$idtfn&pesan=sukses");
+              header("Location: editkriteria.php?id=$id&pesan=sukses");
              }else{
               echo '<div class="alert alert-danger">Data gagal disimpan, silahkan coba lagi.</div>';
              }
@@ -128,9 +128,9 @@
 						<table class="table table-danger">
 							<form class="form-horizontal" method="post">
 								<tr>
-								<td>ID Kepentingan Kriteria</td>
+								<td>ID Kepentingan Alternatif</td>
 								<td>:</td>
-								<td><?php echo $row['idtfn'];?></td>
+								<td><?php echo $row['id_kriteria'];?></td>
 								</tr>
 								<tr>
 								<td>Kepentingan</td>
@@ -140,7 +140,7 @@
 								<tr>
 								<td>Keterangan Kepentingan</td>
 								<td>:</td>
-								<td><input type="text" value="<?php echo $row['ket_kepentingan'];?>" name="ket_kepentingan" class="form-control"  required></td>
+								<td><input type="text" value="<?php echo $row['ket_kepentingan'];?>" name="ket" class="form-control"  required></td>
 								</tr>
         <tr>
 								<td>Nilai Lower</td>
