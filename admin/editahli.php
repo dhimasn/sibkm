@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-//koneksi
+    //koneksi
 	session_start();
 	if ( !isset($_SESSION) ||$_SESSION['status'] !== 'admin') {
 		header('Location: ../index.php');
@@ -84,11 +84,11 @@
 							</ul>
 						  </div>
 						  <!-- /.Navbar-collapse -->
-						  </div>
+						</div>
 					</div>
-			  </div>
+			    </div>
 			<!-- /.container -->
-		  </nav>
+		</nav>
 	</div>
 	<!-- /Navigation -->
 	<p>
@@ -99,7 +99,7 @@
 				<h2 class="h-bold" style="margin-top:50px;" align="center">Data Ahli Bekam</h2>
 					<div class="divider-header"></div>
 				</div>
-		</div>
+		    </div>
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-3">
 				<div class="panel panel-primary">
@@ -112,7 +112,6 @@
 							$pass1		=  aman($_POST['pass1']);
 							$pass2		=  aman($_POST['pass2']);
 							$status		=  aman($_POST['status']);
-							
 							if($pass1 == $pass2){
 								$pass 	 = md5($pass1);
 								$update = mysqli_query($koneksi,"UPDATE user SET nama='$nama',status='$status',password='$pass' WHERE iduser='$id'") or die(mysqli_error());
@@ -129,7 +128,6 @@
 							echo '<div class="alert alert-success">Data berhasil diubah.</div>';
 						}
 						?>
-
 						<table class="table table-danger">
 							<form class="form-horizontal" method="post">
 								<tr>

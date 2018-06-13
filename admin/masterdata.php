@@ -105,7 +105,7 @@
 									<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;DATA GANGGUAN KESEHATAN</div>
 										<div class="panel-body">	
 											<div class="table-responsive">
-												<table id="example2" class="table table-bordered" style="background-color:#fff" cellspacing="0" width="100%" >
+												<table id="example1" class="table table-bordered" style="background-color:#fff" cellspacing="0" width="100%" >
 										  <p>
 											<thead>
 												<th>No</th>
@@ -155,13 +155,13 @@
 							<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;KEPENTINGAN KRITERIA</div>
 								<div class="panel-body">	
 									<div class="table-responsive">
-										<table id="example3" class="table table-bordered" style="background-color:#fff" cellspacing="0" width="100%" >
+										<table id="example2" class="table table-bordered" style="background-color:#fff" cellspacing="0" width="100%" >
 										  <p>
 											<thead>
 												<th>No</th>
 												<th>ID kriteria</th>
 												<th>Kepentingan</th>
-												<th>Keterngan Kepentingan</th>
+												<th>Keterangan Kepentingan</th>
 												<th>TFN LMU</th>
 												<th>Aksi</th>
 											</thead>
@@ -177,7 +177,7 @@
 												<td align="center">'.$data['ket_kepentingan'].'</td>
 												<td align="center">'.$data['tfn_lmu'].'</td>
 												<td align="center"> 
-												<a href="editgk.php?id='.$data['idtfn'].'"><button class="btn btn-warning btn-sm">ubah</button></a>
+												<a href="editkriteria.php?id='.$data['idtfn'].'"><button class="btn btn-warning btn-sm">ubah</button></a>
 												</td>
 											</tr>';
 										$no++;
@@ -206,13 +206,13 @@
 							<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;KEPENTINGAN ALTERNATIF</div>
 								<div class="panel-body">	
 									<div class="table-responsive">
-									<table id="example4" class="table table-bordered" style="background-color:#fff" cellspacing="0" width="100%" >
+									<table id="example3" class="table table-bordered" style="background-color:#fff" cellspacing="0" width="100%" >
 									  <p>
 										<thead>
 											<th>No</th>
 											<th>ID kriteria</th>
 											<th>Kepentingan</th>
-											<th>Keterngan Kepentingan</th>
+											<th>Keterangan Kepentingan</th>
 											<th>TFN LMU</th>
 											<th>Aksi</th>
 										</thead>
@@ -228,7 +228,7 @@
 											<td align="center">'.$data['ket_kepentingan'].'</td>
 											<td align="center">'.$data['tfn_lmu'].'</td>
 											<td align="center"> 
-												<a href="editgk.php?id='.$data['id_kriteria'].'"><button class="btn btn-warning btn-sm">ubah</button></a>
+												<a href="editatt.php?id='.$data['id_kriteria'].'"><button class="btn btn-warning btn-sm">ubah</button></a>
 											</td>
 										</tr>';
 									$no++;
@@ -260,9 +260,6 @@
             });
 			$(function() {
                 $('#example3').dataTable();
-            });
-			$(function() {
-                $('#example4').dataTable();
             });
 			jQuery(document).ready(function ($) {
 				$('#tabs').tab();
