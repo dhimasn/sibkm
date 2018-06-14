@@ -1,59 +1,4 @@
 <?php	
-		// //DATA UJI
-		// $id = '9';
-		// $pu = pengujian($id);
-		// $du = deffuzifikasi($pu);
-        // $ns = normalisasi($du);
-        // print_r($ns);
-
-		// //DATA ALTERNATIF
-        // $a = array();
-        // $bk1 = alternatif(301);
-		// $at1 = konversi($bk1);
-        // $nr1 = normalisasi($at1);
-        // $a[] = $nr1;
-
-		// $bk2 = alternatif(302);
-		// $at2 = konversi($bk2);
-		// $nr2 = normalisasi($at2);
-        // $a[] = $nr2;
-
-		// $bk3 = alternatif(303);
-		// $at3 = konversi($bk3);
-        // $nr3 = normalisasi($at3);
-        // $a[] = $nr3;
-
-		// $bk4 = alternatif(304);
-		// $at4 = konversi($bk4);
-		// $nr4 = normalisasi($at4);
-        // $a[] = $nr4;
-
-		// $bk5 = alternatif(305);
-		// $at5 = konversi($bk5);
-		// $nr5 = normalisasi($at5);
-        // $a[] = $nr5;
-
-		// $bk6 = alternatif(306);
-		// $at6 = konversi($bk6);
-        // $nr6 = normalisasi($at6);
-        // $a[] = $nr6;
-        // print_r($a);
-
-		// //PERKALIAN MATRIKS
-		// $mt = matriksPerkalian($a,$ns);
-		// print_r($mt);
-		
-		// //MENCARI NILAI TERTINGGI
-		// $maks = maks($mt);
-		// print_r($maks);
-
-		// //MENCARI ID penentuan
-		// $rk = penentuan($mt);
-		// print_r($rk);
-
-		// //UPLOAD DATA
-		// diagnosa($id,$mt,$maks,$rk);
-		
 		//FUNGSI MENGAMBIL DATA UJI
 		function pengujian($idpasien){
 		include('../config.php');
@@ -92,11 +37,23 @@
 		}
 		//FUNGSI KONVERSI DATA BOBOT KRITERIA
 		function konversi($bk){
-		$vl  = array(0.0,0.0,0.2);
-		$l   = array(0.0,0.2,0.4);
-		$m   = array(0.2,0.4,0.6);
-		$h   = array(0.4,0.6,0.8);
-		$vh  = array(0.6,0.8,1);
+		include('../config.php');
+		//select data konversi
+		$sql= mysqli_query($koneksi,"SELECT `nilai_l`,`nilai_m`,`nilai_u` FROM `bobot`") or die(mysqli_error()); 
+		for($i=0;$i<mysqli_num_rows($sql);$i++){
+		$data = mysqli_fetch_array($sql);
+		$kon[$i] = array 
+		(
+			$nilai_l = $data['nilai_l'],
+			$nilai_m = $data['nilai_m'],
+			$nilai_u = $data['nilai_u']
+		);
+		}
+		$vl  = $kon[0];
+		$l   = $kon[1];
+		$m   = $kon[2];
+		$h   = $kon[3];
+		$vh  = $kon[4];
 		foreach($bk as $key=>$value){
 		if($value == 'VH')
 			$tfn[] = $vh;    //konversi = konversi data awal ke data fuzzy
