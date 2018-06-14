@@ -22,7 +22,7 @@
 	<!-- css -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
 	<link href="../color/default.css" rel="stylesheet">
 	<link href="../data_tables/css/dataTables.bootstrap.css" rel="stylesheet">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -147,24 +147,6 @@
 			</div>
 		</section>				
 	</div>
-	<!-- Modal -->
-	<!-- <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	  <div class="modal-dialog modal-sm" role="document">
-		<div class="modal-content">
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<h4 class="modal-title" id="myModalLabel">Hapus Ahli Bekam?</h4>
-		  </div>
-		  <div class="modal-body" align="center">
-			<a href=""><button type="button" class="btn btn-success btn-sm">Ya</button></a>
-			<button type="button" class="btn btn-danger btn-sm btn-lg" data-dismiss="modal">Tidak</button>
-		  </div>
-		  <div class="modal-footer">
-		  </div>
-		</div>
-	  </div>
-	</div> -->
-	
 	<!-- Core JavaScript Files -->
 	<script src="../js/jquery.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>

@@ -206,11 +206,9 @@
 															<option value="<?php echo $row['c1']; ?>">bobot</option>
 															<option value ="VL">Very low</option>
 															<option value ="L">low</option>
-															<option value ="ML">Medium low</option>
-															<option value ="F">Fair</option>
-															<option value ="MG">Medium Good</option>
-															<option value ="G">Good</option>
-															<option value ="VG">Very Good</option>
+															<option value ="M">Medium</option>
+															<option value ="H">High</option>
+															<option value ="MH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -221,11 +219,9 @@
 															<option value="<?php echo $row['c2']; ?>">bobot</option>
 															<option value ="VL">Very low</option>
 															<option value ="L">low</option>
-															<option value ="ML">Medium low</option>
-															<option value ="F">Fair</option>
-															<option value ="MG">Medium Good</option>
-															<option value ="G">Good</option>
-															<option value ="VG">Very Good</option>
+															<option value ="M">Medium</option>
+															<option value ="H">High</option>
+															<option value ="MH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -236,11 +232,9 @@
 															<option value="<?php echo $row['c3']; ?>">bobot</option>
 															<option value ="VL">Very low</option>
 															<option value ="L">low</option>
-															<option value ="ML">Medium low</option>
-															<option value ="F">Fair</option>
-															<option value ="MG">Medium Good</option>
-															<option value ="G">Good</option>
-															<option value ="VG">Very Good</option>
+															<option value ="M">Medium</option>
+															<option value ="H">High</option>
+															<option value ="MH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -251,11 +245,9 @@
 															<option value="<?php echo $row['c4']; ?>">bobot</option>
 															<option value ="VL">Very low</option>
 															<option value ="L">low</option>
-															<option value ="ML">Medium low</option>
-															<option value ="F">Fair</option>
-															<option value ="MG">Medium Good</option>
-															<option value ="G">Good</option>
-															<option value ="VG">Very Good</option>
+															<option value ="M">Medium</option>
+															<option value ="H">High</option>
+															<option value ="MH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -266,11 +258,9 @@
 															<option value="<?php echo $row['c5']; ?>">bobot</option>
 															<option value ="VL">Very low</option>
 															<option value ="L">low</option>
-															<option value ="ML">Medium low</option>
-															<option value ="F">Fair</option>
-															<option value ="MG">Medium Good</option>
-															<option value ="G">Good</option>
-															<option value ="VG">Very Good</option>
+															<option value ="M">Medium</option>
+															<option value ="H">High</option>
+															<option value ="MH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -281,11 +271,9 @@
 															<option value="<?php echo $row['c6']; ?>">bobot</option>
 															<option value ="VL">Very low</option>
 															<option value ="L">low</option>
-															<option value ="ML">Medium low</option>
-															<option value ="F">Fair</option>
-															<option value ="MG">Medium Good</option>
-															<option value ="G">Good</option>
-															<option value ="VG">Very Good</option>
+															<option value ="M">Medium</option>
+															<option value ="H">High</option>
+															<option value ="MH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -296,11 +284,9 @@
 															<option value="<?php echo $row['c7']; ?>">bobot</option>
 															<option value ="VL">Very low</option>
 															<option value ="L">low</option>
-															<option value ="ML">Medium low</option>
-															<option value ="F">Fair</option>
-															<option value ="MG">Medium Good</option>
-															<option value ="G">Good</option>
-															<option value ="VG">Very Good</option>
+															<option value ="M">Medium</option>
+															<option value ="H">High</option>
+															<option value ="MH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -311,11 +297,9 @@
 															<option value="<?php echo $row['c8']; ?>">bobot</option>
 															<option value ="VL">Very low</option>
 															<option value ="L">low</option>
-															<option value ="ML">Medium low</option>
-															<option value ="F">Fair</option>
-															<option value ="MG">Medium Good</option>
-															<option value ="G">Good</option>
-															<option value ="VG">Very Good</option>
+															<option value ="M">Medium</option>
+															<option value ="H">High</option>
+															<option value ="MH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -326,11 +310,9 @@
 															<option value="<?php echo $row['c9']; ?>">bobot</option>
 															<option value ="VL">Very low</option>
 															<option value ="L">low</option>
-															<option value ="ML">Medium low</option>
-															<option value ="F">Fair</option>
-															<option value ="MG">Medium Good</option>
-															<option value ="G">Good</option>
-															<option value ="VG">Very Good</option>
+															<option value ="M">Medium</option>
+															<option value ="H">High</option>
+															<option value ="MH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -341,11 +323,9 @@
 															<option value="<?php echo $row['c10']; ?>">bobot</option>
 															<option value ="VL">Very low</option>
 															<option value ="L">low</option>
-															<option value ="ML">Medium low</option>
-															<option value ="F">Fair</option>
-															<option value ="MG">Medium Good</option>
-															<option value ="G">Good</option>
-															<option value ="VG">Very Good</option>
+															<option value ="M">Medium</option>
+															<option value ="H">High</option>
+															<option value ="MH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -356,11 +336,9 @@
 															<option value="<?php echo $row['c11']; ?>">bobot</option>
 															<option value ="VL">Very low</option>
 															<option value ="L">low</option>
-															<option value ="ML">Medium low</option>
-															<option value ="F">Fair</option>
-															<option value ="MG">Medium Good</option>
-															<option value ="G">Good</option>
-															<option value ="VG">Very Good</option>
+															<option value ="M">Medium</option>
+															<option value ="H">High</option>
+															<option value ="MH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -369,13 +347,11 @@
 													<td>:</td>
 													<td><select  name="c12"  class="form-control"required>
 															<option value="<?php echo $row['c12']; ?>">bobot</option>
-															<<option value ="VL">Very low</option>
+															<option value ="VL">Very low</option>
 															<option value ="L">low</option>
-															<option value ="ML">Medium low</option>
-															<option value ="F">Fair</option>
-															<option value ="MG">Medium Good</option>
-															<option value ="G">Good</option>
-															<option value ="VG">Very Good</option>
+															<option value ="M">Medium</option>
+															<option value ="H">High</option>
+															<option value ="MH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -386,11 +362,9 @@
 															<option value="<?php echo $row['c13']; ?>">bobot</option>
 															<option value ="VL">Very low</option>
 															<option value ="L">low</option>
-															<option value ="ML">Medium low</option>
-															<option value ="F">Fair</option>
-															<option value ="MG">Medium Good</option>
-															<option value ="G">Good</option>
-															<option value ="VG">Very Good</option>
+															<option value ="M">Medium</option>
+															<option value ="H">High</option>
+															<option value ="MH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -401,11 +375,9 @@
 															<option value="<?php echo $row['c14']; ?>">bobot</option>
 															<option value ="VL">Very low</option>
 															<option value ="L">low</option>
-															<option value ="ML">Medium low</option>
-															<option value ="F">Fair</option>
-															<option value ="MG">Medium Good</option>
-															<option value ="G">Good</option>
-															<option value ="VG">Very Good</option>
+															<option value ="M">Medium</option>
+															<option value ="H">High</option>
+															<option value ="MH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -416,11 +388,9 @@
 															<option value="<?php echo $row['c15']; ?>">bobot</option>
 															<option value ="VL">Very low</option>
 															<option value ="L">low</option>
-															<option value ="ML">Medium low</option>
-															<option value ="F">Fair</option>
-															<option value ="MG">Medium Good</option>
-															<option value ="G">Good</option>
-															<option value ="VG">Very Good</option>
+															<option value ="M">Medium</option>
+															<option value ="H">High</option>
+															<option value ="MH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -431,11 +401,9 @@
 															<option value="<?php echo $row['c16']; ?>">bobot</option>
 															<option value ="VL">Very low</option>
 															<option value ="L">low</option>
-															<option value ="ML">Medium low</option>
-															<option value ="F">Fair</option>
-															<option value ="MG">Medium Good</option>
-															<option value ="G">Good</option>
-															<option value ="VG">Very Good</option>
+															<option value ="M">Medium</option>
+															<option value ="H">High</option>
+															<option value ="MH">Very High</option>
 														</select>
 													</td>
 													</tr>
