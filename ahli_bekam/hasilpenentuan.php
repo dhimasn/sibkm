@@ -93,25 +93,27 @@
 	</div>
 <section>
 	<div class="col-sm-12" >
-<?php
-if(isset($_GET['aksi']) == 'delete'){
-	$idpasien = $_GET['idpasien'];
-	$cek = mysqli_query($koneksi, "SELECT * FROM pasien WHERE idpasien='$idpasien'") or die(mysqli_error());
-	if(mysqli_num_rows($cek) == 0){
-		echo '<div class="alert alert-info">Data tidak ditemukan.</div>';
-	}else{
-		$delete = mysqli_query($koneksi, "DELETE FROM pasien WHERE idpasien='$idpasien'") or die(mysqli_error());
-		if($delete){
-			echo '<div class="alert alert-danger">Data berhasil dihapus.</div>';
-		}else{
-			echo '<div class="alert alert-info">Data gagal dihapus.</div>';
-		}
-	}
-}
-?>
 	<div class="panel panel-primary alert-info">
 		<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;HASIL PENENTUAN</div>
-			<div class="panel-body">	
+			<div class="panel-body">
+			<?php
+			if(isset($_GET['aksi']) == 'delete'){
+				$idpasien = $_GET['idpasien'];
+				$cek = mysqli_query($koneksi, "SELECT * FROM pasien WHERE idpasien='$idpasien'") or die(mysqli_error());
+				if(mysqli_num_rows($cek) == 0){
+					echo '<div class="alert alert-info">Data tidak ditemukan.</div>';
+				}else{
+					$delete = mysqli_query($koneksi, "DELETE FROM pasien WHERE idpasien='$idpasien'") or die(mysqli_error());
+					$delete1 = mysqli_query($koneksi, "DELETE FROM rating_pasien WHERE idpasien='$idpasien'") or die(mysqli_error());
+					$delete2 = mysqli_query($koneksi, "DELETE FROM diagnosa WHERE idpasien='$idpasien'") or die(mysqli_error());
+					if($delete && $delete1 && $delete2){
+						echo '<div class="alert alert-danger">Data berhasil dihapus.</div>';
+					}else{
+						echo '<div class="alert alert-info">Data gagal dihapus.</div>';
+					}
+				}
+			}
+			?>	
 				<div class="table-responsive">
 					<span id="tblArea">
 							<table id="example1" class="table table-bordered table-condensed table-hover" style="background-color:#fff" cellspacing="0" width="100%" >
@@ -149,7 +151,7 @@ if(isset($_GET['aksi']) == 'delete'){
 									<td align="center">'.$data['nilai_fsaw'].'</td>
 									<td align="center">
 									<a href="detailhasil.php?id='.$data['idpasien'].'"><button class="btn btn-info btn-sm">Detail</button></a>	
-									<a href="masterdata.php?aksi=delete&idpasien='.$data['idpasien'].'"onclick="return confirm(\'Yakin?\')"><button type="button" class="btn btn-danger" aria-label="delete">HAPUS</button></a>
+									<a href="hasilpenentuan.php?aksi=delete&idpasien='.$data['idpasien'].'"onclick="return confirm(\'Yakin?\')"><button type="button" class="btn btn-danger" aria-label="delete">HAPUS</button></a>
 									</td>
 								</tr>';
 							$no++;
