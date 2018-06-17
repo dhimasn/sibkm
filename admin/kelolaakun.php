@@ -22,7 +22,7 @@
 	<!-- css -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 	<link href="../color/default.css" rel="stylesheet">
 	<link href="../data_tables/css/dataTables.bootstrap.css" rel="stylesheet">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

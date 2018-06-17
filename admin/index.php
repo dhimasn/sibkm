@@ -77,7 +77,7 @@
 				</nav>
 			</div>
 			<!-- /Navigation -->
-				<!-- Section: about -->
+			<!-- Section: about -->
 			<section id="about" class="home-section color-dark bg-white">
 			<div class="container marginbot-50">
 				<div class="row">
@@ -85,8 +85,8 @@
 							<h2 class="h-bold" align="center">Selamat Datang</h2>
 							<div class="divider-header"></div>
 					</div>
-					</div>
 				</div>
+			</div>
 				<div class="row">
 					<div class="col-lg-8 col-lg-offset-2">
 						<p>Bekam merupakan salah satu metode pengobatan yang diajarkan oleh Rasulullah SAW dengan cara mengeluarkan darah kotor yang terkontaminasi  oksidan dari dalam tubuh melalui permukaan kulit. Dalam istilah medis dikenal dengan istilah Oxidant Release therapy</p>
@@ -95,9 +95,9 @@
 					</div>
 				</div>
 			</section>
-	<!-- Core JavaScript Files -->
-	<script src="../js/jquery.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
+<!-- Core JavaScript Files -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 </body>
 	<div class="container">
 		<div class="row">

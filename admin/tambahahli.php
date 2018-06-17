@@ -33,6 +33,12 @@
 	<link href="../css/animations.css" rel="stylesheet" />
 	<link href="../css/style.css" rel="stylesheet">
 	<link href="../color/default.css" rel="stylesheet">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+      <script src="../js/respond.min.js"></script>
+    <![endif]-->
 </head>
 <!-- koneksi  -->
 <body>
@@ -145,7 +151,7 @@
 										<option value="admin">admin</option>
 										<option value="user">user</option>
 									  </select>
-									  </td>
+								</td>
 								</tr>
 								<tr colspan="3">
 								 <td>
@@ -163,10 +169,10 @@
 			</div>
 		</div>
 	</div>
-	</div>
-	<!-- Core JavaScript Files -->
-	<script src="../js/jquery.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>	
+</div>
+<!-- Core JavaScript Files -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>	
 </body>
 	<div class="container">
 		<div class="row">
