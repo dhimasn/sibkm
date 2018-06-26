@@ -139,13 +139,6 @@
 												$c14=$_POST['c14'];
 												$c15=$_POST['c15'];
 												$c16=$_POST['c16'];
-												//$allowed_ext	= array('png','jpg');
-												//$value 			= explode('.', $_FILES['file']['name']);
-												//$ext 			= strtolower(array_pop($value));
-												//$file_name		= array_shift($value);
-												//$file_size		= $_FILES['file']['size'];
-												//$file_tmp	 	= $_FILES['file']['tmp_name'];
-												//update kedalam database
 												$update = mysqli_query($koneksi,
 												"UPDATE gangguan_kesehatan
 												SET
@@ -208,7 +201,7 @@
 															<option value ="L">low</option>
 															<option value ="M">Medium</option>
 															<option value ="H">High</option>
-															<option value ="MH">Very High</option>
+															<option value ="VH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -221,7 +214,7 @@
 															<option value ="L">low</option>
 															<option value ="M">Medium</option>
 															<option value ="H">High</option>
-															<option value ="MH">Very High</option>
+															<option value ="VH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -234,7 +227,7 @@
 															<option value ="L">low</option>
 															<option value ="M">Medium</option>
 															<option value ="H">High</option>
-															<option value ="MH">Very High</option>
+															<option value ="VH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -247,7 +240,7 @@
 															<option value ="L">low</option>
 															<option value ="M">Medium</option>
 															<option value ="H">High</option>
-															<option value ="MH">Very High</option>
+															<option value ="VH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -260,7 +253,7 @@
 															<option value ="L">low</option>
 															<option value ="M">Medium</option>
 															<option value ="H">High</option>
-															<option value ="MH">Very High</option>
+															<option value ="VH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -273,7 +266,7 @@
 															<option value ="L">low</option>
 															<option value ="M">Medium</option>
 															<option value ="H">High</option>
-															<option value ="MH">Very High</option>
+															<option value ="VH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -286,7 +279,7 @@
 															<option value ="L">low</option>
 															<option value ="M">Medium</option>
 															<option value ="H">High</option>
-															<option value ="MH">Very High</option>
+															<option value ="VH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -299,7 +292,7 @@
 															<option value ="L">low</option>
 															<option value ="M">Medium</option>
 															<option value ="H">High</option>
-															<option value ="MH">Very High</option>
+															<option value ="VH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -312,7 +305,7 @@
 															<option value ="L">low</option>
 															<option value ="M">Medium</option>
 															<option value ="H">High</option>
-															<option value ="MH">Very High</option>
+															<option value ="VH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -325,7 +318,7 @@
 															<option value ="L">low</option>
 															<option value ="M">Medium</option>
 															<option value ="H">High</option>
-															<option value ="MH">Very High</option>
+															<option value ="VH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -338,7 +331,7 @@
 															<option value ="L">low</option>
 															<option value ="M">Medium</option>
 															<option value ="H">High</option>
-															<option value ="MH">Very High</option>
+															<option value ="VH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -351,7 +344,7 @@
 															<option value ="L">low</option>
 															<option value ="M">Medium</option>
 															<option value ="H">High</option>
-															<option value ="MH">Very High</option>
+															<option value ="VH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -364,7 +357,7 @@
 															<option value ="L">low</option>
 															<option value ="M">Medium</option>
 															<option value ="H">High</option>
-															<option value ="MH">Very High</option>
+															<option value ="VH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -377,7 +370,7 @@
 															<option value ="L">low</option>
 															<option value ="M">Medium</option>
 															<option value ="H">High</option>
-															<option value ="MH">Very High</option>
+															<option value ="VH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -390,7 +383,7 @@
 															<option value ="L">low</option>
 															<option value ="M">Medium</option>
 															<option value ="H">High</option>
-															<option value ="MH">Very High</option>
+															<option value ="VH">Very High</option>
 														</select>
 													</td>
 													</tr>
@@ -403,7 +396,7 @@
 															<option value ="L">low</option>
 															<option value ="M">Medium</option>
 															<option value ="H">High</option>
-															<option value ="MH">Very High</option>
+															<option value ="VH">Very High</option>
 														</select>
 													</td>
 													</tr>
