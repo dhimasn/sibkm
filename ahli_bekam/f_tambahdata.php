@@ -77,6 +77,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$pu = pengujian($id);
 	$du = deffuzifikasi($pu);
 	$ns = normalisasi($du);
+	print_r($ns);
 
 	//DATA ALTERNATIF
 	$a = array();
@@ -109,25 +110,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$at6 = konversi($bk6);
 	$nr6 = normalisasi($at6);
 	$a[] = $nr6;
+	print_r($a);
 
 	//PERKALIAN MATRIKS
 	$mt = matriksPerkalian($a,$ns);
-	
+	print_r($mt);
+
 	//MENCARI NILAI TERTINGGI
 	$maks = maks($mt);
+	print_r($maks);
 
 	//MENCARI ID penentuan
 	$rk = penentuan($mt);
+	print_r($rk);
 
 	//UPLOAD DATA
 	$valid = diagnosa($id,$mt,$maks,$rk);
+	print_r($valid);
 
 	//notifikasi proses input
-		if($valid){		
-			header("Location: penentuan.php?pesan=sukses&id=$id");
-		}else{ 
-			header("Location: penentuan.php?pesan=gagal&id=$id");
-		}
+		// if($valid){		
+		// 	header("Location: penentuan.php?pesan=sukses&id=$id");
+		// }else{ 
+		// 	header("Location: penentuan.php?pesan=gagal&id=$id");
+		// }
 	}
 }
 ?>				
