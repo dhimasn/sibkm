@@ -108,7 +108,6 @@
 						$id = $_GET['id'];
 						$sql = mysqli_query($koneksi,
 							"SELECT
-								diagnosa.idpasien,
 								diagnosa.id_gangguan_kesehatan,
 								diagnosa.nilai_A1,
 								diagnosa.nilai_A2,
@@ -116,15 +115,14 @@
 								diagnosa.nilai_A4,
 								diagnosa.nilai_A5,
 								diagnosa.nilai_A6,
-								diagnosa.nilai_fsaw,
-								pasien.nama,
+								diagnosa.nilai_fsaw,								
 								gangguan_kesehatan.nama_gangguan_kesehatan,
 								gangguan_kesehatan.solusi_gangguan_kesehatan,
 								gangguan_kesehatan.titik_bekam								
 							FROM
 								diagnosa
-							JOIN pasien ON diagnosa.idpasien = pasien.idpasien
-							JOIN gangguan_kesehatan ON diagnosa.id_gangguan_kesehatan = gangguan_kesehatan.id_gangguan_kesehatan")or die(mysqli_error());
+							JOIN gangguan_kesehatan ON diagnosa.id_gangguan_kesehatan = gangguan_kesehatan.id_gangguan_kesehatan 
+							WHERE idpasien=".$id."")or die(mysqli_error());
 						$data = mysqli_fetch_assoc($sql);
 						if(mysqli_num_rows($sql) > 0){
 						$sql1 = mysqli_query($koneksi,"SELECT * FROM pasien WHERE idpasien=".$id."")or die(mysqli_error());
