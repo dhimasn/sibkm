@@ -82,7 +82,7 @@
 			<div class="container marginbot-50">
 				<div class="row">
 					<div class="col-lg-8 col-lg-offset-2">
-							<h2 class="h-bold" align="center">Selamat Datang</h2>
+							<h2 class="h-bold" align="center">Tentang SI BEKAM</h2>
 							<div class="divider-header"></div>
 					</div>
 				</div>

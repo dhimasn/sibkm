@@ -85,7 +85,7 @@
 	  <!-- /Navigation -->
 	  <div class="container">
 		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2">
+			 <div class="col-lg-8 col-lg-offset-2">
 				<h2 class="h-bold" style="margin-top:50px;" align="center">Data Ahli Bekam</h2>
 					<div class="divider-header"></div>
 			</div>

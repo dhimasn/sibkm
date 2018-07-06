@@ -77,40 +77,38 @@
 	</nav>
 	</div>
 	<!-- /Navigation -->
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<h2 class="h-bold" style="margin-top:50px;" align="center">Bantuan</h2>
+				<div class="divider-header"></div>
+		</div>
+	</div>
 	<!-- Section: about -->
-	<section id="about" class="home-section color-dark bg-white">
+	<section>
 	<div class="container marginbot-50">
 	<div class="row">
-		<div class="col-lg-6">
-		<div class="panel panel-primary alert-info">
+		<div class="col-lg-4">
+		<div class="panel panel-primary">
 			<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Beranda</div>
 			<div class="panel-body">	
 				<p>Menu Beranda berisi informasi mengenai gangguan kesehatan terdapat beberapa penjelasan mengenai gambaran dari gangguan kesehatan.</p>
 			</div>
 		</div>
 		</div>
-		<div class="col-lg-6">
-		<div class="panel panel-primary alert-info">
+		<div class="col-lg-4">
+		<div class="panel panel-primary">
 		<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Master Data</div>
 		<div class="panel-body">
 				<p>Menu Master data berisi informasi Data Gangguan Kesehatan, Kepentingan Kriteria, Kepentigan Alternatif. Tab Data Gangguan Kesehatan Aministrator dapat melihat detail gangguan kesehatan dan mengubah data gangguan kesehatan, Tab Kepentingan Kriteria Aministrator dapat mengubah nilai rating kriteria yang digunakan pada sistem, Tab Kepentingan Alternatif Administrator dapat mengubah nilai rating alternatif yang digunakan pada sistem.</p>
 		</div>
 		</div>
 		</div>
-		<div class="col-lg-6">
-		<div class="panel panel-primary alert-info">
+		<div class="col-lg-4">
+		<div class="panel panel-primary">
 			<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Kelola Akun</div>
 			<div class="panel-body">	
 				<p>Menu kelola Akun  berisi informasi data Akun Ahli Bekam. Administrator dapat menambah data Ahli Bekam,mengubah data Ahli Bekam, dan juga menghapus data Ahli Bekam.</p>
 			</div>
-		</div>
-		</div>
-		<div class="col-lg-6">
-		<div class="panel panel-primary alert-info">
-		<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Bantuan</div>
-		<div class="panel-body">
-				<p>Menu bantuan berisikan informasi terkait sistem dan menu yang ada.</p>
-		</div>
 		</div>
 		</div>
 	</div>

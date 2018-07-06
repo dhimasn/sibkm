@@ -78,39 +78,37 @@
 	</div>
 	<!-- /Navigation -->
 	<!-- Section: about -->
-	<section id="about" class="home-section color-dark bg-white">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<h2 class="h-bold" style="margin-top:50px;" align="center">Bantuan</h2>
+				<div class="divider-header"></div>
+		</div>
+	</div>
+	<section>
 	<div class="container marginbot-50">
 	<div class="row">
-		<div class="col-lg-6">
-		<div class="panel panel-primary alert-info">
+		<div class="col-lg-4">
+		<div class="panel panel-primary">
 			<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Beranda</div>
 			<div class="panel-body">	
 				<p>Menu Beranda berisi informasi mengenai gangguan kesehatan terdapat beberapa penjelasan mengenai gambaran dari  gangguan kesehatan.<p>
 			</div>
 		</div>
 		</div>
-		<div class="col-lg-6">
-		<div class="panel panel-primary alert-info">
+		<div class="col-lg-4">
+		<div class="panel panel-primary">
 		<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;SPK GK</div>
 		<div class="panel-body">
 				<p>Menu SPK GK sebuah Step form yang digunakan ahli bekam untuk menentukan gangguan pada kesehatan yang tepat pada pasien berdasarkan kriteria yang dibutuhkan sistem penentuan gangguan kesehatan. Ahli Bekam di minta untuk menginputkan data sesuai dengan kondisi fisik pasien selanjutnya sistem akan menampilkan hasil gangguan kesehatan yang di diderita pasien beserta solusinya.</p>
 		</div>
 		</div>
 		</div>
-		<div class="col-lg-6">
-		<div class="panel panel-primary alert-info">
+		<div class="col-lg-4">
+		<div class="panel panel-primary">
 			<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Hasil SPK GK</div>
 			<div class="panel-body">	
 				<p>Menu Hasil SPK GK berisikan informasi hasil penentuan gangguan kesehatan pada pasien yang telah ditentukan berdasarkan metode Fuzzy Simple Additive Weighting Diagnosa Telapak Tangan<p>
 			</div>
-		</div>
-		</div>
-		<div class="col-lg-6">
-		<div class="panel panel-primary alert-info">
-		<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Bantuan</div>
-		<div class="panel-body">
-				<p>Menu bantuan berisikan informasi terkait sistem dan menu yang ada.</p>
-		</div>
 		</div>
 		</div>
 	</div>
