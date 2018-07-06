@@ -108,13 +108,12 @@
 		$matrixProduct = array();
 			for($i =0; $i < $colsA; $i++){
 				$sum = 0; 
-				for($j = 0; $j < $rowsB; $j++){
-						for($p = 0; $p < $rowsA; $p++){
-					$sum += $matrixA[$i][$p] * $matrixB[$p];
+				for($j = 0; $j < $rowsA; $j++){
+						for($p = 0; $p < $rowsB; $p++){
+					    $sum += $matrixA[$i][$p] * $matrixB[$p];
 					}
-				$matrixProduct[$i] = $sum;
+				}$matrixProduct[$i] = $sum;
 			}
-		}
 		return $matrixProduct;
 		}
 

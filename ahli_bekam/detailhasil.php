@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-//koneksi
+    //koneksi
 	session_start();
 	if ( !isset($_SESSION) ||$_SESSION['status'] !== 'user') {
 		header('Location: ../index.php');
@@ -89,12 +89,14 @@
 			<!-- /.container -->
 		</nav>
 	</div>
-	<div id="print-area-1" class="print-area">
 	<div class="container">
+		<div id="print-area-1" class="print-area">
 		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2">
-				<h2 class="h-bold" style="margin-top:50px;" align="center">Detail Hasil Pasien</h2> 
+			<div class="col-lg-12">
+				<div class="animatedParent">
+						<h2 class="h-bold" style="margin-top:50px;" align="center">Detail Hasil Penentuan Gangguan Kesehatan</h2>
 					<div class="divider-header"></div>
+				</div>
 			</div>
 		</div>
 		<div class="row">
@@ -106,25 +108,31 @@
 						$id = $_GET['id'];
 						$sql = mysqli_query($koneksi,
 							"SELECT
-								diagnosa.idpasien,
 								diagnosa.id_gangguan_kesehatan,
-								diagnosa.nilai_fsaw,
-								pasien.nama,
+								diagnosa.nilai_A1,
+								diagnosa.nilai_A2,
+								diagnosa.nilai_A3,
+								diagnosa.nilai_A4,
+								diagnosa.nilai_A5,
+								diagnosa.nilai_A6,
+								diagnosa.nilai_fsaw,								
 								gangguan_kesehatan.nama_gangguan_kesehatan,
 								gangguan_kesehatan.solusi_gangguan_kesehatan,
 								gangguan_kesehatan.titik_bekam								
 							FROM
 								diagnosa
-							JOIN pasien ON diagnosa.idpasien = pasien.idpasien
-							JOIN gangguan_kesehatan ON diagnosa.id_gangguan_kesehatan = gangguan_kesehatan.id_gangguan_kesehatan")or die(mysqli_error());
+							JOIN gangguan_kesehatan ON diagnosa.id_gangguan_kesehatan = gangguan_kesehatan.id_gangguan_kesehatan 
+							WHERE idpasien=".$id."")or die(mysqli_error());
 						$data = mysqli_fetch_assoc($sql);
 						if(mysqli_num_rows($sql) > 0){
 						$sql1 = mysqli_query($koneksi,"SELECT * FROM pasien WHERE idpasien=".$id."")or die(mysqli_error());
 						$row = mysqli_fetch_assoc($sql1);}	
 						?>
-				<img src="<?php echo $data['titik_bekam'];?>"/></img> 
-				<div class="col-lg-6">				
-					<div class="table-responsive">	
+					<div class="table-responsive" align="center">
+						<div class="col-lg-8 col-lg-offset-2">
+						<div class="animatedParent">
+							<h4 class="h-bold" align="center">Biodata Pasien</h4>
+						</div>
 						<table class="table table-danger">
 							<tr>
 								<td>Nama</td>
@@ -156,23 +164,69 @@
 								<td>:</td>
 								<td><?php echo $row['keluhan']; ?></td>
 							</tr>
+						</table>
+						</div>
+						<div class="col-lg-12" align="center">
+						<div class="animatedParent">
+							<h5 class="h-bold" align="center">Disarankan Untuk Melakukan Terapi Bekam Pada Titik :</h5>
+						</div>
+						<table class="table table-danger">
 							<tr colspan="3">
-								<td>
-									<a href="hasilpenentuan.php" class="btn btn-success btn-sm" id="batal">Kembali</a>
-									<a class="no-print btn btn-sm btn-warning" href="javascript:printDiv('print-area-1');" ><span class="glyphicon glyphicon-print"></span> Cetak</a>
-								</td>
+								<img src="<?php echo $data['titik_bekam'];?>"/></img> 
 							</tr>
-							</table>
+						</table>
+						</div>
+						<div class="col-lg-8 col-lg-offset-2" align="center">
+						<div class="animatedParent">
+							<h5 class="h-bold" align="center">Dengan Hasil Prefensi :</h5>
+						</div>
+						<table class="table table-danger">
+							<tr>
+								<td>Nilai Alternatif 1</td>
+								<td>:</td>
+								<td><?php echo $data['nilai_A1']; ?></td>
+							</tr>
+							<tr>
+								<td>Nilai Alternatif 2</td>
+								<td>:</td>
+								<td><?php echo $data['nilai_A2']; ?></td>
+							</tr>
+							<tr>
+								<td>Nilai Alternatif 3</td>
+								<td>:</td>
+								<td><?php echo $data['nilai_A3']; ?></td>
+							</tr>
+							<tr>
+								<td>Nilai Alternatif 4</td>
+								<td>:</td>
+								<td><?php echo  $data['nilai_A4']; ?></td>
+							</tr>
+							<tr>
+								<td>Nilai Alternatif 5</td>
+								<td>:</td>
+								<td><?php echo  $data['nilai_A5']; ?></td>
+							</tr>
+							<tr>
+								<td>Nilai Alternatif 6</td>
+								<td>:</td>
+								<td><?php echo  $data['nilai_A6']; ?></td>
+							</tr>
+						</table>
+						<iframe id="printing-frame" name="print_frame" src="about:blank" style="display:none;"></iframe>
+						<div class="col-lg-6 col-lg-offset-3">
+								<a href="hasilpenentuan.php" class="btn btn-success btn-sm" id="batal">Kembali</a>
+								<a class="no-print btn btn-sm btn-warning" href="javascript:printDiv('print-area-1');" ><span class="glyphicon glyphicon-print"></span> Cetak</a>
+						</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
-	</div>
-	</div>
-	<iframe id="printing-frame" name="print_frame" src="about:blank" style="display:none;"></iframe>
+</div>
 	<!-- Core JavaScript Files -->
 	<script src="../js/jquery.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
