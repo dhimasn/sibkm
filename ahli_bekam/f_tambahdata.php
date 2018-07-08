@@ -77,56 +77,51 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$pu = pengujian($id);
 	$du = deffuzifikasi($pu);
 	$ns = normalisasi($du);
-	//print_r($ns);
+
 
 	//DATA ALTERNATIF
 	$a = array();
 	$bk1 = alternatif(301);
 	$at1 = konversi($bk1);
-	$nr1 = normalisasi($at1);
+	$nr1 = norm($at1);
 	$a[] = $nr1;
 
 	$bk2 = alternatif(302);
 	$at2 = konversi($bk2);
-	$nr2 = normalisasi($at2);
+	$nr2 = norm($at2);
 	$a[] = $nr2;
 
 	$bk3 = alternatif(303);
 	$at3 = konversi($bk3);
-	$nr3 = normalisasi($at3);
+	$nr3 = norm($at3);
 	$a[] = $nr3;
 
 	$bk4 = alternatif(304);
 	$at4 = konversi($bk4);
-	$nr4 = normalisasi($at4);
+	$nr4 = norm($at4);
 	$a[] = $nr4;
 
 	$bk5 = alternatif(305);
 	$at5 = konversi($bk5);
-	$nr5 = normalisasi($at5);
+	$nr5 = norm($at5);
 	$a[] = $nr5;
 
 	$bk6 = alternatif(306);
 	$at6 = konversi($bk6);
-	$nr6 = normalisasi($at6);
+	$nr6 = norm($at6);
 	$a[] = $nr6;
-	//print_r($a);
 
 	//PERKALIAN MATRIKS
 	$mt = matriksPerkalian($a,$ns);
-	//print_r($mt);
 
 	//MENCARI NILAI TERTINGGI
 	$maks = maks($mt);
-	//print_r($maks);
 
 	//MENCARI ID penentuan
 	$rk = penentuan($mt);
-	//print_r($rk);
 
 	//UPLOAD DATA
 	$valid = diagnosa($id,$mt,$maks,$rk);
-	//print_r($valid);
 
 	//notifikasi proses input
 		if($valid){		

@@ -89,7 +89,18 @@
 				}	
 		return $deffval;
 		}
-		//FUNGSI NORMALISASI DATA
+		//FUNGSI NORMALISASI DATA BOBOT KRITERIA
+		function norm($normal){
+		$total = max($normal);
+		foreach($normal as $c){
+			$normalized[] = $c/$total;
+		}
+			$normalisasi['total'] 	  = $total;
+			$normalisasi['normalized'] = $normalized;
+
+		return $normalized;
+		}
+		//FUNGSI NORMALISASI DATA UJI
 		function normalisasi($normal){
 		$total = array_sum($normal);
 		foreach($normal as $c){
@@ -106,13 +117,14 @@
 		$rowsA = count($matrixA);	
 		$rowsB = count($matrixB);
 		$matrixProduct = array();
-			for($i =0; $i < $colsA; $i++){
-				$sum = 0; 
-				for($j = 0; $j < $rowsA; $j++){
-						for($p = 0; $p < $rowsB; $p++){
+			for($i =0; $i < $colsA; $i++){	
+				for($j = 0; $j < $rowsA; $j++){	
+					$sum = 0; 
+					for($p = 0; $p < $rowsB; $p++){
 					    $sum += $matrixA[$i][$p] * $matrixB[$p];
 					}
-				}$matrixProduct[$i] = $sum;
+					$matrixProduct[$i] = $sum;
+				}
 			}
 		return $matrixProduct;
 		}
