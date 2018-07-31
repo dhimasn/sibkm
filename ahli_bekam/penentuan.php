@@ -92,8 +92,8 @@ radio.invalid {
 						<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
 						<li><a href="beranda.php">Beranda</a></li>
-						<li class="active"><a href="penentuan.php">SPKGK</a></li>
-						<li><a href="hasilpenentuan.php">Hasil SPKGK</a></li>						
+						<li class="active"><a href="penentuan.php">Diagnosa</a></li>
+						<li><a href="hasilpenentuan.php">Hasil Diagnosa</a></li>						
 						<li><a href="bantuan.php">Bantuan</a></li>	
 						<li><a> </a></li>
 						<li>
@@ -122,14 +122,14 @@ radio.invalid {
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="animatedParent">
-					<h2 class="h-bold" style="margin-top:50px;" align="center">SPK Penentuan Gangguan Kesehatan</h2>
+					<h2 class="h-bold" style="margin-top:50px;" align="center">Diagnose of Hand</h2>
 				<div class="divider-header"></div>
 			</div>
 		</div>
 	</div>
 	</div>
 	<div class="container">
-	<div class="col-md-8 col-lg-offset-2">
+	<div class="col-md-10 col-lg-offset-1">
 		<div class="panel panel-primary">
 		 <div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;ISI DATA PASIEN</div>
 			<div class="panel-body">
@@ -206,7 +206,7 @@ radio.invalid {
 			<div class="table-responsive">		
 				<table class="table table-danger">
 					<tr>
-						<td><label class="control-label">1.Tingkat Kegelapan pada ruas garis jari-jari</label></td>		
+						<td><label class="control-label">1) Tingkat kegelapan pada ruas garis jari-jari</label></td>		
 						<td>:</td>	
 						<td>	
 							<select class="form-control" style="width: 100%;" name="c1" oninput="this.className = ''" required>
@@ -217,7 +217,7 @@ radio.invalid {
 						</td>	
 					</tr>
 					<tr>
-						<td><label class="control-label" >2.Tingkat Kegelapan pada ruas garis telapak tangan</label></td>			
+						<td><label class="control-label" >2) Tingkat kegelapan pada ruas garis telapak tangan</label></td>			
 						<td>:</td>	
 						<td>	
 							<select  class="form-control" style="width: 100%;"  name="c2" oninput="this.className = ''" required>	
@@ -228,18 +228,18 @@ radio.invalid {
 						</td>
 					</tr>
 					<tr>
-						<td><label class="control-label">3.Tingkat Kehitaman pada telapak tangan</label></td>
+						<td><label class="control-label">3) Tingkat kehitaman pada telapak tangan</label></td>
 						<td>:</td>
 						<td>
 							<select  class="form-control" style="width: 100%;" name="c3" oninput="this.className = ''" required>
 								<option value ="tfn1">tidak hitam</option>
-								<option value ="tfn2">sedikir hitam</option>
+								<option value ="tfn2">sedikit hitam</option>
 								<option value ="tfn3">sangat hitam</option>
 							</select>
 						</td>	
 					</tr>
 					<tr>
-						<td><label class="control-label">4.Tingkat banyaknya urat berwarna biru pada telapak tangan</label></td>
+						<td><label class="control-label">4) Tingkat banyaknya urat berwarna biru pada telapak tangan</label></td>
 						<td>:</td>
 						<td>
 							<select  class="form-control" style="width: 100%;" name="c4" oninput="this.className = ''" required>
@@ -250,7 +250,7 @@ radio.invalid {
 						<td>
 					<tr>
 					<tr>
-						<td><label class="control-label">5.Tingkat warna merah pucat pada telapak tangan</label></td>	
+						<td><label class="control-label">5) Tingkat warna merah pucat pada telapak tangan</label></td>	
 						<td>:</td>
 						<td>
 							<select class="form-control" style="width: 100%;" name="c5" oninput="this.className = ''" required>
@@ -261,18 +261,18 @@ radio.invalid {
 						</td>	
 					</tr>
 					<tr>	
-						<td><label class="control-label">6.Tingkat warna merah pada ruas ujung jari</label></td>
+						<td><label class="control-label">6) Tingkat warna merah pada ruas ujung jari</label></td>
 						<td>:</td>
 						<td>
 							<select  class="form-control"  style="width: 100%;" name="c6" oninput="this.className = ''" required>
-								<option value ="tfn1">tidak berwarna merah</option>
-								<option value ="tfn2">sedikit berwarna merah</option>
-								<option value ="tfn3">sangat berwarna merah</option>
+								<option value ="tfn1">Berwarna merah normal</option>
+								<option value ="tfn2">Berwarna merah dari ruas jari sekitarnya.</option>
+								<option value ="tfn3">Sangat berwarna merah dari ruas jari sekitarnya.</option>
 							</select>
 						</td>	
 					</tr>
 					<tr>
-						<td><label class="control-label">7.Tingkat Kebengkokan pada ibu jari</label></td>
+						<td><label class="control-label">7) Tingkat Kebengkokan pada ibu jari</label></td>
 						<td>:</td>
 						<td>	
 							<select class="form-control"  style="width: 100%;" name="c7" oninput="this.className = ''" required>
@@ -283,7 +283,7 @@ radio.invalid {
 						</td>
 					</tr>
 					<tr>
-						<td><label class="control-label">8.Tingkat Kebengkokan pada jari kelingking</label></td>
+						<td><label class="control-label">8) Tingkat kebengkokan pada jari kelingking</label></td>
 						<td>:</td>
 						<td>	
 							<select class="form-control" style="width: 100%;" name="c8" oninput="this.className = ''" required>
@@ -300,7 +300,7 @@ radio.invalid {
 				<div class="table-responsive">		
 					<table class="table table-danger">
 					<tr>
-						<td><label class="control-label">9.Tingkat Kebengkokan pada jari tengah</label></td>				
+						<td><label class="control-label">9) Tingkat kebengkokan pada jari tengah</label></td>				
 						<td>:</td>
 						<td>
 							<select class="form-control" style="width: 100%;" name="c9" oninput="this.className = ''" required>
@@ -311,7 +311,7 @@ radio.invalid {
 						</td>
 					</tr>
 					<tr>
-						<td><label class="control-label">10.Tingkat kebengkokan ke dalam pada ujung-ujung jari</label></td>						
+						<td><label class="control-label">10) Tingkat kebengkokan ke dalam pada ujung-ujung jari</label></td>						
 						<td>:</td>
 						<td><select  class="form-control" style="width: 100%;" name="c10" oninput="this.className = ''" required>
 								<option value ="tfn1">tidak bengkok</option>
@@ -321,7 +321,7 @@ radio.invalid {
 						</td>
 					</tr>
 					<tr>
-						<td><label class="control-label">11.Tingkat kebengkokan pada jari telunjuk</label></td>
+						<td><label class="control-label">11) Tingkat kebengkokan pada jari manis</label></td>
 						<td>:</td>
 						<td><select  class="form-control" style="width: 100%;" name="c11" oninput="this.className = ''" required>
 								<option value ="tfn1">tidak bengkok</option>
@@ -331,17 +331,17 @@ radio.invalid {
 						</td>
 					</tr>
 					<tr>
-						<td><label class="control-label">12.Tingkat kebengkokan pada jari manis</label></td>
+						<td><label class="control-label">12) Tingkat ruas pertama pada jari telunjuk keriput</label></td>
 						<td>:</td>
 						<td><select  class="form-control" style="width: 100%;" name="c12" oninput="this.className = ''" required>
-								<option value ="tfn1">tidak bengkok</option>
-								<option value ="tfn2">sedikit bengkok</option>
-								<option value ="tfn3">sangat bengkok</option>
+								<option value ="tfn1">Tidak keriput</option>
+								<option value ="tfn2">Sedikit keriput</option>
+								<option value ="tfn3">Sangat keriput</option>
 							</select>
 						</td>
 					</tr>
 					<tr>
-						<td><label class="control-label">13.Tingkat Kekempotan pada jari kelingking</label></td>											
+						<td><label class="control-label">13) Tingkat kempot pada jari kelingking</label></td>											
 						<td>:</td>
 						<td><select class="form-control" style="width: 100%;" name="c13" oninput="this.className = ''" required>
 							<option value ="tfn1">tidak kempot</option>
@@ -350,17 +350,17 @@ radio.invalid {
 						</td>
 					</tr>
 					<tr>
-						<td><label class="control-label">14.Tingkat Kekempotan pada ibu jari</label></td>							
+						<td><label class="control-label">14) Tingkat ruas pertama seluruh jari terlihat kembung</label></td>							
 						<td>:</td>
 						<td><select  class="form-control" style="width: 100%;" name="c14" oninput="this.className = ''" required>
-								<option value ="tfn1">tidak kempot</option>
-								<option value ="tfn2">sedikit kempot</option>
-								<option value ="tfn3">sangat kempot</option>
+								<option value ="tfn1">Tidak kembung</option>
+								<option value ="tfn2">Sedikit kembung</option>
+								<option value ="tfn3">Sangat kembung</option>
 						    </select>
 						</td>
 					</tr>
 					<tr>
-						<td><label class="control-label">15.Tingkat Keringat pada tangan</label></td>
+						<td><label class="control-label">15) Tingkat keringat pada tangan</label></td>
 						<td>:</td>
 						<td>
 							<select class="form-control" style="width: 100%;" name="c15" oninput="this.className = ''" required>
@@ -371,7 +371,7 @@ radio.invalid {
 						</td>
 					</tr>	
 					<tr>
-						<td><label class="control-label">16.Tingkat Kenyerian pada tangan</label></td>						
+						<td><label class="control-label">16) Tingkat kenyerian pada tangan</label></td>						
 						<td>:</td>
 						<td>
 							<select class="form-control" style="width: 100%;" name="c16" oninput="this.className = ''" required>
@@ -503,7 +503,7 @@ radio.invalid {
 	<div class="container">
 		<div class="row">
 			<div class="text-right">
-				<b>Copyirght © Bekam Learning Center</b> All rights reserved</p>
+				<b>Copyirght © Bekam Holistic Center</b> All rights reserved</p>
 			</div>
 		</div>
 	</div>	

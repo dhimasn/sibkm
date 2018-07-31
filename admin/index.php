@@ -28,6 +28,11 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+<style type="text/css">
+   p {
+   font-size: 18px;
+   }
+</style>
 <body data-target=".navbar-custom">
 		<!-- Navigation -->
 			<div id="navigation">
@@ -102,7 +107,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="text-right">
-				<b>Copyirght © Bekam Learning Center</b> All rights reserved</p>
+				<b>Copyirght © Bekam Holistic Center</b> All rights reserved</p>
 			</div>
 		</div>
 	</div>	

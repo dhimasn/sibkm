@@ -117,9 +117,9 @@
 							  <p>
 							<thead>
 								<th>No</th>
-								<th>Nama</th>
 								<th>ID user</th>
-								<th>Action</th>
+								<th>Nama</th>
+								<th>Aksi</th>
 							</thead>
 							<?php
 							$sql = mysqli_query($koneksi ,"SELECT * FROM user WHERE status='user'")or die(mysqli_error());
@@ -128,8 +128,8 @@
 							while($data = mysqli_fetch_assoc($sql)){
 							echo'<tr bgcolor="#fff">
 									<td align="center">'.$no.'</td>
-									<td align="center">'.$data['nama'].'</td>
 									<td align="center">'.$data['iduser'].'</td>
+									<td align="center">'.$data['nama'].'</td>
 									<td align="center">
 									<a href="editahli.php?id='.$data['iduser'].'"><button class="btn btn-warning btn-sm">ubah</button></a>  
 									<a href="kelolaakun.php?aksi=delete&iduser='.$data['iduser'].'"onclick="return confirm(\'Yakin?\')"><button type="button" class="btn btn-danger">HAPUS</button></a>
@@ -161,7 +161,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="text-right">
-				<b>Copyirght © Bekam Learning Center</b> All rights reserved</p>
+				<b>Copyirght © Bekam Holistic Center</b> All rights reserved</p>
 			</div>
 		</div>
 	</div>	

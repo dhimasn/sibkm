@@ -55,8 +55,8 @@
 					<div class="collapse navbar-collapse" id="menu">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="beranda.php">Beranda</a></li>
-						<li><a href="penentuan.php">SPKGK</a></li>
-						<li class="active"><a href="hasilpenentuan.php">Hasil SPKGK</a></li>						
+						<li><a href="penentuan.php">Diagnosa</a></li>
+						<li class="active"><a href="hasilpenentuan.php">Hasil Diagnosa</a></li>						
 						<li><a href="bantuan.php">Bantuan</a></li>
 						<li><a> </a></li>
 						<li>
@@ -86,7 +86,7 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="animatedParent">
-					<h2 class="h-bold" style="margin-top:50px;" align="center">Hasil Penentuan</h2>
+					<h2 class="h-bold" style="margin-top:50px;" align="center">Hasil Diagnosa</h2>
 				<div class="divider-header"></div>
 			</div>
 		</div>
@@ -94,7 +94,7 @@
 <section>
 	<div class="col-sm-12" >
 	<div class="panel panel-primary alert-info">
-		<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;HASIL PENENTUAN</div>
+		<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;HASIL Diagnosa</div>
 			<div class="panel-body">
 			<?php
 			if(isset($_GET['aksi']) == 'delete'){
@@ -118,13 +118,12 @@
 					<span id="tblArea">
 							<table id="example1" class="table table-bordered table-condensed table-hover" style="background-color:#fff" cellspacing="0" width="100%" >
 								<thead>
-									<th>No</th>
-									<th>Id pasien</th>
+									<th>ID pasien</th>
 									<th>Nama</th>
 									<th>Nama gangguan</th>
 									<th>Solusi gangguan</th>
 									<th>Nilai FSAW</th>
-									<th>Action</th>
+									<th>Aksi</th>
 								</thead>
 							<?php
 							$sql = mysqli_query($koneksi,
@@ -143,12 +142,11 @@
 							$no = 1;
 							while($data = mysqli_fetch_assoc($sql)){
 							echo'<tr bgcolor="#fff">
-									<td align="center">'.$no.'</td>
 									<td align="center">'.$data['idpasien'].'</td>
 									<td align="center">'.$data['nama'].'</td>
 									<td align="center">'.$data['nama_gangguan_kesehatan'].'</td>
 									<td align="center">'.$data['solusi_gangguan_kesehatan'].'</td>
-									<td align="center">'.$data['nilai_fsaw'].'</td>
+									<td align="center">'.round($data['nilai_fsaw'],5).'</td>
 									<td align="center">
 									<a href="detailhasil.php?id='.$data['idpasien'].'"><button class="btn btn-info btn-sm">Detail</button></a>	
 									<a href="hasilpenentuan.php?aksi=delete&idpasien='.$data['idpasien'].'"onclick="return confirm(\'Yakin?\')"><button type="button" class="btn btn-danger" aria-label="delete">HAPUS</button></a>
@@ -181,7 +179,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="text-right">
-				<b>Copyirght © Bekam Learning Center</b> All rights reserved
+				<b>Copyirght © Bekam Holistic Center</b> All rights reserved
 			</div>
 		</div>
 	</div>	

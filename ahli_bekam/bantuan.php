@@ -28,6 +28,11 @@
       <script src="../js/respond.min.js"></script>
     <![endif]-->
 </head>
+<style type="text/css">
+   p {
+   font-size: 18px;
+   }
+</style>
 <body>
 	<!-- Navigation -->
 	<div id="navigation">
@@ -50,8 +55,8 @@
 				<div class="collapse navbar-collapse" id="menu">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="beranda.php">Beranda</a></li>
-						<li><a href="penentuan.php">SPKGK</a></li>
-						<li><a href="hasilpenentuan.php">Hasil SPKGK</a></li>						
+						<li><a href="penentuan.php">Diagnosa</a></li>
+						<li><a href="hasilpenentuan.php">Hasil Diagnosa</a></li>						
 						<li class="active"><a href="bantuan.php">Bantuan</a></li>
 						<li><a> </a></li>
 						<li>
@@ -97,17 +102,17 @@
 		</div>
 		<div class="col-lg-4">
 		<div class="panel panel-primary">
-		<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;SPK GK</div>
+		<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;DIAGNOSA</div>
 		<div class="panel-body">
-				<p>Menu SPK GK sebuah Step form yang digunakan ahli bekam untuk menentukan gangguan pada kesehatan yang tepat pada pasien berdasarkan kriteria yang dibutuhkan sistem penentuan gangguan kesehatan. Ahli Bekam di minta untuk menginputkan data sesuai dengan kondisi fisik pasien selanjutnya sistem akan menampilkan hasil gangguan kesehatan yang di diderita pasien beserta solusinya.</p>
+				<p>Menu Diagnosa sebuah Step form yang digunakan ahli bekam untuk menentukan gangguan pada kesehatan yang tepat pada pasien berdasarkan kriteria yang dibutuhkan sistem penentuan gangguan kesehatan. Ahli Bekam di minta untuk menginputkan data sesuai dengan kondisi fisik pasien selanjutnya sistem akan menampilkan hasil gangguan kesehatan yang di diderita pasien beserta solusinya.</p>
 		</div>
 		</div>
 		</div>
 		<div class="col-lg-4">
 		<div class="panel panel-primary">
-			<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Hasil SPK GK</div>
+			<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Hasil DIAGNOSA</div>
 			<div class="panel-body">	
-				<p>Menu Hasil SPK GK berisikan informasi hasil penentuan gangguan kesehatan pada pasien yang telah ditentukan berdasarkan metode Fuzzy Simple Additive Weighting Diagnosa Telapak Tangan<p>
+				<p>Menu Hasil Diagnosa berisikan informasi hasil penentuan gangguan kesehatan pada pasien yang telah ditentukan berdasarkan metode Fuzzy Simple Additive Weighting Diagnosa Telapak Tangan<p>
 			</div>
 		</div>
 		</div>
@@ -120,7 +125,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="text-right">
-				<b>Copyirght © Bekam Learning Center</b> All rights reserved</p>
+				<b>Copyirght © Bekam Holistic Center</b> All rights reserved</p>
 			</div>
 		</div>
 	</div>	

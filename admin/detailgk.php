@@ -114,7 +114,7 @@
 						<table class="table table-danger">
 							<form class="form-horizontal" method="post">
 								<tr>
-									 <td><label>ID</label></td>
+									 <td><label>ID Gangguan Kesehatan</label></td>
 									 <td>:</td>
 									 <td><?php echo $row['id_gangguan_kesehatan']; ?></td>
 								</tr>
@@ -129,84 +129,245 @@
 									 <td><?php echo $row['solusi_gangguan_kesehatan']; ?></td>
 								</tr>
 								<tr>
-									<td><label>1.Tingkat Warna Gelap pada jari-jari</label></td>
+									<td><label>1) Tingkat kegelapan pada ruas garis jari-jari</label></td>
 									<td>:</td>
-									<td><?php echo $row['c1']; ?></td>
+									<td><?php if($row['c1']=='VL')
+											echo 'Very Low';
+											elseif($row['c1']=='L') 
+											echo 'Low';
+											elseif($row['c1']=='M') 
+											echo 'Medium';
+											elseif($row['c1']=='H') 
+											echo 'High';
+											else
+											echo 'Very High';
+											;?>
+									</td>
 								</tr>
 								<tr>
-									<td><label class="main">2.Tingkat Warna Gelap pada telapak tangan</label></td>						
+									<td><label>2) Tingkat kegelapan pada ruas garis telapak tangan</label></td>						
 									<td>:</td>
-									<td><?php echo $row['c2']; ?></td>
+									<td><?php if($row['c2']=='VL')
+											echo 'Very Low';
+											elseif($row['c2']=='L') 
+											echo 'Low';
+											elseif($row['c2']=='M') 
+											echo 'Medium';
+											elseif($row['c2']=='H') 
+											echo 'High';
+											else
+											echo 'Very High';
+											;?></td>
 								</tr>
 								<tr>
-									<td><label>3.Tingkat bintik-bintik merah/putih pada telapak tangan</</label></td>
+									<td><label>3) Tingkat kehitaman pada telapak tangan</</label></td>
 									<td>:</td>
-									<td><?php echo $row['c3']; ?></td>
+									<td><?php if($row['c3']=='VL')
+											echo 'Very Low';
+											elseif($row['c3']=='L') 
+											echo 'Low';
+											elseif($row['c3']=='M') 
+											echo 'Medium';
+											elseif($row['c3']=='H') 
+											echo 'High';
+											else
+											echo 'Very High';
+											;?></td>
 								</tr>
 								<tr>
-									<td><label>4.Tingkat warna urat biru pada telapak tangan</label></td>						
+									<td><label>4) Tingkat banyaknya urat berwarna biru pada telapak tangan</label></td>						
 									<td>:</td>
-									<td><?php echo $row['c4']; ?></td>
+									<td><?php if($row['c4']=='VL')
+											echo 'Very Low';
+											elseif($row['c4']=='L') 
+											echo 'Low';
+											elseif($row['c4']=='M') 
+											echo 'Medium';
+											elseif($row['c4']=='H') 
+											echo 'High';
+											else
+											echo 'Very High';
+											;?></td>
 								</tr>
 								<tr>
-									<td><label>5.Tingkat warna merah pucat pada telapak tangan</label></td>
+									<td><label>5) Tingkat warna merah pucat pada telapak tangan</label></td>
 									<td>:</td>
-									<td><?php echo $row['c5']; ?></td>
+									<td><?php if($row['c5']=='VL')
+											echo 'Very Low';
+											elseif($row['c5']=='L') 
+											echo 'Low';
+											elseif($row['c5']=='M') 
+											echo 'Medium';
+											elseif($row['c5']=='H') 
+											echo 'High';
+											else
+											echo 'Very High';
+											;?></td>
 								</tr>
 								<tr>
-									<td><label>6.Tingkat warna merah pada ruas ujung jari</label></td>						
+									<td><label>6) Tingkat warna merah pada ruas ujung jari</label></td>						
 									<td>:</td>
-									<td><?php echo $row['c6']; ?></td>
+									<td><?php if($row['c6']=='VL')
+											echo 'Very Low';
+											elseif($row['c6']=='L') 
+											echo 'Low';
+											elseif($row['c6']=='M') 
+											echo 'Medium';
+											elseif($row['c6']=='H') 
+											echo 'High';
+											else
+											echo 'Very High';
+											;?></td>
 								</tr>
 								<tr>
-									<td><label>7.Tingkat bengkok pada ibu jari</label></td>
+									<td><label>7) Tingkat kebengkokan pada ibu jari</label></td>
 									<td>:</td>
-									<td><?php echo $row['c7']; ?></td>
+									<td><?php if($row['c7']=='VL')
+											echo 'Very Low';
+											elseif($row['c7']=='L') 
+											echo 'Low';
+											elseif($row['c7']=='M') 
+											echo 'Medium';
+											elseif($row['c7']=='H') 
+											echo 'High';
+											else
+											echo 'Very High';
+											;?></td>
 								</tr>
 								<tr>
-									<td><label>8.Tingkat Bengkok pada jari kelingking</label></td>						
+									<td><label>8) Tingkat kebengkokan pada jari kelingking</label></td>						
 									<td>:</td>
-									<td><?php echo $row['c8']; ?></td>
+									<td><?php if($row['c8']=='VL')
+											echo 'Very Low';
+											elseif($row['c8']=='L') 
+											echo 'Low';
+											elseif($row['c8']=='M') 
+											echo 'Medium';
+											elseif($row['c8']=='H') 
+											echo 'High';
+											else
+											echo 'Very High';
+											;?></td>
 								</tr>
 								<tr>
-									<td><label>9.Tingkat Bengkok pada jari tengah</</label></td>
+									<td><label>9) Tingkat kebengkokan pada jari tengah</</label></td>
 									<td>:</td>
-									<td><?php echo $row['c9']; ?></td>
+									<td><?php if($row['c9']=='VL')
+											echo 'Very Low';
+											elseif($row['c9']=='L') 
+											echo 'Low';
+											elseif($row['c9']=='M') 
+											echo 'Medium';
+											elseif($row['c9']=='H') 
+											echo 'High';
+											else
+											echo 'Very High';
+											;?></td>
 								</tr>
 								<tr>
-									<td><label>10.Tingkat Bengkok ke dalam pada ujung-ujung jari</label></td>						
+									<td><label>10) Tingkat kebengkokan ke dalam pada ujung-ujung jari</label></td>						
 									<td>:</td>
-									<td><?php echo $row['c10']; ?></td>
+									<td><?php if($row['c10']=='VL')
+											echo 'Very Low';
+											elseif($row['c10']=='L') 
+											echo 'Low';
+											elseif($row['c10']=='M') 
+											echo 'Medium';
+											elseif($row['c10']=='H') 
+											echo 'High';
+											else
+											echo 'Very High';
+											;?></td>
 								</tr>
 								<tr>
-									<td><label>11.Tingkat Bengkok pada jari telunjuk</label></td>
+									<td><label>11) Tingkat kebengkokan pada jari manis</label></td>
 									<td>:</td>
-									<td><?php echo $row['c11']; ?></td>
+									<td><?php if($row['c11']=='VL')
+											echo 'Very Low';
+											elseif($row['c11']=='L') 
+											echo 'Low';
+											elseif($row['c11']=='M') 
+											echo 'Medium';
+											elseif($row['c11']=='H') 
+											echo 'High';
+											else
+											echo 'Very High';
+											;?></td>
 								</tr>
 								<tr>
-									<td><label>12.Tingkat Bengkok pada jari manis</label></td>						
+									<td><label>12) Tingkat ruas pertama pada jari telunjuk keriput</label></td>						
 									<td>:</td>
-									<td><?php echo $row['c12']; ?></td>
+									<td><?php if($row['c12']=='VL')
+											echo 'Very Low';
+											elseif($row['c12']=='L') 
+											echo 'Low';
+											elseif($row['c12']=='M') 
+											echo 'Medium';
+											elseif($row['c12']=='H') 
+											echo 'High';
+											else
+											echo 'Very High';
+											;?></td>
 								</tr>
 								<tr>
-									<td><label>13.Tingkat Kempot pada jari kelingking</label></td>
+									<td><label>13) Tingkat kempot pada jari kelingking</label></td>
 									<td>:</td>
-									<td><?php echo $row['c13']; ?></td>
+									<td><?php if($row['c13']=='VL')
+											echo 'Very Low';
+											elseif($row['c13']=='L') 
+											echo 'Low';
+											elseif($row['c13']=='M') 
+											echo 'Medium';
+											elseif($row['c13']=='H') 
+											echo 'High';
+											else
+											echo 'Very High';
+											;?></td>
 								</tr>
 								<tr>
-									<td><label>14.Tingkat Kempot pada ibu jari</label></td>						
+									<td><label>14) Tingkat ruas pertama seluruh jari terlihat kembung</label></td>						
 									<td>:</td>
-									<td><?php echo $row['c14']; ?></td>
+									<td><?php if($row['c14']=='VL')
+											echo 'Very Low';
+											elseif($row['c14']=='L') 
+											echo 'Low';
+											elseif($row['c14']=='M') 
+											echo 'Medium';
+											elseif($row['c14']=='H') 
+											echo 'High';
+											else
+											echo 'Very High';
+											;?></td>
 								</tr>
 								<tr>
-									<td><label>15.Tingkat Keringat pada tangan</label></td>
+									<td><label>15) Tingkat keringat pada tangan</label></td>
 									<td>:</td>
-									<td><?php echo $row['c15']; ?></td>
+									<td><?php if($row['c15']=='VL')
+											echo 'Very Low';
+											elseif($row['c15']=='L') 
+											echo 'Low';
+											elseif($row['c15']=='M') 
+											echo 'Medium';
+											elseif($row['c15']=='H') 
+											echo 'High';
+											else
+											echo 'Very High';
+											;?></td>
 								</tr>
 								<tr>
-									<td><label>16.Tingkat Nyeri pada tangan</label></td>						
+									<td><label>16) Tingkat kenyerian pada tangan</label></td>						
 									<td>:</td>
-									<td><?php echo $row['c16']; ?></td>
+									<td><?php if($row['c16']=='VL')
+											echo 'Very Low';
+											elseif($row['c16']=='L') 
+											echo 'Low';
+											elseif($row['c16']=='M') 
+											echo 'Medium';
+											elseif($row['c16']=='H') 
+											echo 'High';
+											else
+											echo 'Very High';
+											;?></td>
 								</tr>
 								<tr colspan="3">
 									<td>
@@ -239,8 +400,10 @@
 						<table class="table table-danger">
 							<tr>
 								<td>
-									<img src="<?php echo $row['titik_bekam']; ?>" border="0"/> 
-								</td>
+									 <a class="thumbnail" href="#">
+										<img class="img-responsive" src="<?php echo $row['titik_bekam'];?>" alt="">
+									 </a>
+								</td>	               
 							</tr>
 							<tr colspan="3">
 								<td>
@@ -266,7 +429,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="text-right">
-				<b>Copyirght © Bekam Learning Center</b> All rights reserved</p>
+				<b>Copyirght © Bekam Holistic Center</b> All rights reserved</p>
 			</div>
 		</div>
 	</div>	

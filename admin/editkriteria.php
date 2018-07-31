@@ -136,13 +136,13 @@
 								echo '<div class="alert alert-success">Data berhasil diubah.</div>';
 								}
 								?>	
-		   				<table class="table table-danger">
+		   						<table class="table table-danger">
 										<form class="form-horizontal" method="post">
 											<tr>
 												<td>ID Kepentingan Kriteria</td>
 												<td>:</td>
 												<td>
-													<?php echo $row[ 'idtfn'];?>
+													<?php echo $row['idtfn'];?>
 												</td>
 											</tr>
 											<tr>
@@ -210,7 +210,7 @@
 <div class="container">
 	<div class="row">
 		<div class="text-right">
-			<b>Copyirght © Bekam Learning Center</b> All rights reserved</p>
+			<b>Copyirght © Bekam Holistic Center</b> All rights reserved</p>
 		</div>
 	</div>
 </div>

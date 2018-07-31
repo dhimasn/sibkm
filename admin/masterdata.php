@@ -109,7 +109,7 @@
 										  <p>
 											<thead>
 												<th>No</th>
-												<th>ID</th>
+												<th>Alternatif</th>
 												<th>Nama Gangguan Kesehatan</th>							
 												<th>Solusi Gangguan Kesehatan</th>
 												<th>Aksi</th>
@@ -121,7 +121,7 @@
 										while($data = mysqli_fetch_assoc($sql)){
 										echo'<tr bgcolor="#fff">
 												<td align="center">'.$no.'</td>
-												<td align="center">'.$data['alternatif'].'</td>
+												<td align="center">'.$data['alternatif'][0].'<sub>'.$data['alternatif'][1].'</sub></td>
 												<td align="center">'.$data['nama_gangguan_kesehatan'].'</td>
 												<td align="center">'.$data['solusi_gangguan_kesehatan'].'</td>
 												<td align="center"> 
@@ -159,7 +159,7 @@
 										  <p>
 											<thead>
 												<th>No</th>
-												<th>ID kriteria</th>
+												<th>ID Kepentingan Kriteria</th>
 												<th>Kepentingan</th>
 												<th>Keterangan Kepentingan</th>
 												<th>TFN LMU</th>
@@ -172,7 +172,7 @@
 										while($data = mysqli_fetch_assoc($sql)){
 										echo'<tr bgcolor="#fff">
 												<td align="center">'.$no.'</td>
-												<td align="center">'.$data['idtfn'].'</td>
+												<td align="center">'.$data['idtfn'][0].''.$data['idtfn'][1].''.$data['idtfn'][2].'<sub>'.$data['idtfn'][3].'</sub></td>
 												<td align="center">'.$data['kepentingan'].'</td>
 												<td align="center">'.$data['ket_kepentingan'].'</td>
 												<td align="center">'.$data['tfn_lmu'].'</td>
@@ -210,7 +210,7 @@
 									  <p>
 										<thead>
 											<th>No</th>
-											<th>ID kriteria</th>
+											<th>ID Kepentingan Alternatif</th>
 											<th>Kepentingan</th>
 											<th>Keterangan Kepentingan</th>
 											<th>TFN LMU</th>
@@ -223,7 +223,7 @@
 									while($data = mysqli_fetch_assoc($sql)){
 									echo'<tr bgcolor="#fff">
 											<td align="center">'.$no.'</td>
-											<td align="center">'.$data['id_kriteria'].'</td>
+											<td align="center">'.$data['id_kriteria'][0].''.$data['id_kriteria'][1].''.$data['id_kriteria'][2].'<sub>'.$data['id_kriteria'][3].'</sub></td>
 											<td align="center">'.$data['kepentingan'].'</td>
 											<td align="center">'.$data['ket_kepentingan'].'</td>
 											<td align="center">'.$data['tfn_lmu'].'</td>
@@ -269,7 +269,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="text-right">
-				<b>Copyirght © Bekam Learning Center</b> All rights reserved</p>
+				<b>Copyirght © Bekam Holistic Center</b> All rights reserved</p>
 			</div>
 		</div>
 	</div>	

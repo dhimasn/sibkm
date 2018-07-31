@@ -22,12 +22,17 @@
     <link href="../css/style.css" rel="stylesheet">
 	<link href="../color/default.css" rel="stylesheet">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
- <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
- <!--[if lt IE 9]>
-	<script src="../js/html5shiv.min.js"></script>
-	<script src="../js/respond.min.js"></script>
- <![endif]-->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="../js/html5shiv.min.js"></script>
+		<script src="../js/respond.min.js"></script>
+	<![endif]-->
 </head>
+<style type="text/css">
+   p {
+   font-size: 18px;
+   }
+</style>
 <body>
 	<!-- Navigation -->
 	<div id="navigation">
@@ -91,7 +96,7 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Beranda</div>
 			<div class="panel-body">	
-				<p>Menu Beranda berisi informasi mengenai gangguan kesehatan terdapat beberapa penjelasan mengenai gambaran dari gangguan kesehatan.</p>
+				<p class="text-left">Menu Beranda berisi informasi mengenai gangguan kesehatan terdapat beberapa penjelasan mengenai gambaran dari gangguan kesehatan.</p>
 			</div>
 		</div>
 		</div>
@@ -99,7 +104,7 @@
 		<div class="panel panel-primary">
 		<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Master Data</div>
 		<div class="panel-body">
-				<p>Menu Master data berisi informasi Data Gangguan Kesehatan, Kepentingan Kriteria, Kepentigan Alternatif. Tab Data Gangguan Kesehatan Aministrator dapat melihat detail gangguan kesehatan dan mengubah data gangguan kesehatan, Tab Kepentingan Kriteria Aministrator dapat mengubah nilai rating kriteria yang digunakan pada sistem, Tab Kepentingan Alternatif Administrator dapat mengubah nilai rating alternatif yang digunakan pada sistem.</p>
+				<p class="text-left">Menu Master data berisi informasi Data Gangguan Kesehatan, Kepentingan Kriteria, Kepentigan Alternatif. Tab Data Gangguan Kesehatan Aministrator dapat melihat detail gangguan kesehatan dan mengubah data gangguan kesehatan, Tab Kepentingan Kriteria Aministrator dapat mengubah nilai rating kriteria yang digunakan pada sistem, Tab Kepentingan Alternatif Administrator dapat mengubah nilai rating alternatif yang digunakan pada sistem.</p>
 		</div>
 		</div>
 		</div>
@@ -107,7 +112,7 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Kelola Akun</div>
 			<div class="panel-body">	
-				<p>Menu kelola Akun  berisi informasi data Akun Ahli Bekam. Administrator dapat menambah data Ahli Bekam,mengubah data Ahli Bekam, dan juga menghapus data Ahli Bekam.</p>
+				<p class="text-left">Menu kelola Akun  berisi informasi data Akun Ahli Bekam. Administrator dapat menambah data Ahli Bekam,mengubah data Ahli Bekam, dan juga menghapus data Ahli Bekam.</p>
 			</div>
 		</div>
 		</div>
@@ -120,7 +125,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="text-right">
-				<b>Copyirght © Bekam Learning Center</b> All rights reserved</p>
+				<b>Copyirght © Bekam Holistic Center</b> All rights reserved</p>
 			</div>
 		</div>
 	</div>	

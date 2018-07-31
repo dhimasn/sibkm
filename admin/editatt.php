@@ -117,12 +117,12 @@
            <div class="table-responsive">			
            <?php						
            if(isset($_POST["save"])){
-            $kepentingan	    =  aman($_POST['kepentingan']);
-            $ket_kepentingan =  aman($_POST['ket_kepentingan']);
+            $kepentingan	       =  aman($_POST['kepentingan']);
+            $ket_kepentingan 	   =  aman($_POST['ket_kepentingan']);
             $nilai_l		       =  aman($_POST['nilai_l']);
             $nilai_m		       =  aman($_POST['nilai_m']);
             $nilai_u		       =  aman($_POST['nilai_u']);
-            $tfn_lmu         =  aman($_POST['tfn_lmu']);
+            $tfn_lmu               =  aman($_POST['tfn_lmu']);
              $update = mysqli_query($koneksi,"UPDATE bobot SET kepentingan='$kepentingan',ket_kepentingan='$ket_kepentingan',nilai_l='$nilai_l',nilai_m='$nilai_m',nilai_u='$nilai_u',tfn_lmu='$tfn_lmu' WHERE id_kriteria='$id_kriteria'") or die(mysqli_error());
              if($update){
               header("Location: editatt.php?id_kriteria=$id_kriteria&pesan=sukses");
@@ -193,7 +193,7 @@
 	<div class="container">
 		<div class="row">
 			<div class = "text-right">
-				<b>Copyirght © Bekam Learning Center</b> All rights reserved</p>
+				<b>Copyirght © Bekam Holistic Center</b> All rights reserved</p>
 			</div>
 		</div>
 	</div>	

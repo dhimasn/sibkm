@@ -163,18 +163,19 @@
 										?>
 										<form class="form-horizontal"  method="post" enctype="multipart/form-data">
 										<tr>
-											<td>
-											<img src="<?php echo $row['titik_bekam']; ?>" border="0"/> 
-											</td>
+										<td>
+											<a class="thumbnail" href="#">
+												<img class="img-responsive" src="<?php echo $row['titik_bekam'];?>" alt="">
+											</a>
+										</td>
 										</tr>
-										<tr colspan="3">
-										<td>Foto</td>
+										<tr>
 										<td><input type="file" name="foto" required/></td>
 										</tr>
 										<tr colspan="3">
 											 <td>
+											  <button type="submit" name="submit" class="btn btn-warning btn-sm" value="Submit">KIRIM</button>
 											 <a href="masterdata.php" class="btn btn-danger btn-sm" id="batal">BATAL</a>	
-											 <button type="submit" name="submit" class="btn btn-warning btn-sm" value="Submit">KIRIM</button>
 											 </td>
 										</tr>
 										</form>
@@ -193,7 +194,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="text-right">
-				<b>Copyirght © Bekam Learning Center</b> All rights reserved</p>
+				<b>Copyirght © Bekam Holistic Center</b> All rights reserved</p>
 			</div>
 		</div>
 	</div>	

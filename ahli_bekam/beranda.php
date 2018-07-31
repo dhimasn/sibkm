@@ -28,6 +28,11 @@
       <script src="../js/respond.min.js"></script>
     <![endif]-->
 </head>
+<style type="text/css">
+   p {
+   font-size: 18px;
+   }
+</style>
 <body data-target=".navbar-custom">
 	<!-- Navigation -->
 	<div id="navigation">
@@ -50,8 +55,8 @@
 				<div class="collapse navbar-collapse" id="menu">
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a href="beranda.php">Beranda</a></li>
-						<li><a href="penentuan.php">SPKGK</a></li>
-						<li><a href="hasilpenentuan.php">Hasil SPKGK</a></li>						
+						<li><a href="penentuan.php">Diagnosa</a></li>
+						<li><a href="hasilpenentuan.php">Hasil Diagnosa</a></li>						
 						<li><a href="bantuan.php">Bantuan</a></li>
 						<li><a> </a></li>
 						<li>
@@ -103,7 +108,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="text-right">
-				<b>Copyirght © Bekam Learning Center</b> All rights reserved</p>
+				<b>Copyirght © Bekam Holistic Center</b> All rights reserved</p>
 			</div>
 		</div>
 	</div>	

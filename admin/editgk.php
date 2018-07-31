@@ -110,7 +110,7 @@
 								</div>
 							</div>
 							<div class="row">	
-								<div class="col-sm-10 col-lg-offset-1">
+								<div class="col-sm-8 col-lg-offset-2">
 									<div class="panel panel-primary">
 										<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Ubah Data Gangguan Kesehatan</div>
 											<div class="panel-body"> 
@@ -178,7 +178,7 @@
 												<table class="table table-danger">
 												<form class="form-horizontal"  method="post" enctype="multipart/form-data">
 													<tr>
-													 <td><label>ID</label></td>
+													 <td><label>ID Gangguan Kesehatan</label></td>
 													 <td>:</td>
 													 <td><?php echo $row['id_gangguan_kesehatan'];?></td>
 													</tr>
@@ -193,7 +193,7 @@
 													 <td><input type="text" value="<?php echo $row['solusi_gangguan_kesehatan']; ?>" name="solusigk" class="form-control" placeholder="solusi gangguan kesehatan" required></td>
 													</tr>
 													<tr>
-													<td><label>1.Tingkat Warna Gelap pada jari-jari</label></td>
+													<td><label>1) Tingkat kegelapan pada ruas garis jari-jari</label></td>
 													<td>:</td>
 													<td><select name="c1" class="form-control" required>
 															<option value="<?php echo $row['c1']; ?>">bobot</option>
@@ -206,7 +206,7 @@
 													</td>
 													</tr>
 													<tr>
-													<td><label class="main">2.Tingkat Warna Gelap pada telapak tangan</label></td>						
+													<td><label class="main">2) Tingkat kegelapan pada ruas garis telapak tangan</label></td>						
 													<td>:</td>
 													<td><select  name="c2" class="form-control" required>
 															<option value="<?php echo $row['c2']; ?>">bobot</option>
@@ -219,7 +219,7 @@
 													</td>
 													</tr>
 													<tr>
-													<td><label>3.Tingkat bintik-bintik merah/putih pada telapak tangan</</label></td>
+													<td><label>3) Tingkat kehitaman pada telapak tangan</</label></td>
 													<td>:</td>
 													<td><select  name="c3" class="form-control"required>
 															<option value="<?php echo $row['c3']; ?>">bobot</option>
@@ -232,7 +232,7 @@
 													</td>
 													</tr>
 													<tr>
-													<td><label>4.Tingkat warna urat biru pada telapak tangan</label></td>						
+													<td><label>4) Tingkat banyaknya urat berwarna biru pada telapak tangan</label></td>						
 													<td>:</td>
 													<td><select  name="c4" class="form-control" required>
 															<option value="<?php echo $row['c4']; ?>">bobot</option>
@@ -245,7 +245,7 @@
 													</td>
 													</tr>
 													<tr>
-													<td><label>5.Tingkat warna merah pucat pada telapak tangan</label></td>
+													<td><label>5) Tingkat warna merah pucat pada telapak tangan</label></td>
 													<td>:</td>
 													<td><select  name="c5" class="form-control" required>
 															<option value="<?php echo $row['c5']; ?>">bobot</option>
@@ -258,7 +258,7 @@
 													</td>
 													</tr>
 													<tr>
-													<td><label>6.Tingkat warna merah pada ruas ujung jari</label></td>						
+													<td><label>6) Tingkat  warna merah pada ruas ujung jari</label></td>						
 													<td>:</td>
 													<td><select  name="c6" class="form-control" required>
 															<option value="<?php echo $row['c6']; ?>">bobot</option>
@@ -271,7 +271,7 @@
 													</td>
 													</tr>
 													<tr>
-													<td><label>7.Tingkat bengkok pada ibu jari</label></td>
+													<td><label>7) Tingkat Kebengkokan pada ibu jari</label></td>
 													<td>:</td>
 													<td><select  name="c7" class="form-control" required>
 															<option value="<?php echo $row['c7']; ?>">bobot</option>
@@ -284,7 +284,7 @@
 													</td>
 													</tr>
 													<tr>
-													<td><label>8.Tingkat Bengkok pada jari kelingking</label></td>						
+													<td><label>8) Tingkat kebengkokan pada jari kelingking</label></td>						
 													<td>:</td>
 													<td><select  name="c8" class="form-control" required>
 															<option value="<?php echo $row['c8']; ?>">bobot</option>
@@ -297,7 +297,7 @@
 													</td>
 													</tr>
 													<tr>
-													<td><label>9.Tingkat Bengkok pada jari tengah</</label></td>
+													<td><label>9) Tingkat kebengkokan pada jari tengah</</label></td>
 													<td>:</td>
 													<td><select  name="c9" class="form-control" required>
 															<option value="<?php echo $row['c9']; ?>">bobot</option>
@@ -310,7 +310,7 @@
 													</td>
 													</tr>
 													<tr>
-													<td><label>10.Tingkat Bengkok ke dalam pada ujung-ujung jari</label></td>						
+													<td><label>10) Tingkat kebengkokan ke dalam pada ujung-ujung jari</label></td>						
 													<td>:</td>
 													<td><select  name="c10" class="form-control" required>
 															<option value="<?php echo $row['c10']; ?>">bobot</option>
@@ -323,7 +323,7 @@
 													</td>
 													</tr>
 													<tr>
-													<td><label>11.Tingkat Bengkok pada jari telunjuk</label></td>
+													<td><label>11) Tingkat kebengkokan pada jari manis</label></td>
 													<td>:</td>
 													<td><select  name="c11" class="form-control" required>
 															<option value="<?php echo $row['c11']; ?>">bobot</option>
@@ -336,7 +336,7 @@
 													</td>
 													</tr>
 													<tr>
-													<td><label>12.Tingkat Bengkok pada jari manis</label></td>						
+													<td><label>12) Tingkat ruas pertama pada jari telunjuk keriput</label></td>						
 													<td>:</td>
 													<td><select  name="c12"  class="form-control"required>
 															<option value="<?php echo $row['c12']; ?>">bobot</option>
@@ -349,7 +349,7 @@
 													</td>
 													</tr>
 													<tr>
-													<td><label>13.Tingkat Kempot pada jari kelingking</label></td>
+													<td><label>13) Tingkat kempot pada jari kelingking</label></td>
 													<td>:</td>
 													<td><select  name="c13" class="form-control" required>
 															<option value="<?php echo $row['c13']; ?>">bobot</option>
@@ -362,7 +362,7 @@
 													</td>
 													</tr>
 													<tr>
-													<td><label>14.Tingkat Kempot pada ibu jari</label></td>						
+													<td><label>14) Tingkat ruas pertama seluruh jari terlihat kembung</label></td>						
 													<td>:</td>
 													<td><select  name="c14" class="form-control" required>
 															<option value="<?php echo $row['c14']; ?>">bobot</option>
@@ -375,7 +375,7 @@
 													</td>
 													</tr>
 													<tr>
-													<td><label>15.Tingkat Keringat pada tangan</label></td>
+													<td><label>15) Tingkat keringat pada tangan</label></td>
 													<td>:</td>
 													<td><select  name="c15"  class="form-control"required>
 															<option value="<?php echo $row['c15']; ?>">bobot</option>
@@ -388,7 +388,7 @@
 													</td>
 													</tr>
 													<tr>
-													<td><label>16.Tingkat Nyeri pada tangan</label></td>						
+													<td><label>16) Tingkat kenyerian pada tangan</label></td>						
 													<td>:</td>
 													<td><select  name="c16"  class="form-control"required>
 															<option value="<?php echo $row['c16']; ?>">bobot</option>
@@ -402,8 +402,8 @@
 													</tr>
 													<tr colspan="3">
 													 <td>
+													 <button type="submit" name="submit" class="btn btn-warning btn-sm" value="Submit">KIRIM</button>
 													 <a href="masterdata.php" class="btn btn-danger btn-sm" id="batal">BATAL</a>
-													<button type="submit" name="submit" class="btn btn-warning btn-sm" value="Submit">KIRIM</button>
 													 </td>
 													</tr>
 												</form> 
@@ -423,7 +423,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="text-right">
-				<b>Copyirght © Bekam Learning Center</b> All rights reserved</p>
+				<b>Copyirght © Bekam Holistic Center</b> All rights reserved</p>
 			</div>
 		</div>
 	</div>	
