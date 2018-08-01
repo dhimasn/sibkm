@@ -111,7 +111,7 @@
 												<th>No</th>
 												<th>Alternatif</th>
 												<th>Nama Gangguan Kesehatan</th>							
-												<th>Solusi Gangguan Kesehatan</th>
+												<th>Solusi Herbal</th>
 												<th>Aksi</th>
 											</thead>
 										<?php
@@ -123,7 +123,7 @@
 												<td align="center">'.$no.'</td>
 												<td align="center">'.$data['alternatif'][0].'<sub>'.$data['alternatif'][1].'</sub></td>
 												<td align="center">'.$data['nama_gangguan_kesehatan'].'</td>
-												<td align="center">'.$data['solusi_gangguan_kesehatan'].'</td>
+												<td align="left" valign="top">'.substr($data['solusi_gangguan_kesehatan'],0,35).'</td>
 												<td align="center"> 
 												<a href="detailgk.php?id='.$data['id_gangguan_kesehatan'].'"><button class="btn btn-info btn-sm">Detail</button></a> 
 												<a href="editgk.php?id='.$data['id_gangguan_kesehatan'].'"><button class="btn btn-warning btn-sm">ubah</button></a>

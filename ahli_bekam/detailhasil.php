@@ -148,15 +148,20 @@
 			<div class="panel panel-primary">
 					<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Detail Hasil Diagnosa</div>
 						<div class="panel-body" align="center">
-						<div id="print-area-1" class="print-area">
+						<div id="print-area-1" class="print-area">						
 						<div class="animatedParent">
 							<h6 class="h-bold" align="center">Data Pasien</h6>
 						</div>
-						<table class="table table-danger">
+						<table class="table table-danger" align="center">
 							<tr>
 								<td><b>Nama</b></td>
 								<td>:</td>
 								<td><b><?php echo $row['nama']; ?></b></td>
+							</tr>
+							<tr>
+								<td><b>No</b></td>
+								<td>:</td>
+								<td><b><?php echo $row['no']; ?></b></td>
 							</tr>
 							<tr>
 								<td><b>Umur</b></td>
@@ -172,6 +177,11 @@
 											echo 'Perempuan';?></b></td>
 							</tr>
 							<tr>
+								<td><b>alamat</b></td>
+								<td>:</td>
+								<td><b><?php echo $row['alamat']; ?></b></td>
+							</tr>
+							<tr>
 								<td><b>Keluhan<b></td>
 								<td>:</td>
 								<td><b><?php echo $row['keluhan']; ?></b></td>
@@ -180,7 +190,7 @@
 						<div class="animatedParent">
 							<h6 class="h-bold" align="center">Nilai Prefensi</h6>
 						</div>
-						<table class="table table-danger">
+						<table class="table table-danger" align="center">
 							<tr>
 								<td><b>Gangguan pada Kolesterol</b></td>
 								<td>:</td>
@@ -211,6 +221,14 @@
 								<td>:</td>
 								<td><b><?php echo  round($data['nilai_A6'],5); ?></b></td>
 							</tr>
+						</table>
+						<div class="animatedParent">
+							<h6 class="h-bold" align="center">Solusi Herbal</h6>
+						</div>
+						<table class="table table-danger" align="center">
+							<tr>
+								<td><b><?php echo $data['solusi_gangguan_kesehatan']; ?></b></td>
+							</tr>	
 						</table>
 						<iframe id="printing-frame" name="print_frame" src="about:blank" style="display:none;"></iframe>
 						<div class="col-lg-6 col-lg-offset-3">

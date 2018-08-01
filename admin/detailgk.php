@@ -106,7 +106,7 @@
 		</div>
 		<!-- TAB PANE DATA GANGGUAN KESEHATAN -->
 		<div class="row">	
-			<div class="col-sm-8 col-lg-offset-2">
+			<div class="col-sm-10 col-lg-offset-1">
 				<div class="panel panel-primary">
 					<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Data Gangguan Kesehatan</div>
 				<div class="panel-body">

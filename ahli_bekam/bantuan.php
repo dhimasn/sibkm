@@ -96,7 +96,7 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Beranda</div>
 			<div class="panel-body">	
-				<p>Menu Beranda berisi informasi mengenai gangguan kesehatan terdapat beberapa penjelasan mengenai gambaran dari  gangguan kesehatan.<p>
+				<p>Menu Beranda berisi informasi mengenai sistem diagnosis gangguan kesehatan terapi bekam.<p>
 			</div>
 		</div>
 		</div>
@@ -104,7 +104,8 @@
 		<div class="panel panel-primary">
 		<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;DIAGNOSA</div>
 		<div class="panel-body">
-				<p>Menu Diagnosa sebuah Step form yang digunakan ahli bekam untuk menentukan gangguan pada kesehatan yang tepat pada pasien berdasarkan kriteria yang dibutuhkan sistem penentuan gangguan kesehatan. Ahli Bekam di minta untuk menginputkan data sesuai dengan kondisi fisik pasien selanjutnya sistem akan menampilkan hasil gangguan kesehatan yang di diderita pasien beserta solusinya.</p>
+				<p>Menu Diagnosa sebuah Step form yang digunakan ahli bekam untuk menentukan gangguan pada kesehatan yang tepat pada pasien berdasarkan kriteria yang dibutuhkan sistem penentuan gangguan kesehatan</p> 
+				<p>Ahli Bekam di minta untuk menginputkan data sesuai dengan kondisi fisik pasien selanjutnya sistem akan menampilkan hasil gangguan kesehatan yang di diderita pasien beserta solusinya.</p>
 		</div>
 		</div>
 		</div>
@@ -112,7 +113,7 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Hasil DIAGNOSA</div>
 			<div class="panel-body">	
-				<p>Menu Hasil Diagnosa berisikan informasi hasil penentuan gangguan kesehatan pada pasien yang telah ditentukan berdasarkan metode Fuzzy Simple Additive Weighting Diagnosa Telapak Tangan<p>
+				<p>Menu Hasil Diagnosa berisikan informasi hasil penentuan gangguan kesehatan pada pasien yang telah ditentukan berdasarkan metode Fuzzy Simple Additive Weighting<p>
 			</div>
 		</div>
 		</div>

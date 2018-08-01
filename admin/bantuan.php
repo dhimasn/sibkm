@@ -96,7 +96,7 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Beranda</div>
 			<div class="panel-body">	
-				<p class="text-left">Menu Beranda berisi informasi mengenai gangguan kesehatan terdapat beberapa penjelasan mengenai gambaran dari gangguan kesehatan.</p>
+				<p class="text-left">Menu Beranda berisi informasi gambaran dari sistem diagnosis gangguan kesehatan terapi bekam menggunakan metode Fuzzy Simple Additive Weighting.</p>
 			</div>
 		</div>
 		</div>
@@ -104,7 +104,10 @@
 		<div class="panel panel-primary">
 		<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Master Data</div>
 		<div class="panel-body">
-				<p class="text-left">Menu Master data berisi informasi Data Gangguan Kesehatan, Kepentingan Kriteria, Kepentigan Alternatif. Tab Data Gangguan Kesehatan Aministrator dapat melihat detail gangguan kesehatan dan mengubah data gangguan kesehatan, Tab Kepentingan Kriteria Aministrator dapat mengubah nilai rating kriteria yang digunakan pada sistem, Tab Kepentingan Alternatif Administrator dapat mengubah nilai rating alternatif yang digunakan pada sistem.</p>
+				<p class="text-left">Menu Master data berisi informasi Data Gangguan Kesehatan, Kepentingan Kriteria, Kepentigan Alternatif.</p>
+				<p> Tab Data Gangguan Kesehatan Aministrator dapat melihat detail gangguan kesehatan dan mengubah data gangguan kesehatan</p>
+				<p> Tab Kepentingan Kriteria Aministrator dapat mengubah nilai rating kriteria yang digunakan pada sistem</p>
+				<p> Tab Kepentingan Alternatif Administrator dapat mengubah nilai rating alternatif yang digunakan pada sistem.</p>
 		</div>
 		</div>
 		</div>

@@ -121,7 +121,7 @@
 									<th>ID pasien</th>
 									<th>Nama</th>
 									<th>Nama gangguan</th>
-									<th>Solusi gangguan</th>
+									<th>Solusi Herbal</th>
 									<th>Nilai FSAW</th>
 									<th>Aksi</th>
 								</thead>
@@ -145,7 +145,7 @@
 									<td align="center">'.$data['idpasien'].'</td>
 									<td align="center">'.$data['nama'].'</td>
 									<td align="center">'.$data['nama_gangguan_kesehatan'].'</td>
-									<td align="center">'.$data['solusi_gangguan_kesehatan'].'</td>
+									<td align="center">'.substr($data['solusi_gangguan_kesehatan'],0,30).'</td>
 									<td align="center">'.round($data['nilai_fsaw'],5).'</td>
 									<td align="center">
 									<a href="detailhasil.php?id='.$data['idpasien'].'"><button class="btn btn-info btn-sm">Detail</button></a>	
