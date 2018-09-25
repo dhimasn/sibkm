@@ -124,9 +124,9 @@
 									 <td><?php echo $row['nama_gangguan_kesehatan']; ?></td>
 								</tr>
 								<tr>
-									 <td><label>Solusi Gangguan Kesehatan</label></td>
+									 <td><label>Solusi Herbal</label></td>
 									 <td>:</td>
-									 <td><?php echo $row['solusi_gangguan_kesehatan']; ?></td>
+									 <td width="400px"><?php echo $row['solusi_gangguan_kesehatan']; ?></td>
 								</tr>
 								<tr>
 									<td><label>1) Tingkat kegelapan pada ruas garis jari-jari</label></td>

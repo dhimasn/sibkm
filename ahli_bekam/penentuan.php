@@ -208,89 +208,73 @@ radio.invalid {
 					<tr>
 						<td><label class="control-label">1) Tingkat kegelapan pada ruas garis jari-jari</label></td>		
 						<td>:</td>	
-						<td>	
-							<select class="form-control" style="width: 100%;" name="c1" oninput="this.className = ''" required>
-								<option value ="tfn1">tidak gelap</option>
-								<option value ="tfn2">sedikit gelap</option>
-								<option value ="tfn3">sangat gelap</option>
-							</select>
+						<td>
+						<label><input name="c1" type="radio" value="tfn1" oninput="this.className = ''">tidak gelap</label><br>	
+						<label><input name="c1" type="radio" value="tfn2" oninput="this.className = ''">sedikit gelap</label><br>
+						<label><input name="c1" type="radio" value="tfn3" oninput="this.className = ''">sangat gelap</label>	
 						</td>	
 					</tr>
 					<tr>
 						<td><label class="control-label" >2) Tingkat kegelapan pada ruas garis telapak tangan</label></td>			
 						<td>:</td>	
-						<td>	
-							<select  class="form-control" style="width: 100%;"  name="c2" oninput="this.className = ''" required>	
-								<option value ="tfn1">tidak gelap</option>
-								<option value ="tfn2">sedikit gelap</option>
-								<option value ="tfn3">sangat gelap</option>
-							</select>
+						<td>
+						<label><input name="c2" type="radio" value="tfn1" oninput="this.className = ''">tidak gelap</label><br>	
+						<label><input name="c2" type="radio" value="tfn2" oninput="this.className = ''">sedikit gelap</label><br>
+						<label><input name="c2" type="radio" value="tfn3" oninput="this.className = ''">sangat gelap</label>	
 						</td>
 					</tr>
 					<tr>
 						<td><label class="control-label">3) Tingkat kehitaman pada telapak tangan</label></td>
 						<td>:</td>
 						<td>
-							<select  class="form-control" style="width: 100%;" name="c3" oninput="this.className = ''" required>
-								<option value ="tfn1">tidak hitam</option>
-								<option value ="tfn2">sedikit hitam</option>
-								<option value ="tfn3">sangat hitam</option>
-							</select>
+						<label><input name="c3" type="radio" value="tfn1" oninput="this.className = ''">tidak hitam</label><br>	
+						<label><input name="c3" type="radio" value="tfn2" oninput="this.className = ''">sedikit hitam</label><br>
+						<label><input name="c3" type="radio" value="tfn3" oninput="this.className = ''">sangat hitam</label>
 						</td>	
 					</tr>
 					<tr>
 						<td><label class="control-label">4) Tingkat banyaknya urat berwarna biru pada telapak tangan</label></td>
 						<td>:</td>
 						<td>
-							<select  class="form-control" style="width: 100%;" name="c4" oninput="this.className = ''" required>
-								<option value ="tfn1">tidak terdapat urat berwarna biru</option>
-								<option value ="tfn2">sedikit terdapat urat berwarna biru</option>
-								<option value ="tfn3">sangat banyak terdapat urat berwarna biru</option>
-							</select>
+						<label><input name="c4" type="radio" value="tfn1" oninput="this.className = ''">tidak terdapat urat berwarna biru</label><br>	
+						<label><input name="c4" type="radio" value="tfn2" oninput="this.className = ''">sedikit terdapat urat berwarna biru</label><br>
+						<label><input name="c4" type="radio" value="tfn3" oninput="this.className = ''">sangat banyak terdapat urat berwarna biru</label>
 						<td>
 					<tr>
 					<tr>
 						<td><label class="control-label">5) Tingkat warna merah pucat pada telapak tangan</label></td>	
 						<td>:</td>
 						<td>
-							<select class="form-control" style="width: 100%;" name="c5" oninput="this.className = ''" required>
-								<option value ="tfn1">tidak berwarna merah pucat</option>
-								<option value ="tfn2">sedikit berwarna merah pucat</option>
-								<option value ="tfn3">sangat berwarna merah pucat</option>
-							</select>
+						<label><input name="c5" type="radio" value="tfn1" oninput="this.className = ''">tidak berwarna merah pucat</label><br>	
+						<label><input name="c5" type="radio" value="tfn2" oninput="this.className = ''">sedikit berwarna merah pucat</label><br>
+						<label><input name="c5" type="radio" value="tfn3" oninput="this.className = ''">sangat berwarna merah pucat</label>
 						</td>	
 					</tr>
 					<tr>	
 						<td><label class="control-label">6) Tingkat warna merah pada ruas ujung jari</label></td>
 						<td>:</td>
 						<td>
-							<select  class="form-control"  style="width: 100%;" name="c6" oninput="this.className = ''" required>
-								<option value ="tfn1">Berwarna merah normal</option>
-								<option value ="tfn2">Berwarna merah dari ruas jari sekitarnya.</option>
-								<option value ="tfn3">Sangat berwarna merah dari ruas jari sekitarnya.</option>
-							</select>
+						<label><input name="c6" type="radio" value="tfn1" oninput="this.className = ''">Berwarna merah normal</label><br>	
+						<label><input name="c6" type="radio" value="tfn2" oninput="this.className = ''">Berwarna merah dari ruas jari sekitarnya</label><br>
+						<label><input name="c6" type="radio" value="tfn3" oninput="this.className = ''">Sangat berwarna merah dari ruas jari sekitarnya</label>
 						</td>	
 					</tr>
 					<tr>
 						<td><label class="control-label">7) Tingkat Kebengkokan pada ibu jari</label></td>
 						<td>:</td>
-						<td>	
-							<select class="form-control"  style="width: 100%;" name="c7" oninput="this.className = ''" required>
-								<option value ="tfn1">tidak bengkok</option>
-								<option value ="tfn2">sedikit bengkok</option>
-								<option value ="tfn3">sangat bengkok</option>
-							</select>
+						<td>
+						<label><input name="c7" type="radio" value="tfn1" oninput="this.className = ''">tidak bengkok</label><br>	
+						<label><input name="c7" type="radio" value="tfn2" oninput="this.className = ''">sedikit bengkok</label><br>
+						<label><input name="c7" type="radio" value="tfn3" oninput="this.className = ''">sangat bengkok</label>	
 						</td>
 					</tr>
 					<tr>
 						<td><label class="control-label">8) Tingkat kebengkokan pada jari kelingking</label></td>
 						<td>:</td>
-						<td>	
-							<select class="form-control" style="width: 100%;" name="c8" oninput="this.className = ''" required>
-								<option value ="tfn1">tidak bengkok</option>
-								<option value ="tfn2">sedikit bengkok</option>
-								<option value ="tfn3">sangat bengkok</option>
-							</select>
+						<td>
+						<label><input name="c8" type="radio" value="tfn1" oninput="this.className = ''">tidak bengkok</label><br>	
+						<label><input name="c8" type="radio" value="tfn2" oninput="this.className = ''">sedikit bengkok</label><br>
+						<label><input name="c8" type="radio" value="tfn3" oninput="this.className = ''">sangat bengkok</label>	
 						</td>
 					</tr>
 				</table>
@@ -303,82 +287,72 @@ radio.invalid {
 						<td><label class="control-label">9) Tingkat kebengkokan pada jari tengah</label></td>				
 						<td>:</td>
 						<td>
-							<select class="form-control" style="width: 100%;" name="c9" oninput="this.className = ''" required>
-								<option value ="tfn1">tidak bengkok</option>
-								<option value ="tfn2">sedikit bengkok</option>
-								<option value ="tfn3">sangat bengkok</option>
-							</select>
+						<label><input name="c9" type="radio" value="tfn1" oninput="this.className = ''">tidak bengkok</label><br>	
+						<label><input name="c9" type="radio" value="tfn2" oninput="this.className = ''">sedikit bengkok</label><br>
+						<label><input name="c9" type="radio" value="tfn3" oninput="this.className = ''">sangat bengkok</label>
 						</td>
 					</tr>
 					<tr>
 						<td><label class="control-label">10) Tingkat kebengkokan ke dalam pada ujung-ujung jari</label></td>						
 						<td>:</td>
-						<td><select  class="form-control" style="width: 100%;" name="c10" oninput="this.className = ''" required>
-								<option value ="tfn1">tidak bengkok</option>
-								<option value ="tfn2">sedikit bengkok</option>
-								<option value ="tfn3">sangat bengkok</option>
-							</select>
+						<td>
+						<label><input name="c10" type="radio" value="tfn1" oninput="this.className = ''">tidak bengkok</label><br>	
+						<label><input name="c10" type="radio" value="tfn2" oninput="this.className = ''">sedikit bengkok</label><br>
+						<label><input name="c10" type="radio" value="tfn3" oninput="this.className = ''">sangat bengkok</label>
 						</td>
 					</tr>
 					<tr>
 						<td><label class="control-label">11) Tingkat kebengkokan pada jari manis</label></td>
 						<td>:</td>
-						<td><select  class="form-control" style="width: 100%;" name="c11" oninput="this.className = ''" required>
-								<option value ="tfn1">tidak bengkok</option>
-								<option value ="tfn2">sedikit bengkok</option>
-								<option value ="tfn3">sangat bengkok</option>
-							</select>
+						<td>
+						<label><input name="c11" type="radio" value="tfn1" oninput="this.className = ''">tidak bengkok</label><br>	
+						<label><input name="c11" type="radio" value="tfn2" oninput="this.className = ''">sedikit bengkok</label><br>
+						<label><input name="c11" type="radio" value="tfn3" oninput="this.className = ''">sangat bengkok</label>
 						</td>
 					</tr>
 					<tr>
 						<td><label class="control-label">12) Tingkat ruas pertama pada jari telunjuk keriput</label></td>
 						<td>:</td>
-						<td><select  class="form-control" style="width: 100%;" name="c12" oninput="this.className = ''" required>
-								<option value ="tfn1">Tidak keriput</option>
-								<option value ="tfn2">Sedikit keriput</option>
-								<option value ="tfn3">Sangat keriput</option>
-							</select>
+						<td>
+						<label><input name="c12" type="radio" value="tfn1" oninput="this.className = ''">Tidak keriput</label><br>	
+						<label><input name="c12" type="radio" value="tfn2" oninput="this.className = ''">Sedikit keriput</label><br>
+						<label><input name="c12" type="radio" value="tfn3" oninput="this.className = ''">Sangat keriput</label>
 						</td>
 					</tr>
 					<tr>
 						<td><label class="control-label">13) Tingkat kempot pada jari kelingking</label></td>											
 						<td>:</td>
-						<td><select class="form-control" style="width: 100%;" name="c13" oninput="this.className = ''" required>
-							<option value ="tfn1">tidak kempot</option>
-							<option value ="tfn2">sedikit kempot</option>
-							<option value ="tfn3">sangat kempot</option></select>
+						<td>
+						<label><input name="c13" type="radio" value="tfn1" oninput="this.className = ''">tidak kempot</label><br>	
+						<label><input name="c13" type="radio" value="tfn2" oninput="this.className = ''">sedikit kempot</label><br>
+						<label><input name="c13" type="radio" value="tfn3" oninput="this.className = ''">sangat kempot</label>
 						</td>
 					</tr>
 					<tr>
 						<td><label class="control-label">14) Tingkat ruas pertama seluruh jari terlihat kembung</label></td>							
 						<td>:</td>
-						<td><select  class="form-control" style="width: 100%;" name="c14" oninput="this.className = ''" required>
-								<option value ="tfn1">Tidak kembung</option>
-								<option value ="tfn2">Sedikit kembung</option>
-								<option value ="tfn3">Sangat kembung</option>
-						    </select>
+						<td>
+						<label><input name="c14" type="radio" value="tfn1" oninput="this.className = ''">tidak kembung</label><br>	
+						<label><input name="c14" type="radio" value="tfn2" oninput="this.className = ''">sedikit kembung</label><br>
+						<label><input name="c14" type="radio" value="tfn3" oninput="this.className = ''">sangat kembung</label>
 						</td>
 					</tr>
 					<tr>
 						<td><label class="control-label">15) Tingkat keringat pada tangan</label></td>
 						<td>:</td>
 						<td>
-							<select class="form-control" style="width: 100%;" name="c15" oninput="this.className = ''" required>
-								<option value ="tfn1">tidak berkeringat</option>
-								<option value ="tfn2">sedikit berkeringat</option>
-								<option value ="tfn3">sangat berkeringat</option>
-							</select>
+						<label><input name="c15" type="radio" value="tfn1" oninput="this.className = ''">tidak berkeringat</label><br>	
+						<label><input name="c15" type="radio" value="tfn2" oninput="this.className = ''">sedikit berkeringat</label><br>
+						<label><input name="c15" type="radio" value="tfn3" oninput="this.className = ''">sangat berkeringat</label>
 						</td>
 					</tr>	
 					<tr>
 						<td><label class="control-label">16) Tingkat kenyerian pada tangan</label></td>						
 						<td>:</td>
 						<td>
-							<select class="form-control" style="width: 100%;" name="c16" oninput="this.className = ''" required>
-								<option value ="tfn1">tidak nyeri</option>
-								<option value ="tfn2">sedikit nyeri</option>
-								<option value ="tfn3">sangat nyeri</option>
-							</select>
+						<label><input name="c16" type="radio" value="tfn1" oninput="this.className = ''">tidak nyeri</label><br>	
+						<label><input name="c16" type="radio" value="tfn2" oninput="this.className = ''">sedikit nyeri</label><br>
+						<label><input name="c16" type="radio" value="tfn3" oninput="this.className = ''">sangat nyeri</label>
 						</td>
 					</table>
 				</div>

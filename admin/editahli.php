@@ -106,12 +106,13 @@
 				<div class="panel-heading"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;ubah data ahli bekam</div>
 					<div class="panel-body">
 						<div class="table-responsive">			
-						<?php						
+						<?php	
+											
 						if(isset($_POST["save"])){
 							$nama		=  aman($_POST['nama']);
 							$pass1		=  aman($_POST['pass1']);
 							$pass2		=  aman($_POST['pass2']);
-							$status		=  aman($_POST['status']);
+							$status		=  'user';
 							if($pass1 == $pass2){
 								$pass 	 = md5($pass1);
 								$update = mysqli_query($koneksi,"UPDATE user SET nama='$nama',status='$status',password='$pass' WHERE iduser='$id'") or die(mysqli_error());
@@ -146,15 +147,6 @@
 								 <td><input type="password" name="pass2" class="form-control" placeholder="KONFIRMASI PASSWORD" required></td>
 								</tr>
 								<tr>
-								<td>STATUS</td>
-								<td>:</td>
-								<td><select  class="form-control input-sm" name="status" required>
-										<option value="">STATUS</option>
-										<option value="admin"<?php if($row['status'] == 'admin'){ echo 'selected'; } ?>>admin</option>
-										<option value="user"<?php if($row['status'] == 'user'){ echo 'selected'; } ?>>user</option>
-									  </select>
-									  </td>
-								</tr>
 								<tr colspan="3">
 								 <td>  
 								 <input type="submit" name="save" value="SIMPAN" class="btn btn-warning btn-sm">
